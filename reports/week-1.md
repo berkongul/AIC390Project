@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Team | [TEAM NAME] |
+| Team | [TEAM 6] |
 | Use case | UC1 |
 | Week | 1 |
 | Repository | [GITHUB URL] |
