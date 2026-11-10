@@ -24,7 +24,7 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: openai/gpt-oss-20b
-          DRY_RUN: "1"
+          DRY_RUN: "0"
         run: python -u src/baseline.py
 
       - name: Generate summary
