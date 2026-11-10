@@ -5,7 +5,7 @@
 | Team | [TEAM 6] |
 | Use case | UC1 |
 | Week | 1 |
-| Repository | [GITHUB URL] |
+| Repository | [https://github.com/berkongul/AIC390Project/] |
 | Commit tag | week-1 (to be created) |
 | Presenter | [NAME] |
 | Members and roles | [Name] (data and retrieval lead); [Name] (agent and tools lead); [Name] (evaluation and safety lead) |
