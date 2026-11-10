@@ -33,6 +33,7 @@ def main():
     tasks = [(t,c) for t in TEMPERATURES for c in CASES]
     if dry_run: tasks = tasks[:1]
     output = ROOT / 'results/baseline_results.csv'
+    output.parent.mkdir(parents=True, exist_ok=True)
     with output.open('w',encoding='utf-8',newline='') as handle:
         writer = csv.DictWriter(handle,fieldnames=FIELDS)
         writer.writeheader()
