@@ -23,7 +23,7 @@ jobs:
       - name: Run Groq tests
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: llama-3.1-8b-instant
+          GROQ_MODEL: openai/gpt-oss-20b
           DRY_RUN: "1"
         run: python -u src/baseline.py
 
