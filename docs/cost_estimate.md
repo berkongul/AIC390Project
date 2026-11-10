@@ -1,13 +1,35 @@
-# W1.6 Cost estimate — fill in current model pricing before submission
+## Week 1 Measured Token Usage and Cost
 
-Model: **[MODEL AND PRICING SOURCE/DATE]**. Pricing may vary by model, tier, region and input/output token type.
+**Model:** `openai/gpt-oss-20b` (Groq API)
 
-Assumptions (replace with measurements when available):
-- Average input tokens/request: **[MEASURE]**
-- Average output tokens/request: **[MEASURE]**
-- Input price per 1M tokens (USD): **[VERIFY]**
-- Output price per 1M tokens (USD): **[VERIFY]**
+**Experiment:** 25 test inputs × 3 temperatures = 75 requests.
 
-Formula: `cost_per_1000_usd = (1000 * input_tokens_per_request / 1_000_000 * input_price_per_million) + (1000 * output_tokens_per_request / 1_000_000 * output_price_per_million)`.
+| Metric | Value |
+|---|---:|
+| Successful API requests | 75 |
+| Failed API requests | 0 |
+| Input tokens | 12,177 |
+| Output tokens | 10,973 |
+| Total tokens | 23,150 |
+| Average tokens per request | 308.67 |
 
-Week 1 experiment: 25 prompts x 3 temperatures = 75 planned requests. Actual spend must be taken from billing or verified price and measured token usage; **do not invent a cost**. Free-tier usage is not evidence of a universal $0 price.
+### Pricing Assumptions
+
+- Input: $0.075 per 1 million tokens
+- Output: $0.30 per 1 million tokens
+
+### Cost Calculation
+
+Input cost = (12,177 / 1,000,000) × $0.075 = $0.000913275
+
+Output cost = (10,973 / 1,000,000) × $0.30 = $0.0032919
+
+**Estimated total cost for 75 requests = $0.004205175**
+
+**Estimated cost per request = $0.00005607**
+
+**Estimated cost per 1,000 similar requests = $0.05607**
+
+These estimates use the recorded token counts and the stated model pricing. Actual billed spending may differ, especially when using a free API tier.
+
+Evidence: `results/baseline_results.csv`.
