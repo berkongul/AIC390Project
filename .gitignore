@@ -1,0 +1,15 @@
+# Secrets (rule R13): never commit API keys
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/

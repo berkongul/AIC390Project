@@ -1,54 +1,64 @@
-# UC1 — Online Store Support Agent | Week 1
+# UC1 Online Store Support Agent (AIC 390, Team 6)
 
-Course project baseline using the **Google Gemini API** and 25 synthetic English customer requests. This repository contains a **starter package**: documentation drafts and scripts, **not completed experimental results**.
+Course project for AIC 390 Prompt Engineering (Özyeğin University, fall 2026-27). Over seven weeks we build a support assistant for small online stores. It answers from store documents, looks up orders, starts returns in a sandbox and measures its own accuracy, safety and cost.
 
-## Setup (macOS/Linux; Python 3.10+)
+| Member | Role |
+|---|---|
+| Orhun Cerit | Data and retrieval lead |
+| Nurettin Selim Özyılmaz | Agent and tools lead |
+| Yakup Berk Öngül | Evaluation and safety lead |
+
+Current state: **week 1**, a prompt-only baseline on `openai/gpt-oss-20b` through the Groq API. The model has no documents, data or tools yet.
+
+## Setup (Python 3.10+)
 
 ```bash
+git clone https://github.com/berkongul/AIC390Project.git
+cd AIC390Project
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
+cp .env.example .env   # then put your GROQ_API_KEY in .env
 ```
 
-Edit `.env`: paste your own `GEMINI_API_KEY` and set a Gemini model that supports temperatures **0, 0.7, 1.2**. Check quota and pricing in Google AI Studio. Never commit `.env`.
+`.env` is ignored by git. Never commit an API key (rule R13).
 
-## Run
+## Reproduce week 1
 
 ```bash
-DRY_RUN=1 python src/baseline.py   # optional: one API call first
-python src/baseline.py             # 25 cases x 3 temperatures = 75 attempts
-python src/summarize.py            # descriptive summary from actual results
+python src/analyze_week1.py   # results/baseline_results.csv -> results/week1_analysis.json
+python src/scoreboard.py      # week1_analysis.json -> results/scoreboard_week1.json and results/week1_rates.json
 ```
 
-**Note:** `DRY_RUN=1` in the shell overrides the value in `.env`. If `.env` sets `DRY_RUN=1`, change it to `0` for the full run. The model may reject a temperature, quota may be exhausted, or requests may fail. All failures are logged; check that 75 requests succeeded before reporting results.
+These two commands need no API key. They recompute every number in `reports/week-1.md` from the committed baseline results.
 
-The script outputs `results/baseline_results.csv` with answers, token counts, latency and errors. Results are excluded from git by default to avoid accidental sensitive uploads; after reviewing them, intentionally add the synthetic-only evidence with `git add -f results/baseline_results.csv results/baseline_summary.json` if your instructor requires reproducibility.
-
-## Week 1 deliverables
-- W1.1 `docs/team_agreement.md` — **team must fill in**
-- W1.2 `docs/use_case_brief.md` — product name must be selected
-- W1.3 `tests/week1_inputs.json` — 25 labeled inputs
-- W1.4 `docs/data_inventory.md` — planned docs, tables, API and untrusted input
-- W1.5 `src/baseline.py` — **run and analyze results**
-- W1.6 `docs/cost_estimate.md` — **complete using measured tokens and verified prices**
-- W1.7 `docs/predicted_failures.md` — six hypotheses
-- W1.8 Git repository, README and tag `week-1` — **create tag after finalizing**
-
-Report: `reports/week-1.md` (fill in members, evidence, observed failures, results and contributions). No fabricated experiment scores.
-
-## Publish to GitHub
+To re-run the baseline itself (75 Groq requests, about 7 minutes because of a 5 s pause between calls):
 
 ```bash
-git init
-git add .
-git commit -m "UC1 Week 1 starter"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git push -u origin main
-# AFTER running tests, completing report, committing evidence:
-git tag week-1
-git push origin week-1
+DRY_RUN=1 python src/baseline.py   # one request, to check the key and model
+python src/baseline.py             # 25 inputs x 3 temperatures, overwrites results/baseline_results.csv
 ```
 
-Do not tag before the Week 1 deliverables and evidence are complete. Keep API keys out of git.
+A new run gives different answers at temperature 0.7 and 1.2, so the counts in the report will change. The week 1 numbers come from the committed CSV.
+
+The same baseline can run on GitHub Actions: **Actions → UC1 Week 1 Groq Tests → Run workflow**. It needs a repository secret named `GROQ_API_KEY` and uploads `results/` as an artifact.
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `src/baseline.py` | W1.5 baseline: one system prompt, 25 inputs, temperatures 0, 0.7 and 1.2 |
+| `src/analyze_week1.py` | Tokens, cost, latency and two heuristic failure checks per temperature |
+| `src/scoreboard.py` | Builds the week 1 scoreboard block and failure rates with 95% intervals |
+| `src/summarize.py` | Short descriptive summary of the raw CSV |
+| `tests/week1_inputs.json` | W1.3: 25 labelled synthetic customer messages |
+| `results/` | Committed evidence: raw baseline answers and analysis outputs |
+| `docs/` | W1.1 team agreement, W1.2 use case brief, W1.4 data inventory, W1.5 baseline analysis, W1.6 cost estimate, W1.7 predicted failures |
+| `reports/week-N.md` | Weekly reports, tagged `week-N` |
+
+## Rules we follow
+
+- Synthetic data only, no real customer records (R10).
+- Write actions run only against a sandbox or fake API (R11).
+- No secrets in the repository (R13).
+- Every number in a report comes from a script in this repository at the tagged commit (R8).
