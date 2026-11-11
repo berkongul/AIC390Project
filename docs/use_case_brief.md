@@ -1,7 +1,7 @@
 # W1.2 UC1 — Online Store Support Agent
 
 ## First customer and manual job
-A small online shop with a two-person support team answering repeated order-status, returns, shipping and product questions manually by email and chat.
+A small online clothing and shoe shop with a two-person support team answering repeated order-status, returns, shipping and sizing questions manually by email and chat. Clothing and shoes are where sizing, exchanges and damaged-item returns come up most, which matches our 25 test inputs (shoes, jackets, shirts, hoodies).
 
 ## User persona
 A fictional customer-service representative who handles many routine requests and needs a reliable assistant that escalates unknown or sensitive cases.
