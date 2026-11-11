@@ -17,7 +17,7 @@ Leading an area means owning its quality, not working alone on it. Everyone writ
 - **Channels:** the team WhatsApp group for quick questions, GitHub for all work and evidence.
 - **Meeting** *(proposed)*: one 30-minute online meeting every week on [day] at [time], to read the scoreboard and split the next week's deliverables by ID.
 - **Internal deadline** *(proposed)*: all work for the week is merged by Monday 20:00. The report is finished and checked on Tuesday morning, and the link goes on the course page at least 24 hours before class (rule R4).
-- **Presenter:** rotates every week so each member presents at least twice. Order *(proposed)*: Selim (week 1), Berk (week 2), Orhun (week 3), then repeat.
+- **Presenter:** rotates every week so each member presents at least twice. Week 1: Selim presents the proposal and Berk the results. Order after that *(proposed)*: Orhun (week 2), Selim (week 3), Berk (week 4), then repeat.
 - **Code:** work on a branch, open a pull request, and another member reviews it before merge. No API keys in the repository (R13). Every number in a report comes from a script in the repository (R8).
 
 ## How we decide *(proposed)*

@@ -7,7 +7,7 @@
 | Week | 1 |
 | Repository | https://github.com/berkongul/AIC390Project |
 | Commit tag | week-1 |
-| Presenter | Nurettin Selim Özyılmaz |
+| Presenter | Nurettin Selim Özyılmaz (proposal), Yakup Berk Öngül (week 1 results) |
 | Members and roles | Orhun Cerit (data and retrieval lead), Nurettin Selim Özyılmaz (agent and tools lead), Yakup Berk Öngül (evaluation and safety lead) |
 
 ## 1. Summary
