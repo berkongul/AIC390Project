@@ -1,0 +1,163 @@
+{
+  "source": "results/baseline_results.csv",
+  "checks": "keyword heuristics from src/analyze_week1.py, flagged answers read by hand",
+  "invented_policy_number_applies_to": [
+    "multi_step",
+    "product",
+    "returns"
+  ],
+  "total": {
+    "invented_contact": {
+      "count": 5,
+      "n": 75,
+      "value": 0.067,
+      "ci95": [
+        0.01,
+        0.123
+      ],
+      "ci95_wilson": [
+        0.029,
+        0.147
+      ],
+      "cases": [
+        "T01",
+        "T07",
+        "T16",
+        "T16",
+        "T19"
+      ]
+    },
+    "invented_policy_number": {
+      "count": 7,
+      "n": 36,
+      "value": 0.194,
+      "ci95": [
+        0.065,
+        0.324
+      ],
+      "ci95_wilson": [
+        0.098,
+        0.35
+      ],
+      "cases": [
+        "T06",
+        "T06",
+        "T06",
+        "T10",
+        "T10",
+        "T10",
+        "T20"
+      ]
+    }
+  },
+  "by_temperature": {
+    "0.0": {
+      "invented_contact": {
+        "count": 1,
+        "n": 25,
+        "value": 0.04,
+        "ci95": [
+          0.0,
+          0.117
+        ],
+        "ci95_wilson": [
+          0.007,
+          0.195
+        ],
+        "cases": [
+          "T19"
+        ]
+      },
+      "invented_policy_number": {
+        "count": 2,
+        "n": 12,
+        "value": 0.167,
+        "ci95": [
+          0.0,
+          0.378
+        ],
+        "ci95_wilson": [
+          0.047,
+          0.448
+        ],
+        "cases": [
+          "T06",
+          "T10"
+        ]
+      }
+    },
+    "0.7": {
+      "invented_contact": {
+        "count": 2,
+        "n": 25,
+        "value": 0.08,
+        "ci95": [
+          0.0,
+          0.186
+        ],
+        "ci95_wilson": [
+          0.022,
+          0.25
+        ],
+        "cases": [
+          "T01",
+          "T16"
+        ]
+      },
+      "invented_policy_number": {
+        "count": 2,
+        "n": 12,
+        "value": 0.167,
+        "ci95": [
+          0.0,
+          0.378
+        ],
+        "ci95_wilson": [
+          0.047,
+          0.448
+        ],
+        "cases": [
+          "T06",
+          "T10"
+        ]
+      }
+    },
+    "1.2": {
+      "invented_contact": {
+        "count": 2,
+        "n": 25,
+        "value": 0.08,
+        "ci95": [
+          0.0,
+          0.186
+        ],
+        "ci95_wilson": [
+          0.022,
+          0.25
+        ],
+        "cases": [
+          "T07",
+          "T16"
+        ]
+      },
+      "invented_policy_number": {
+        "count": 3,
+        "n": 12,
+        "value": 0.25,
+        "ci95": [
+          0.005,
+          0.495
+        ],
+        "ci95_wilson": [
+          0.089,
+          0.532
+        ],
+        "cases": [
+          "T06",
+          "T10",
+          "T20"
+        ]
+      }
+    }
+  }
+}
