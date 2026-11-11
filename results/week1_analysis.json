@@ -1,0 +1,111 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "price_usd_per_million": {
+    "input": 0.075,
+    "output": 0.3
+  },
+  "total": {
+    "requests": 75,
+    "successful": 75,
+    "input_tokens": 12177,
+    "output_tokens": 10973,
+    "mean_output_tokens": 146.3,
+    "cost_usd": 0.004205,
+    "latency_p50_s": 0.417,
+    "invented_contact": {
+      "count": 5,
+      "cases": [
+        "T01",
+        "T07",
+        "T16",
+        "T16",
+        "T19"
+      ]
+    },
+    "invented_policy_number": {
+      "count": 7,
+      "cases": [
+        "T06",
+        "T06",
+        "T06",
+        "T10",
+        "T10",
+        "T10",
+        "T20"
+      ]
+    },
+    "cost_per_request_usd": 5.607e-05,
+    "cost_per_1000_requests_usd": 0.0561
+  },
+  "by_temperature": {
+    "0.0": {
+      "requests": 25,
+      "successful": 25,
+      "input_tokens": 4059,
+      "output_tokens": 3697,
+      "mean_output_tokens": 147.9,
+      "cost_usd": 0.001414,
+      "latency_p50_s": 0.431,
+      "invented_contact": {
+        "count": 1,
+        "cases": [
+          "T19"
+        ]
+      },
+      "invented_policy_number": {
+        "count": 2,
+        "cases": [
+          "T06",
+          "T10"
+        ]
+      }
+    },
+    "0.7": {
+      "requests": 25,
+      "successful": 25,
+      "input_tokens": 4059,
+      "output_tokens": 3496,
+      "mean_output_tokens": 139.8,
+      "cost_usd": 0.001353,
+      "latency_p50_s": 0.417,
+      "invented_contact": {
+        "count": 2,
+        "cases": [
+          "T01",
+          "T16"
+        ]
+      },
+      "invented_policy_number": {
+        "count": 2,
+        "cases": [
+          "T06",
+          "T10"
+        ]
+      }
+    },
+    "1.2": {
+      "requests": 25,
+      "successful": 25,
+      "input_tokens": 4059,
+      "output_tokens": 3780,
+      "mean_output_tokens": 151.2,
+      "cost_usd": 0.001438,
+      "latency_p50_s": 0.338,
+      "invented_contact": {
+        "count": 2,
+        "cases": [
+          "T07",
+          "T16"
+        ]
+      },
+      "invented_policy_number": {
+        "count": 3,
+        "cases": [
+          "T06",
+          "T10",
+          "T20"
+        ]
+      }
+    }
+  }
+}
