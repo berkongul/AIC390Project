@@ -1,0 +1,13 @@
+{
+  "test_set_sha256": "1e8394720b345cda8c697a1b628ec03f764796a3991145d2f1f76f9cc33ccc22",
+  "model": "openai/gpt-oss-20b",
+  "temperature": 0,
+  "schema_sha256": "b125703a9d6b3b346142633194ceacd500d6de1d3a276a2f5f312b84de9e5427",
+  "prompt_sha256": {
+    "v1": "2548a31e6513aac9c09cba4e5dedc09c6fc4cfedfd8adb0ad85b3bceea5ca316",
+    "v2": "ab5bcdc8233785478e9ec9973a3eb18deead875ebbcd7de33d37e56d08402660",
+    "v3": "c5bc0333b9bdac9b20e0bead6f6fafe3b7ed0e7e6ac85598bf4571e47ee7e410"
+  },
+  "price_input": "",
+  "price_output": ""
+}

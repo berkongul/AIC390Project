@@ -13,3 +13,12 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store

@@ -8,7 +8,33 @@ Course project for AIC 390 Prompt Engineering (Özyeğin University, fall 2026-2
 | Nurettin Selim Özyılmaz | Agent and tools lead |
 | Yakup Berk Öngül | Evaluation and safety lead |
 
-Current state: **week 1**, a prompt-only baseline on `openai/gpt-oss-20b` through the Groq API. The model has no documents, data or tools yet.
+Current state: **Week 2 implementation ready; live evaluation and human calibration pending**. Week 1 evidence uses `openai/gpt-oss-20b` through Groq. The assistant still has no documents, store data or tools.
+
+## Week 2
+
+```bash
+python -m unittest discover -s tests -p 'test_week2.py'
+python src/evaluate_week2.py --validate-only  # offline dataset/schema checks
+python src/evaluate_week2.py                 # real Groq experiment; .env key required
+```
+
+For an incomplete run, keep its files and resume successful stages into a new run folder:
+
+```bash
+python src/evaluate_week2.py --resume results/week2/20261116T150159166816Z
+```
+
+Set `WEEK2_PAUSE_SECONDS=15` in `.env`. Rate limits now trigger bounded retries using the server's `Retry-After` header or exponential backoff. Long quota waits stop the run with a checkpoint and a resume command. A fresh 360-call run takes at least 90 minutes with this pacing. Wait for `COMPLETE`; `Evidence` alone does not guarantee all stages succeeded. Resume preserves the source run, verifies prompt/dataset/model compatibility, and reuses successful outputs. Timing after resume includes old stage times and retry waits.
+
+The experiment runs the same 40 labeled inputs against three versioned answer prompts, using a fixed JSON classifier with validation/retry. It writes raw evidence, accuracy with 95% intervals, paired McNemar comparison, three direct injection results, a scoreboard and a blank 20-row human-label sheet under `results/week2/RUN/`. The full run normally makes 360 API calls plus retries. No mock responses are counted as model results.
+
+A person must complete `human_pass` (0/1) and `annotator` in the exported sheet, then run:
+
+```bash
+python src/evaluate_week2.py --calibrate results/week2/RUN/human_labels.csv
+```
+
+See [method and remaining work](docs/week2_method.md), [Week 2 report draft](reports/week-2.md), [test cases](tests/week2_cases.json) and [hallucination candidates](docs/hallucination_log.json). On GitHub, the manual **UC1 Week 2 Evaluation** workflow uses the repository's `GROQ_API_KEY` secret. Costs stay null unless verified price variables from `.env.example` are provided.
 
 ## Setup (Python 3.10+)
 
