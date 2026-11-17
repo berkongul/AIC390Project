@@ -1,0 +1,133 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "n": 40,
+  "exact_match": {
+    "value": 0.95,
+    "n": 40,
+    "count": 38,
+    "ci95": [
+      0.8824581611147578,
+      1
+    ],
+    "ci95_wilson": [
+      0.834958291820748,
+      0.9861796228538989
+    ]
+  },
+  "intent_accuracy": {
+    "value": 1.0,
+    "n": 40,
+    "count": 40,
+    "ci95": [
+      1.0,
+      1
+    ],
+    "ci95_wilson": [
+      0.9123754607496077,
+      1
+    ]
+  },
+  "urgency_accuracy": {
+    "value": 0.975,
+    "n": 40,
+    "count": 39,
+    "ci95": [
+      0.9266163767375778,
+      1
+    ],
+    "ci95_wilson": [
+      0.8711834051199223,
+      0.9955732825922052
+    ]
+  },
+  "order_ids_accuracy": {
+    "value": 0.975,
+    "n": 40,
+    "count": 39,
+    "ci95": [
+      0.9266163767375778,
+      1
+    ],
+    "ci95_wilson": [
+      0.8711834051199223,
+      0.9955732825922052
+    ]
+  },
+  "product_codes_accuracy": {
+    "value": 1.0,
+    "n": 40,
+    "count": 40,
+    "ci95": [
+      1.0,
+      1
+    ],
+    "ci95_wilson": [
+      0.9123754607496077,
+      1
+    ]
+  },
+  "valid_first_try": {
+    "value": 0.975,
+    "n": 40,
+    "count": 39,
+    "ci95": [
+      0.9266163767375778,
+      1
+    ],
+    "ci95_wilson": [
+      0.8711834051199223,
+      0.9955732825922052
+    ]
+  },
+  "valid_after_retries": {
+    "value": 1.0,
+    "n": 40,
+    "count": 40,
+    "ci95": [
+      1.0,
+      1
+    ],
+    "ci95_wilson": [
+      0.9123754607496077,
+      1
+    ]
+  },
+  "attempts_per_case": {
+    "1": 39,
+    "2": 1
+  },
+  "failed_attempt_outcomes": {
+    "api_error": 1
+  },
+  "retried_cases": [
+    {
+      "id": "T28",
+      "outcomes": [
+        "api_error",
+        "ok"
+      ]
+    }
+  ],
+  "fail_closed": [],
+  "mismatches": [
+    {
+      "id": "T23",
+      "wrong": [
+        "urgency"
+      ]
+    },
+    {
+      "id": "T34",
+      "wrong": [
+        "order_ids"
+      ]
+    }
+  ],
+  "cost_per_message_usd": 7.388e-05,
+  "spend_usd": 0.002955,
+  "latency_p50_s": 0.425,
+  "calls": {
+    "ok": 40,
+    "failed": 1
+  }
+}
