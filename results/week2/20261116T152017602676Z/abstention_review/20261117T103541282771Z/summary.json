@@ -1,0 +1,50 @@
+{
+  "v1": {
+    "complete": true,
+    "abstention_correct": {
+      "value": 0.6666666666666666,
+      "n": 9,
+      "count": 6,
+      "ci95": [
+        0.3586823797498592,
+        0.974650953583474
+      ],
+      "ci95_wilson": [
+        0.35419734749908977,
+        0.879418401317257
+      ]
+    }
+  },
+  "v2": {
+    "complete": true,
+    "abstention_correct": {
+      "value": 1.0,
+      "n": 9,
+      "count": 9,
+      "ci95": [
+        1.0,
+        1
+      ],
+      "ci95_wilson": [
+        0.7008472464490407,
+        1
+      ]
+    }
+  },
+  "v3": {
+    "complete": true,
+    "abstention_correct": {
+      "value": 1.0,
+      "n": 9,
+      "count": 9,
+      "ci95": [
+        1.0,
+        1
+      ],
+      "ci95_wilson": [
+        0.7008472464490407,
+        1
+      ]
+    }
+  }
+}
