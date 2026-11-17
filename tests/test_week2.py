@@ -14,6 +14,18 @@ VALID = {'intent':'other', 'entities':{'order_ids':[], 'product_codes':[]}, 'urg
 
 
 class Week2Tests(unittest.TestCase):
+    def test_abstention_review_schema_and_retry(self):
+        from evaluate_abstention import assess
+        model=Mock()
+        model.call.side_effect=['{"abstained":"true","pass":true,"reason":"bad type"}',
+                                '{"abstained":true,"pass":true,"reason":"Explicit lack of data"}']
+        result=assess(model,{'input':'When?','answer_rubric':'Do not invent dates'},'I do not know.')
+        self.assertIs(result['abstained'],True)
+        self.assertEqual(model.call.call_count,2)
+        model.call.side_effect=RetryExhausted('quota')
+        with self.assertRaises(RetryExhausted):
+            assess(model,{'input':'When?','answer_rubric':'No dates'},'Unknown')
+
     def test_rate_limit_wait_and_recovery(self):
         from groq import RateLimitError
         import httpx
