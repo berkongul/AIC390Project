@@ -1,0 +1,52 @@
+name: UC1 Week 2 Evaluation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  offline:
+    # Every push: unit tests, dataset checks, and the committed scoreboard must match the script.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Unit tests (no API key)
+        run: python -m unittest discover -s tests -v
+      - name: Dataset, schema and tag quotas
+        run: python src/evaluate_week2.py --validate-only
+
+  live-run:
+    # Manual only: Actions -> UC1 Week 2 Evaluation -> Run workflow. About 90 minutes with 15 s pacing.
+    if: github.event_name == 'workflow_dispatch'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Evaluate v1, v2 and v3 on the 40 cases
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: openai/gpt-oss-20b
+          WEEK2_PAUSE_SECONDS: "15"
+          GROQ_INPUT_USD_PER_MILLION: "0.075"
+          GROQ_OUTPUT_USD_PER_MILLION: "0.30"
+        run: python -u src/evaluate_week2.py
+      - name: Rescore the new run
+        if: always()
+        run: python src/rescore_week2.py || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: week2-run
+          path: |
+            results/week2/
+            results/scoreboard_week2.json
