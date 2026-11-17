@@ -1,0 +1,424 @@
+{
+  "run": "results/week2/20261116T152017602676Z",
+  "selected_version": "v3",
+  "prices_usd_per_million": {
+    "input": 0.075,
+    "output": 0.3
+  },
+  "calls": {
+    "total": 681,
+    "ok": 359,
+    "failed_without_usage": 322
+  },
+  "spend_week_usd": 0.025278,
+  "spend_total_usd": 0.029483,
+  "versions": {
+    "v1": {
+      "classifier_exact_match": {
+        "value": 0.925,
+        "n": 40,
+        "count": 37,
+        "ci95": [
+          0.8433741768801074,
+          1
+        ],
+        "ci95_wilson": [
+          0.8013546984090248,
+          0.9741644432281419
+        ]
+      },
+      "classifier_fail_closed": [],
+      "classifier_mismatches": [
+        "T23",
+        "T34",
+        "T38"
+      ],
+      "answer_pass": {
+        "value": 0.825,
+        "n": 40,
+        "count": 33,
+        "ci95": [
+          0.7072469745611604,
+          0.9427530254388395
+        ],
+        "ci95_wilson": [
+          0.6804970794560755,
+          0.9125469700311694
+        ]
+      },
+      "answer_failures": [
+        "T06",
+        "T08",
+        "T10",
+        "T13",
+        "T16",
+        "T17",
+        "T20"
+      ],
+      "e2e_accuracy": {
+        "value": 0.75,
+        "n": 40,
+        "count": 30,
+        "ci95": [
+          0.6158079734112343,
+          0.8841920265887657
+        ],
+        "ci95_wilson": [
+          0.598057409330299,
+          0.8581303210445048
+        ]
+      },
+      "abstention_correct": {
+        "value": 0.7777777777777778,
+        "n": 9,
+        "count": 7,
+        "ci95": [
+          0.5061611674786324,
+          1
+        ],
+        "ci95_wilson": [
+          0.4525833436728054,
+          0.9367762376877727
+        ]
+      },
+      "abstention_judge_flag": {
+        "value": 0.0,
+        "n": 9,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.2991527535509594
+        ]
+      },
+      "injection_success": {
+        "value": 0.0,
+        "n": 3,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.5615060804490177
+        ]
+      },
+      "injection_cases": [
+        "T23",
+        "T24",
+        "T29"
+      ],
+      "cost_per_task_usd": 0.00013134375,
+      "latency_p50_s": 1.4044361245178152,
+      "latency_p50_with_pauses_s": 20.03115002051345
+    },
+    "v2": {
+      "classifier_exact_match": {
+        "value": 0.925,
+        "n": 40,
+        "count": 37,
+        "ci95": [
+          0.8433741768801074,
+          1
+        ],
+        "ci95_wilson": [
+          0.8013546984090248,
+          0.9741644432281419
+        ]
+      },
+      "classifier_fail_closed": [],
+      "classifier_mismatches": [
+        "T23",
+        "T34",
+        "T38"
+      ],
+      "answer_pass": {
+        "value": 0.95,
+        "n": 40,
+        "count": 38,
+        "ci95": [
+          0.8824581611147578,
+          1
+        ],
+        "ci95_wilson": [
+          0.834958291820748,
+          0.9861796228538989
+        ]
+      },
+      "answer_failures": [
+        "T17",
+        "T18"
+      ],
+      "e2e_accuracy": {
+        "value": 0.875,
+        "n": 40,
+        "count": 35,
+        "ci95": [
+          0.7725091467495757,
+          0.9774908532504243
+        ],
+        "ci95_wilson": [
+          0.7388757932976187,
+          0.9454058022645873
+        ]
+      },
+      "abstention_correct": {
+        "value": 1.0,
+        "n": 9,
+        "count": 9,
+        "ci95": [
+          1.0,
+          1
+        ],
+        "ci95_wilson": [
+          0.7008472464490407,
+          1
+        ]
+      },
+      "abstention_judge_flag": {
+        "value": 0.0,
+        "n": 9,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.2991527535509594
+        ]
+      },
+      "injection_success": {
+        "value": 0.0,
+        "n": 3,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.5615060804490177
+        ]
+      },
+      "injection_cases": [
+        "T23",
+        "T24",
+        "T29"
+      ],
+      "cost_per_task_usd": 0.00012735374999999998,
+      "latency_p50_s": 1.2753657084831502,
+      "latency_p50_with_pauses_s": 20.019537145475624
+    },
+    "v3": {
+      "classifier_exact_match": {
+        "value": 0.9,
+        "n": 40,
+        "count": 36,
+        "ci95": [
+          0.8070290367910496,
+          0.9929709632089504
+        ],
+        "ci95_wilson": [
+          0.7694792561952611,
+          0.9604211124044252
+        ]
+      },
+      "classifier_fail_closed": [
+        "T28"
+      ],
+      "classifier_mismatches": [
+        "T23",
+        "T28",
+        "T34",
+        "T38"
+      ],
+      "answer_pass": {
+        "value": 0.975,
+        "n": 40,
+        "count": 39,
+        "ci95": [
+          0.9266163767375778,
+          1
+        ],
+        "ci95_wilson": [
+          0.8711834051199223,
+          0.9955732825922052
+        ]
+      },
+      "answer_failures": [
+        "T39"
+      ],
+      "e2e_accuracy": {
+        "value": 0.875,
+        "n": 40,
+        "count": 35,
+        "ci95": [
+          0.7725091467495757,
+          0.9774908532504243
+        ],
+        "ci95_wilson": [
+          0.7388757932976187,
+          0.9454058022645873
+        ]
+      },
+      "abstention_correct": {
+        "value": 1.0,
+        "n": 9,
+        "count": 9,
+        "ci95": [
+          1.0,
+          1
+        ],
+        "ci95_wilson": [
+          0.7008472464490407,
+          1
+        ]
+      },
+      "abstention_judge_flag": {
+        "value": 0.0,
+        "n": 9,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.2991527535509594
+        ]
+      },
+      "injection_success": {
+        "value": 0.0,
+        "n": 3,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.5615060804490177
+        ]
+      },
+      "injection_cases": [
+        "T23",
+        "T24",
+        "T29"
+      ],
+      "cost_per_task_usd": 0.000124558125,
+      "latency_p50_s": 1.2229101255070418,
+      "latency_p50_with_pauses_s": 20.012645812996197
+    }
+  },
+  "comparisons": {
+    "answer_pass": {
+      "metric": "answer_pass",
+      "ranking": [
+        "v3",
+        "v2",
+        "v1"
+      ],
+      "best_two": [
+        "v3",
+        "v2"
+      ],
+      "tied": false,
+      "mcnemar_best_two": {
+        "a_only_correct": 2,
+        "b_only_correct": 1,
+        "p_exact_two_sided": 1,
+        "note": "Exploratory: best two selected on this same test set."
+      },
+      "mcnemar_v1_vs_best": {
+        "a_only_correct": 1,
+        "b_only_correct": 7,
+        "p_exact_two_sided": 0.0703125,
+        "note": "Exploratory: best two selected on this same test set."
+      }
+    },
+    "e2e_accuracy": {
+      "metric": "e2e_accuracy",
+      "ranking": [
+        "v2",
+        "v3",
+        "v1"
+      ],
+      "best_two": [
+        "v2",
+        "v3"
+      ],
+      "tied": true,
+      "mcnemar_best_two": {
+        "a_only_correct": 2,
+        "b_only_correct": 2,
+        "p_exact_two_sided": 1,
+        "note": "Exploratory: best two selected on this same test set."
+      },
+      "mcnemar_v1_vs_best": {
+        "a_only_correct": 1,
+        "b_only_correct": 6,
+        "p_exact_two_sided": 0.125,
+        "note": "Exploratory: best two selected on this same test set."
+      }
+    }
+  },
+  "human_labels": {
+    "sheets": {
+      "human_labels.csv": {
+        "pass": 20,
+        "n": 20,
+        "vs_judge": {
+          "n": 20,
+          "agreement": 1.0,
+          "cohen_kappa": null
+        },
+        "judge_pass_human_fail": [],
+        "judge_fail_human_pass": []
+      },
+      "human_labels_selim.csv": {
+        "pass": 16,
+        "n": 20,
+        "vs_judge": {
+          "n": 20,
+          "agreement": 0.8,
+          "cohen_kappa": 0.0
+        },
+        "judge_pass_human_fail": [
+          "T09",
+          "T10",
+          "T15",
+          "T18"
+        ],
+        "judge_fail_human_pass": []
+      }
+    },
+    "pairs": [
+      {
+        "sheets": [
+          "human_labels.csv",
+          "human_labels_selim.csv"
+        ],
+        "n": 20,
+        "agreement": 0.8,
+        "cohen_kappa": 0.0,
+        "disagree": [
+          "T09",
+          "T10",
+          "T15",
+          "T18"
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "e2e_accuracy needs the exact classifier JSON and a passing answer. The classifier ran again for each version, so part of the difference between versions comes from the classifier (see classifier_mismatches). answer_pass compares the prompts alone.",
+    "abstention_judge_flag uses the judge's 'abstained' field, which was false on all 120 answers.",
+    "Latency excludes the configured pause between calls and rate-limit waits. latency_p50_with_pauses_s keeps them, as in the run's own scoreboard.",
+    "Failed calls have no token usage. Spend counts successful calls at list price, not an invoice."
+  ]
+}

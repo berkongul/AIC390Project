@@ -8,14 +8,15 @@ Course project for AIC 390 Prompt Engineering (Özyeğin University, fall 2026-2
 | Nurettin Selim Özyılmaz | Agent and tools lead |
 | Yakup Berk Öngül | Evaluation and safety lead |
 
-Current state: **Week 2 implementation ready; live evaluation and human calibration pending**. Week 1 evidence uses `openai/gpt-oss-20b` through Groq. The assistant still has no documents, store data or tools.
+Current state: **week 2**, one complete live run (`results/week2/20261116T152017602676Z`), scored in `results/scoreboard_week2.json`. Human calibration of the judge is pending. Week 1 evidence uses `openai/gpt-oss-20b` through Groq. The assistant still has no documents, store data or tools.
 
 ## Week 2
 
 ```bash
-python -m unittest discover -s tests -p 'test_week2.py'
+python -m unittest discover -s tests          # all offline tests
 python src/evaluate_week2.py --validate-only  # offline dataset/schema checks
 python src/evaluate_week2.py                 # real Groq experiment; .env key required
+python src/rescore_week2.py                   # scoreboard from a saved run, no API calls
 ```
 
 For an incomplete run, keep its files and resume successful stages into a new run folder:
@@ -34,7 +35,7 @@ A person must complete `human_pass` (0/1) and `annotator` in the exported sheet,
 python src/evaluate_week2.py --calibrate results/week2/RUN/human_labels.csv
 ```
 
-See [method and remaining work](docs/week2_method.md), [Week 2 report draft](reports/week-2.md), [test cases](tests/week2_cases.json) and [hallucination candidates](docs/hallucination_log.json). On GitHub, the manual **UC1 Week 2 Evaluation** workflow uses the repository's `GROQ_API_KEY` secret. Costs stay null unless verified price variables from `.env.example` are provided.
+See [method and remaining work](docs/week2_method.md), [Week 2 report draft](reports/week-2.md), [test cases](tests/week2_cases.json) and [hallucination candidates](docs/hallucination_log.json). On GitHub, **Actions → UC1 Week 2 Evaluation → Run workflow** runs the live experiment with the repository's `GROQ_API_KEY` secret and uploads the run folder. The same workflow runs the offline tests on every push. Prices for cost and spend are in `.env.example`. `src/rescore_week2.py` uses them to compute cost per task, spend and model-time latency from a saved run.
 
 ## Setup (Python 3.10+)
 
