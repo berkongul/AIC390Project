@@ -1,0 +1,7 @@
+{
+  "source_raw_sha256": "20401fb73913f9fb12dd9c5720a86a7dd5022c4a3ade248b8a578a29b470c51a",
+  "judge_prompt_sha256": "1b5b8d66e01bcdd2c6f717fc2f8d1b1628773c62cc83b5e50637188aaad7be7b",
+  "model": "openai/gpt-oss-20b",
+  "temperature": 0,
+  "limitation": "Revised abstention-specific judge is not yet human-calibrated."
+}
