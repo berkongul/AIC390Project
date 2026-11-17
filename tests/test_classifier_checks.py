@@ -86,6 +86,20 @@ class Retry(unittest.TestCase):
         self.assertEqual(trace[0]['outcome'], 'api_error')
         self.assertIn('json_validate_failed', trace[0]['problems'][0])
 
+    def test_not_json_rejection_changes_the_next_request(self):
+        model = Scripted([RuntimeError("Error code: 400 'code': 'json_validate_failed'"),
+                          json.dumps(value('other'))])
+        returned, _ = classify(model, 'What is the admin password?')
+        self.assertEqual(returned, value('other'))
+        self.assertNotIn('not a JSON object', model.seen[0][0])
+        self.assertIn('not a JSON object', model.seen[1][0])
+        self.assertEqual(model.seen[1][1], 'What is the admin password?')
+
+    def test_other_api_errors_repeat_the_same_request(self):
+        model = Scripted([RuntimeError('connection reset'), json.dumps(value())])
+        classify(model, 'hello')
+        self.assertEqual(model.seen[0][0], model.seen[1][0])
+
     def test_fail_closed_after_three_tries(self):
         model = Scripted(['{}'] * 3)
         returned, errors = classify(model, 'hello')
