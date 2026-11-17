@@ -1,0 +1,269 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "versions": {
+    "v1": {
+      "classifier_exact_match": {
+        "value": 0.925,
+        "n": 40,
+        "count": 37,
+        "ci95": [
+          0.8433741768801074,
+          1
+        ],
+        "ci95_wilson": [
+          0.8013546984090248,
+          0.9741644432281419
+        ]
+      },
+      "e2e_accuracy": {
+        "value": 0.75,
+        "n": 40,
+        "count": 30,
+        "ci95": [
+          0.6158079734112343,
+          0.8841920265887657
+        ],
+        "ci95_wilson": [
+          0.598057409330299,
+          0.8581303210445048
+        ]
+      },
+      "abstention_correct": {
+        "value": 0.0,
+        "n": 9,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.2991527535509594
+        ]
+      },
+      "judge_complete": true,
+      "paired_correct": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ]
+    },
+    "v2": {
+      "classifier_exact_match": {
+        "value": 0.925,
+        "n": 40,
+        "count": 37,
+        "ci95": [
+          0.8433741768801074,
+          1
+        ],
+        "ci95_wilson": [
+          0.8013546984090248,
+          0.9741644432281419
+        ]
+      },
+      "e2e_accuracy": {
+        "value": 0.875,
+        "n": 40,
+        "count": 35,
+        "ci95": [
+          0.7725091467495757,
+          0.9774908532504243
+        ],
+        "ci95_wilson": [
+          0.7388757932976187,
+          0.9454058022645873
+        ]
+      },
+      "abstention_correct": {
+        "value": 0.0,
+        "n": 9,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.2991527535509594
+        ]
+      },
+      "judge_complete": true,
+      "paired_correct": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ]
+    },
+    "v3": {
+      "classifier_exact_match": {
+        "value": 0.9,
+        "n": 40,
+        "count": 36,
+        "ci95": [
+          0.8070290367910496,
+          0.9929709632089504
+        ],
+        "ci95_wilson": [
+          0.7694792561952611,
+          0.9604211124044252
+        ]
+      },
+      "e2e_accuracy": {
+        "value": 0.875,
+        "n": 40,
+        "count": 35,
+        "ci95": [
+          0.7725091467495757,
+          0.9774908532504243
+        ],
+        "ci95_wilson": [
+          0.7388757932976187,
+          0.9454058022645873
+        ]
+      },
+      "abstention_correct": {
+        "value": 0.0,
+        "n": 9,
+        "count": 0,
+        "ci95": [
+          0,
+          0.0
+        ],
+        "ci95_wilson": [
+          0,
+          0.2991527535509594
+        ]
+      },
+      "judge_complete": true,
+      "paired_correct": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true
+      ]
+    }
+  },
+  "selected": "v3",
+  "best_two": [
+    "v3",
+    "v2"
+  ],
+  "mcnemar": {
+    "a_only_correct": 2,
+    "b_only_correct": 2,
+    "p_exact_two_sided": 1,
+    "note": "Exploratory: best two selected on this same test set."
+  },
+  "answer_scoring": "Uncalibrated LLM judge until 20 human labels are completed."
+}

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "T23",
+    "version": "v3",
+    "classification": {
+      "intent": "return",
+      "urgency": "high",
+      "entities": {
+        "order_ids": [],
+        "product_codes": []
+      }
+    },
+    "errors": [
+      "RateLimitError"
+    ],
+    "answer": "",
+    "judge": null,
+    "latency_s": 2.90491420798935,
+    "pipeline_calls": [
+      {
+        "input_tokens": 434,
+        "output_tokens": 219,
+        "status": "ok",
+        "latency_s": 0.8318152090068907
+      },
+      {
+        "input_tokens": null,
+        "output_tokens": null,
+        "status": "error",
+        "latency_s": 0.06288525002310053
+      }
+    ]
+  },
+  {
+    "id": "T24",
+    "version": "v3",
+    "classification": {
+      "intent": "return",
+      "urgency": "normal",
+      "entities": {
+        "order_ids": [],
+        "product_codes": []
+      }
+    },
+    "errors": [
+      "RateLimitError",
+      "RateLimitError"
+    ],
+    "answer": "I\u2019m sorry, but I can\u2019t confirm a refund without reviewing your order details. Please contact a store staff member so they can check your order against the return policy and process the refund if eligible.",
+    "judge": null,
+    "latency_s": 5.790255917003378,
+    "pipeline_calls": [
+      {
+        "input_tokens": null,
+        "output_tokens": null,
+        "status": "error",
+        "latency_s": 0.06025462498655543
+      },
+      {
+        "input_tokens": null,
+        "output_tokens": null,
+        "status": "error",
+        "latency_s": 0.0627108330372721
+      },
+      {
+        "input_tokens": 452,
+        "output_tokens": 183,
+        "status": "ok",
+        "latency_s": 1.221350625040941
+      },
+      {
+        "input_tokens": 399,
+        "output_tokens": 141,
+        "status": "ok",
+        "latency_s": 0.4307099999859929
+      }
+    ]
+  },
+  {
+    "id": "T29",
+    "version": "v3",
+    "classification": null,
+    "errors": [
+      "RateLimitError",
+      "BadRequestError",
+      "RateLimitError",
+      "RateLimitError"
+    ],
+    "answer": "",
+    "judge": null,
+    "latency_s": 5.870675041980576,
+    "pipeline_calls": [
+      {
+        "input_tokens": null,
+        "output_tokens": null,
+        "status": "error",
+        "latency_s": 0.06318754202220589
+      },
+      {
+        "input_tokens": null,
+        "output_tokens": null,
+        "status": "error",
+        "latency_s": 1.6663108749780804
+      },
+      {
+        "input_tokens": null,
+        "output_tokens": null,
+        "status": "error",
+        "latency_s": 0.06307983299484476
+      },
+      {
+        "input_tokens": null,
+        "output_tokens": null,
+        "status": "error",
+        "latency_s": 0.0591143750352785
+      }
+    ]
+  }
+]

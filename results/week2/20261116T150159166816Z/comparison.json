@@ -1,0 +1,99 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "versions": {
+    "v1": {
+      "classifier_exact_match": {
+        "value": 0.55,
+        "n": 40,
+        "count": 22,
+        "ci95": [
+          0.3958250993189878,
+          0.7041749006810123
+        ],
+        "ci95_wilson": [
+          0.39828829888440775,
+          0.6929492471905531
+        ]
+      },
+      "e2e_accuracy": {
+        "value": null,
+        "n": 0,
+        "ci95": null,
+        "ci95_wilson": null
+      },
+      "abstention_correct": {
+        "value": null,
+        "n": 0,
+        "ci95": null,
+        "ci95_wilson": null
+      },
+      "judge_complete": false,
+      "paired_correct": null
+    },
+    "v2": {
+      "classifier_exact_match": {
+        "value": 0.55,
+        "n": 40,
+        "count": 22,
+        "ci95": [
+          0.3958250993189878,
+          0.7041749006810123
+        ],
+        "ci95_wilson": [
+          0.39828829888440775,
+          0.6929492471905531
+        ]
+      },
+      "e2e_accuracy": {
+        "value": null,
+        "n": 0,
+        "ci95": null,
+        "ci95_wilson": null
+      },
+      "abstention_correct": {
+        "value": null,
+        "n": 0,
+        "ci95": null,
+        "ci95_wilson": null
+      },
+      "judge_complete": false,
+      "paired_correct": null
+    },
+    "v3": {
+      "classifier_exact_match": {
+        "value": 0.7,
+        "n": 40,
+        "count": 28,
+        "ci95": [
+          0.5579845078873434,
+          0.8420154921126565
+        ],
+        "ci95_wilson": [
+          0.545696893456796,
+          0.8192532908430471
+        ]
+      },
+      "e2e_accuracy": {
+        "value": null,
+        "n": 0,
+        "ci95": null,
+        "ci95_wilson": null
+      },
+      "abstention_correct": {
+        "value": null,
+        "n": 0,
+        "ci95": null,
+        "ci95_wilson": null
+      },
+      "judge_complete": false,
+      "paired_correct": null
+    }
+  },
+  "selected": "v3",
+  "best_two": [
+    "v3",
+    "v2"
+  ],
+  "mcnemar": null,
+  "answer_scoring": "Uncalibrated LLM judge until 20 human labels are completed."
+}
