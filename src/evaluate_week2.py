@@ -124,7 +124,11 @@ def main():
         if any(j is None for j in judged):
             raise SystemExit('Judge outputs missing')
         result = kappa([int(r['human_pass']) for r in labels], [int(j['pass']) for j in judged])
-        (args.calibrate.parent/'judge_calibration.json').write_text(json.dumps(result, indent=2)+'\n')
+        result['annotator'] = sorted({r['annotator'].strip() for r in labels})
+        # human_labels.csv -> judge_calibration.json, human_labels_<name>.csv -> judge_calibration_<name>.json,
+        # so a second annotator's sheet does not overwrite the first one's result.
+        suffix = args.calibrate.stem[len('human_labels'):] if args.calibrate.stem.startswith('human_labels') else ''
+        (args.calibrate.parent/f'judge_calibration{suffix}.json').write_text(json.dumps(result, indent=2)+'\n')
         print(result)
         return
     source = ROOT/'tests/week2_cases.json'

@@ -1,5 +1,8 @@
 {
   "n": 20,
-  "agreement": 0.8,
-  "cohen_kappa": 0.0
+  "agreement": 1.0,
+  "cohen_kappa": null,
+  "annotator": [
+    "berk"
+  ]
 }

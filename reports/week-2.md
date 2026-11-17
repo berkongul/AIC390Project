@@ -22,7 +22,7 @@ Implemented a temperature-zero JSON classifier with schema validation and bounde
 | W2.3 | done | [40 cases](../tests/week2_cases.json) | Team review of draft expected labels |
 | W2.4 | partial | [harness](../src/evaluate_week2.py), [workflow](../.github/workflows/week2.yml) | Save full live-run evidence |
 | W2.5 | partial | [statistical functions](../src/week2_stats.py) | Three measured accuracies, intervals and paired McNemar result |
-| W2.6 | done | [human labels](../results/week2/20261116T152017602676Z/human_labels.csv), [calibration](../results/week2/20261116T152017602676Z/judge_calibration.json), [how the labels were made](../results/week2/20261116T152017602676Z/human_labels_notes.md) | Cohen's κ = 0.00, agreement 16 of 20. The judge passed all 20, the human label failed 4 answers that invent store features |
+| W2.6 | done | [labels, Berk](../results/week2/20261116T152017602676Z/human_labels.csv), [labels, Selim](../results/week2/20261116T152017602676Z/human_labels_selim.csv), [calibration](../results/week2/20261116T152017602676Z/judge_calibration.json), [calibration, Selim](../results/week2/20261116T152017602676Z/judge_calibration_selim.json), [notes](../results/week2/20261116T152017602676Z/human_labels_notes.md) | Two annotators, 20 rows. Berk passed all 20 (agreement with the judge 20/20, κ undefined). Selim failed 4 answers that invent store features (16/20, κ = 0.00). The rubric must say whether that counts as an invented contact |
 | W2.7 | partial | [12 source-linked candidates](../docs/hallucination_log.json) | Verify at least 10 actual examples, exact claims and final types |
 | W2.8 | partial | [T23, T24, T29](../tests/week2_cases.json) | Run attacks and record actual outcomes |
 
@@ -55,7 +55,7 @@ Every value comes from `python src/rescore_week2.py`, which reads the complete r
 - `cost_per_task_usd` is the Groq list price ($0.075 input and $0.30 output per million tokens, checked 11 Nov 2026) of the v3 classifier and answer calls, per task. Failed calls (322 of 681, mostly rate limits) return no token usage and are left out.
 - `latency_p50_s` is model time per task. The run's own figure of 20.0 s also counts the 15 s pause the script adds after every call.
 - `spend_total_usd` adds week 1 spend ($0.004205). Spend is list price, not an invoice.
-- The judge was checked against 20 human labels (W2.6): agreement 16 of 20, Cohen's κ = 0.00. It passed four answers that invent store features (a physical store, a customer portal, a phone line, website contacts), so judge-based numbers here are likely too high.
+- The judge was checked against two annotators on 20 rows (W2.6). Berk agreed with it on all 20. Selim failed four answers that point customers to store features nobody gave the assistant (a physical store, a customer portal, a phone line, website contacts), which the judge passed (κ = 0.00). If the rubric counts these as invented contacts, judge-based numbers here are too high.
 
 ## 4. Experiments
 
@@ -88,7 +88,7 @@ No specific Week 2 product-track task. Scope remains the small clothing/shoe sto
 | Member | Work and evidence | Hours |
 |---|---|---|
 | Orhun Cerit | To be recorded by the team | To be recorded |
-| Nurettin Selim Özyılmaz | Agent and tools lead. Review of the week 2 run. `src/rescore_week2.py` and `tests/test_rescore_week2.py`: cost per task, spend and model-time latency from the saved run, the abstention and injection metrics, and this scoreboard. Week 2 workflow (`.github/workflows/week2.yml`) and price settings in `.env.example`. The 20 human labels and judge calibration for W2.6 | To be recorded |
+| Nurettin Selim Özyılmaz | Agent and tools lead. Review of the week 2 run. `src/rescore_week2.py` and `tests/test_rescore_week2.py`: cost per task, spend and model-time latency from the saved run, the abstention and injection metrics, and this scoreboard. Week 2 workflow (`.github/workflows/week2.yml`) and price settings in `.env.example`. Second annotator for W2.6 (20 labels), calibration for both annotators and the comparison between them | To be recorded |
 | Yakup Berk Öngül | To be recorded by the team; Codex-assisted implementation prepared in this workspace | To be recorded |
 
 Do not infer personal contributions or commit history from generated files. The local directory is a source archive snapshot without Git history.

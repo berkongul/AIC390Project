@@ -78,6 +78,13 @@ class CommittedRun(unittest.TestCase):
         week1 = json.loads(rs.WEEK1_SCOREBOARD.read_text(encoding="utf-8"))["spend_total_usd"]
         self.assertAlmostEqual(self.board["spend_total_usd"], round(week1 + self.board["spend_week_usd"], 6), places=6)
 
+    def test_two_annotators_compared(self):
+        labels = self.detail["human_labels"]
+        self.assertEqual(set(labels["sheets"]), {"human_labels.csv", "human_labels_selim.csv"})
+        self.assertIsNone(labels["sheets"]["human_labels.csv"]["vs_judge"]["cohen_kappa"])
+        self.assertEqual(labels["sheets"]["human_labels_selim.csv"]["vs_judge"]["cohen_kappa"], 0.0)
+        self.assertEqual(labels["pairs"][0]["disagree"], ["T09", "T10", "T15", "T18"])
+
     def test_committed_scoreboard_matches_the_script(self):
         committed = json.loads(rs.SCOREBOARD.read_text(encoding="utf-8"))
         self.assertEqual(committed, json.loads(json.dumps(self.board)))

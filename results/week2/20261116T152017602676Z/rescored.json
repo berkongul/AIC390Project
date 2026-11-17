@@ -367,6 +367,54 @@
       }
     }
   },
+  "human_labels": {
+    "sheets": {
+      "human_labels.csv": {
+        "pass": 20,
+        "n": 20,
+        "vs_judge": {
+          "n": 20,
+          "agreement": 1.0,
+          "cohen_kappa": null
+        },
+        "judge_pass_human_fail": [],
+        "judge_fail_human_pass": []
+      },
+      "human_labels_selim.csv": {
+        "pass": 16,
+        "n": 20,
+        "vs_judge": {
+          "n": 20,
+          "agreement": 0.8,
+          "cohen_kappa": 0.0
+        },
+        "judge_pass_human_fail": [
+          "T09",
+          "T10",
+          "T15",
+          "T18"
+        ],
+        "judge_fail_human_pass": []
+      }
+    },
+    "pairs": [
+      {
+        "sheets": [
+          "human_labels.csv",
+          "human_labels_selim.csv"
+        ],
+        "n": 20,
+        "agreement": 0.8,
+        "cohen_kappa": 0.0,
+        "disagree": [
+          "T09",
+          "T10",
+          "T15",
+          "T18"
+        ]
+      }
+    ]
+  },
   "notes": [
     "e2e_accuracy needs the exact classifier JSON and a passing answer. The classifier ran again for each version, so part of the difference between versions comes from the classifier (see classifier_mismatches). answer_pass compares the prompts alone.",
     "abstention_judge_flag uses the judge's 'abstained' field, which was false on all 120 answers.",

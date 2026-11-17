@@ -177,6 +177,7 @@ def rescore(run):
         "spend_total_usd": week1 + spend_week,
         "versions": versions,
         "comparisons": comparisons,
+        "human_labels": human_labels(run),
         "notes": [
             "e2e_accuracy needs the exact classifier JSON and a passing answer. The classifier ran again "
             "for each version, so part of the difference between versions comes from the classifier "
@@ -188,6 +189,35 @@ def rescore(run):
         ],
     }
     return scoreboard, detail
+
+
+def human_labels(run):
+    """Every filled human_labels*.csv in the run: each annotator against the judge and against each other."""
+    import csv
+    from itertools import combinations
+    from week2_stats import kappa
+
+    raw = {(r["id"], r["version"]): r for r in
+           (json.loads(x) for x in (run / "raw.jsonl").read_text(encoding="utf-8").splitlines())}
+    sheets = {}
+    for path in sorted(run.glob("human_labels*.csv")):
+        rows = list(csv.DictReader(path.open(encoding="utf-8")))
+        if rows and all(r["human_pass"] in ("0", "1") and r["annotator"].strip() for r in rows):
+            sheets[path.name] = {(r["id"], r["version"]): int(r["human_pass"]) for r in rows}
+    out = {"sheets": {}, "pairs": []}
+    for name, labels in sheets.items():
+        keys = sorted(labels)
+        judge = [int(raw[k]["judge"]["pass"]) for k in keys]
+        human = [labels[k] for k in keys]
+        out["sheets"][name] = {"pass": sum(human), "n": len(human), "vs_judge": kappa(human, judge),
+                               "judge_pass_human_fail": [k[0] for k, h, j in zip(keys, human, judge) if j and not h],
+                               "judge_fail_human_pass": [k[0] for k, h, j in zip(keys, human, judge) if h and not j]}
+    for a, b in combinations(sheets, 2):
+        keys = sorted(set(sheets[a]) & set(sheets[b]))
+        out["pairs"].append({"sheets": [a, b],
+                             **kappa([sheets[a][k] for k in keys], [sheets[b][k] for k in keys]),
+                             "disagree": [k[0] for k in keys if sheets[a][k] != sheets[b][k]]})
+    return out
 
 
 def latest_run():
