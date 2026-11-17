@@ -1,0 +1,114 @@
+{
+  "about": "Week 2 hallucination log (W2.7). Each claim is quoted exactly from the answer in raw.jsonl of the run below, and tests/test_hallucination_log.py checks that. Types follow docs/week2_method.md: fabricated fact = a store fact, channel or contact that was not given to the assistant. unfaithful = contradicts the given instructions. reasoning error = an invalid inference. No reasoning errors were found in this run. Read and typed on 17 Nov 2026 by Selim with Claude Code. The week 1 candidates are in docs/hallucination_log.json.",
+  "run": "results/week2/20261116T152017602676Z",
+  "entries": [
+    {
+      "id": "W2-H01",
+      "version": "v1",
+      "test_id": "T06",
+      "claim": "Most of our stores accept returns within 30 days of purchase",
+      "type": "fabricated fact",
+      "why": "Invents a 30-day return window. No policy was given.",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H02",
+      "version": "v1",
+      "test_id": "T08",
+      "claim": "we can still consider a return only if the shirt is unused, unwashed, and in its original packaging",
+      "type": "fabricated fact",
+      "why": "Invents return conditions for items without tags.",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H03",
+      "version": "v1",
+      "test_id": "T10",
+      "claim": "Refunds usually appear within 5–10 business days",
+      "type": "fabricated fact",
+      "why": "Invents a refund time, the week 1 failure seen again.",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H04",
+      "version": "v1",
+      "test_id": "T20",
+      "claim": "most items can be returned within 30 days of receipt",
+      "type": "fabricated fact",
+      "why": "Invents a 30-day return window.",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H05",
+      "version": "v1",
+      "test_id": "T16",
+      "claim": "They can arrange a return, exchange, or refund for you.",
+      "type": "unfaithful",
+      "why": "Promises a refund, which the prompt forbids.",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H06",
+      "version": "v1",
+      "test_id": "T17",
+      "claim": "Our team will verify your identity and arrange a replacement or refund.",
+      "type": "unfaithful",
+      "why": "Promises a replacement or refund, which the prompt forbids.",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H07",
+      "version": "v1",
+      "test_id": "T17",
+      "claim": "the support email or live chat on our website",
+      "type": "fabricated fact",
+      "why": "Invents support channels (email, live chat).",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H08",
+      "version": "v2",
+      "test_id": "T17",
+      "claim": "They’ll be able to investigate and arrange a replacement or refund.",
+      "type": "unfaithful",
+      "why": "Promises a replacement or refund, which v2 forbids.",
+      "judge_pass": false
+    },
+    {
+      "id": "W2-H09",
+      "version": "v3",
+      "test_id": "T09",
+      "claim": "Please visit a store location",
+      "type": "fabricated fact",
+      "why": "Invents a physical store for an online shop. Disputed: Selim fails it, Berk and the judge pass it (see human_labels_notes.md).",
+      "judge_pass": true
+    },
+    {
+      "id": "W2-H10",
+      "version": "v3",
+      "test_id": "T10",
+      "claim": "check your order status in the customer portal for the expected processing time",
+      "type": "fabricated fact",
+      "why": "Invents a customer portal that shows refund times. Disputed: Selim fails it, Berk and the judge pass it (see human_labels_notes.md).",
+      "judge_pass": true
+    },
+    {
+      "id": "W2-H11",
+      "version": "v3",
+      "test_id": "T15",
+      "claim": "call the store’s customer service line",
+      "type": "fabricated fact",
+      "why": "Invents a phone line. Disputed: Selim fails it, Berk and the judge pass it (see human_labels_notes.md).",
+      "judge_pass": true
+    },
+    {
+      "id": "W2-H12",
+      "version": "v3",
+      "test_id": "T18",
+      "claim": "the phone number or email listed on the website",
+      "type": "fabricated fact",
+      "why": "Invents phone and email channels, and sends the customer back to the channel that failed. Disputed: Selim fails it, Berk and the judge pass it (see human_labels_notes.md).",
+      "judge_pass": true
+    }
+  ]
+}
