@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "temperature": 0,
+  "git_commit": "8331e78dc5ad327f2c8fdbec60446e69f26fbb19",
+  "uncommitted_changes": false,
+  "classifier_prompt_sha256": "3f86a29dbf37e8a63a9976bacec259b9048e5a0012fbb83549831ad43cae3cdb",
+  "schema_sha256": "b125703a9d6b3b346142633194ceacd500d6de1d3a276a2f5f312b84de9e5427",
+  "test_set_sha256": "1e8394720b345cda8c697a1b628ec03f764796a3991145d2f1f76f9cc33ccc22",
+  "cases": 40,
+  "pause_seconds": "5"
+}
