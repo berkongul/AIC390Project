@@ -1,0 +1,55 @@
+{
+ "mode": "rerank",
+ "k": 5,
+ "questions": 32,
+ "claims": 44,
+ "unsupported_claims": {
+  "value": 0.045454545454545456,
+  "n": 44,
+  "count": 2,
+  "ci95": [
+   0,
+   0.10700293582850931
+  ],
+  "ci95_wilson": [
+   0.012554846366981079,
+   0.15135271525303162
+  ]
+ },
+ "claims_without_citation": 11,
+ "judge_missing": 0,
+ "answers_fully_supported": {
+  "value": 0.84375,
+  "n": 32,
+  "count": 27,
+  "ci95": [
+   0.7179449750730322,
+   0.9695550249269678
+  ],
+  "ci95_wilson": [
+   0.6824550744643347,
+   0.9313568089337279
+  ]
+ },
+ "fixed_replies": [
+  "R29"
+ ],
+ "failures": {
+  "retrieval": [
+   "R02",
+   "R22"
+  ],
+  "generation": [
+   "R13",
+   "R29",
+   "R32"
+  ]
+ },
+ "answer_cost_per_task_usd": 0.00012414,
+ "answer_latency_p50_s": 0.5475000000000001,
+ "spend_usd": 0.007173,
+ "calls": {
+  "ok": 76,
+  "failed": 29
+ }
+}
