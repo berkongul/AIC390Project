@@ -8,10 +8,13 @@
            or the model changes.
   Fusion   reciprocal rank fusion, score = sum over both lists of 1 / (RRF_K + rank).
 
-A reranker is not included yet (W3.3 asks for one): the data and retrieval lead adds it.
+  Rerank   mode "rerank": the top CANDIDATES of the hybrid ranking are scored again by a
+           cross-encoder (Xenova/ms-marco-MiniLM-L-6-v2), which reads the question and the
+           passage together instead of comparing two separate vectors.
 
 Run:  python src/retrieval.py "Does the TR-220 run small?"
       python src/retrieval.py --mode bm25 "sku-778 warranty"
+      python src/retrieval.py --mode rerank "Can I get my money back?"
 """
 import argparse
 import hashlib
@@ -28,6 +31,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from corpus import ROOT, load_chunks  # noqa: E402
 
 MODEL = "BAAI/bge-small-en-v1.5"
+RERANKER = "Xenova/ms-marco-MiniLM-L-6-v2"
+MODES = ("hybrid", "dense", "bm25", "rerank")
 CACHE = ROOT / "results" / "week3" / "index"
 RRF_K = 60
 CANDIDATES = 20
@@ -77,6 +82,16 @@ class Embedder:
         return _unit(np.array(list(self.model.query_embed(text))))[0]
 
 
+class Reranker:
+    def __init__(self, model=RERANKER):
+        from fastembed.rerank.cross_encoder import TextCrossEncoder
+        self.name = model
+        self.model = TextCrossEncoder(model)
+
+    def scores(self, query, texts):
+        return [float(s) for s in self.model.rerank(query, list(texts))]
+
+
 def _unit(m):
     return m / np.linalg.norm(m, axis=-1, keepdims=True)
 
@@ -111,8 +126,10 @@ class Index:
         return [int(i) for i in np.argsort(-sims)[:CANDIDATES]], sims
 
     def search(self, query, k=5, mode="hybrid"):
-        b_rank, b_scores = self.bm25_ranking(query) if mode in ("hybrid", "bm25") else ([], None)
-        d_rank, d_scores = self.dense_ranking(query) if mode in ("hybrid", "dense") else ([], None)
+        if mode not in MODES:
+            raise ValueError(f"mode must be one of {MODES}")
+        b_rank, b_scores = self.bm25_ranking(query) if mode in ("hybrid", "bm25", "rerank") else ([], None)
+        d_rank, d_scores = self.dense_ranking(query) if mode in ("hybrid", "dense", "rerank") else ([], None)
         if mode == "bm25":
             ranked = [(i, float(b_scores[i])) for i in b_rank]
         elif mode == "dense":
@@ -120,6 +137,12 @@ class Index:
         else:
             fused = rrf([b_rank, d_rank])
             ranked = sorted(fused.items(), key=lambda kv: -kv[1])
+            if mode == "rerank":
+                if getattr(self, "reranker", None) is None:
+                    self.reranker = Reranker()
+                pool = [i for i, _ in ranked[:CANDIDATES]]
+                scores = self.reranker.scores(query, [self.chunks[i].text for i in pool])
+                ranked = sorted(zip(pool, scores), key=lambda kv: -kv[1])
         b_pos = {i: r for r, i in enumerate(b_rank, 1)}
         d_pos = {i: r for r, i in enumerate(d_rank, 1)}
         return [Hit(self.chunks[i], score, b_pos.get(i), d_pos.get(i),
@@ -131,7 +154,7 @@ class Index:
 def main():
     parser = argparse.ArgumentParser(description="Search the public store documents.")
     parser.add_argument("query")
-    parser.add_argument("--mode", choices=["hybrid", "bm25", "dense"], default="hybrid")
+    parser.add_argument("--mode", choices=list(MODES), default="hybrid")
     parser.add_argument("-k", type=int, default=5)
     args = parser.parse_args()
     index = Index(dense=args.mode != "bm25")

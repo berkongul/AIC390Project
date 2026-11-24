@@ -1,7 +1,8 @@
 """Live demo of the pipeline so far: understand -> retrieve -> answer with citations.
 
   1 Understand   the request classifier (week 2) returns intent, entities and urgency
-  2 Retrieve     hybrid search over the public store documents: BM25 + embeddings + RRF
+  2 Retrieve     hybrid search over the public store documents: BM25 + embeddings + RRF,
+                 then a cross-encoder reranker
   3 Answer       Groq openai/gpt-oss-20b answers only from the passages, with [n] citations,
                  or gives the fixed "can't find it" reply. The citations are checked.
 
@@ -40,12 +41,12 @@ def run(message, index, model, k):
         print(json.dumps(value, ensure_ascii=False) if value else f"no valid classification, goes to a person {errors}")
 
     start = time.perf_counter()
-    hits = index.search(message, k)
-    header(2, "Retrieve: BM25 + embeddings, fused with RRF (layer 2)", time.perf_counter() - start)
-    print(f" {'#':<3}{'passage':<44}{'bm25':>5}{'dense':>6}{'cosine':>8}{'rrf':>8}")
+    hits = index.search(message, k, "rerank")
+    header(2, "Retrieve: BM25 + embeddings (RRF), then a cross-encoder reranker (layer 2)", time.perf_counter() - start)
+    print(f" {'#':<3}{'passage':<44}{'bm25':>5}{'dense':>6}{'cosine':>8}{'rerank':>8}")
     for n, h in enumerate(hits, 1):
         print(f" [{n}] {h.chunk.label[:42]:<42}{h.bm25_rank or '-':>5}{h.dense_rank or '-':>6}"
-              f"{h.dense_score:>8.3f}{h.score:>8.4f}")
+              f"{h.dense_score:>8.3f}{h.score:>8.2f}")
 
     if not model:
         return

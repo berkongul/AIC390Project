@@ -14,11 +14,12 @@ Ablations, one change each (W3.7): the same questions with
   hybrid  BM25 + embeddings fused with reciprocal rank fusion (the system as built)
   dense   embeddings only            -> what BM25 adds
   bm25    BM25 (keywords) only       -> what embeddings add
+  rerank  hybrid, then the top 20 re-scored by a cross-encoder -> what the reranker adds
 
 Questions tagged "typo" are misspelled copies of main questions. They are reported
 separately so they do not change the main numbers.
 
-Run:  python src/evaluate_retrieval.py              all three modes
+Run:  python src/evaluate_retrieval.py              all four modes
       python src/evaluate_retrieval.py --mode bm25  one mode (bm25 needs no model download)
 Writes results/week3/retrieval_eval.json
 """
@@ -85,10 +86,10 @@ def evaluate(index, questions, mode):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--mode", choices=["hybrid", "dense", "bm25"], action="append",
-                        help="search mode(s) to evaluate; default: all three")
+    parser.add_argument("--mode", choices=["hybrid", "dense", "bm25", "rerank"], action="append",
+                        help="search mode(s) to evaluate; default: all four")
     args = parser.parse_args()
-    modes = args.mode or ["hybrid", "dense", "bm25"]
+    modes = args.mode or ["hybrid", "dense", "bm25", "rerank"]
 
     questions = load_questions()
     index = Index(dense=any(m != "bm25" for m in modes))
