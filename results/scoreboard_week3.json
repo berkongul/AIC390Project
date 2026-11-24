@@ -10,10 +10,6 @@
   "abstention_correct": {
     "value": 1.0,
     "ci95": [
-      1.0,
-      1
-    ],
-    "ci95_wilson": [
       0.757,
       1
     ],

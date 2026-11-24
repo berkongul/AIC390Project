@@ -62,8 +62,9 @@ def main():
         "week": 3,
         "test_set_size": main_set["n"],
         "e2e_accuracy": {"value": None, "ci95": None, "n": None, "script": None},
-        "abstention_correct": {"value": round(abst["value"], 3), "ci95": [round(x, 3) for x in abst["ci95"]],
-                               "ci95_wilson": [round(x, 3) for x in abst["ci95_wilson"]], "n": abst["n"],
+        # Wilson, not Wald: at 12 of 12 the Wald interval collapses to [1.0, 1.0].
+        "abstention_correct": {"value": round(abst["value"], 3), "ci95": [round(x, 3) for x in abst["ci95_wilson"]],
+                               "n": abst["n"],
                                "count": abst["count"], "script": "src/evaluate_abstention_week3.py"},
         "unsupported_claims": {"value": round(unsupported["value"], 3), "n": unsupported["n"],
                                "script": "src/evaluate_faithfulness.py"},
