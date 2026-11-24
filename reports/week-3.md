@@ -12,7 +12,7 @@
 
 ## 1. Summary
 
-We added 37 synthetic store documents, section chunking, hybrid search (BM25 and embeddings with reciprocal rank fusion) with a cross-encoder reranker, and answers with numbered citations. On 32 retrieval questions the system finds a correct passage in the top 5 for **30 (hit@5 0.94, MRR 0.77)**. Embeddings alone did as well (31 of 32), BM25 alone much worse (20). 27 of 32 answers were fully supported. The judge flagged 2 of 44 claims, and the human check overruled both. Last week's feedback is answered with an architecture page, a live demo and an embeddings view.
+We added 37 synthetic store documents, section chunking, hybrid search (BM25 and embeddings with reciprocal rank fusion) with a cross-encoder reranker, and answers with numbered citations. On 32 retrieval questions the system finds a correct passage in the top 5 for **30 (hit@5 0.94, MRR 0.77)**. Embeddings alone did as well (31 of 32), BM25 alone much worse (20, p = 0.001). 27 of 32 answers were fully supported. The judge flagged 2 of 44 claims, and the human check overruled both. Last week's feedback is answered with an architecture page, a live demo and an embeddings view.
 
 ## 2. Deliverables
 
@@ -72,7 +72,7 @@ Changes to any test set this week: a new 32-question retrieval set (W3.5). The w
 | Hybrid (RRF) | 19 | 27 | 29 | 29 | 0.71 |
 | Hybrid + reranker | 21 | 27 | 30 | 31 | 0.77 |
 
-Counts out of 32. All four modes find every exact-code question (4 of 4). At hit@5, embeddings beat BM25 on 11 questions and lost on none. Embeddings and hybrid + reranker differ on a single question.
+Counts out of 32. All four modes find every exact-code question (4 of 4). Paired exact McNemar tests at hit@5: embeddings against BM25, 11 against 0 discordant questions, p = 0.001. Embeddings against hybrid + reranker, 1 against 0, p = 1.0.
 
 - **Decision:** The hypothesis is not supported on this set. 25 of the 32 questions are paraphrases with few shared words, where BM25 adds noise. We keep hybrid + reranker, because the difference to embeddings alone is one question, and the larger catalogue planned next has many near-identical product codes, where embeddings place different codes close together (TR-220 against TR-310, cosine 0.77, `results/week3/embedding_similarity.json`).
 
@@ -80,8 +80,8 @@ Counts out of 32. All four modes find every exact-code question (4 of 4). At hit
 
 - **Hypothesis:** A cross-encoder that reads the question and passage together puts the right passage higher.
 - **Change:** Only the reranker on the top 20 hybrid results.
-- **Result:** hit@1 19 to 21, hit@5 29 to 30, MRR 0.71 to 0.77. At hit@5 the reranker fixed one question and broke none. At hit@1 it moved 6 questions up to first place and 4 down.
-- **Decision:** Keep it on. The direction is consistent, but with 32 questions the gain is too small to call it a real improvement yet.
+- **Result:** hit@1 19 to 21, hit@5 29 to 30, MRR 0.71 to 0.77. Paired exact McNemar: at hit@5, 1 against 0 discordant questions (p = 1.0), at hit@1, 6 against 4 (p = 0.75).
+- **Decision:** Keep it on. The direction is consistent, but n = 32 is too small for significance.
 
 ### Experiment 3: Does the faithfulness judge agree with a person?
 
