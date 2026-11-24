@@ -113,14 +113,29 @@ Also found: R02 (washed hoodie) counts as a retrieval miss, but the answer is co
 
 ## 7. Product track
 
-Not done this week. We have not yet talked to potential customers. The interview questions are prepared: which questions take the most time, how returns are handled, what the assistant may answer, what it is worth per month or per message, and what worries them.
+One of two conversations done. Selim talked with a software developer who runs a small streetwear shop on Instagram, selling limited drops through the ikas platform. It was an informal conversation in a live-stream chat in the week of 16 Nov 2026, with follow-up questions in Instagram chat. Notes were written up afterwards and are summarized here, not quoted. His name and shop are left out.
+
+- **What he does by hand today.** Under half an hour a day in a normal week. In a drop week, Instagram messages take two to three hours a day: when the drop opens, whether a size is left, payment taken but no order, and in the following week whether the item will restock. ikas already sends shipping notifications, but customers still ask. Exchanges are rarely possible because limited stock is gone, so he refunds by hand in the ikas panel.
+- **What he would let an assistant answer.** Drop time, size chart, stock and shipping status, all data his system already has. Not restock promises, return approvals or stuck payments. His worst case is the assistant inventing a restock in front of his community.
+- **What he would pay.** His first reaction is that he could build it himself, since an answer costs very little in API fees. He would pay 500 to 750 TL a month if setup and upkeep were fully handled, but prefers paying per use, because some months have no drop. At 1 to 2 TL per answer he would question the margin.
+- **What worries him.** A black box. He wants logs of what was answered and the ability to change the rules and prompts. Also where customer data is stored under KVKK, and whether the system holds up when hundreds of messages arrive at once on drop day.
+
+What it changes for us:
+
+1. His most common questions (size in stock, order status) cannot be answered from documents, so the week 4 data tool comes first.
+2. Our assistant already refuses to invent restock dates, which matches his biggest fear. That stays a test case.
+3. Payment problems go straight to a person and are never answered by the assistant.
+4. An answer costs us about $0.00012, well under one kuruş, so usage-based pricing is realistic. The pricing hypothesis is the week 5 product task.
+5. Logged runs and versioned prompts are already how we work. Drop-day bursts are a real risk: in week 2, rate limits made about half of our model calls fail.
+
+The second conversation is still open.
 
 ## 8. Contributions
 
 | Member | Role | What they did this week | Commits or files | Hours |
 |---|---|---|---|---|
 | Orhun Cerit | Data and retrieval lead | Retrieval question set (W3.5), retrieval evaluation with the three-mode ablation, price-change rule in the sale policy | 91ff132, a822654, c60d559, a0d701c | not reported |
-| Nurettin Selim Özyılmaz | Agent and tools lead | Store documents, chunking, hybrid search, reranker, cited answers, live demo, architecture page, embeddings view, faithfulness evaluation and failure labels, week 3 scoreboard, 20 human labels, this report | PR #7 | not reported |
+| Nurettin Selim Özyılmaz | Agent and tools lead | Store documents, chunking, hybrid search, reranker, cited answers, live demo, architecture page, embeddings view, faithfulness evaluation and failure labels, week 3 scoreboard, 20 human labels, the product-track conversation, this report | PR #7 | not reported |
 | Yakup Berk Öngül | Evaluation and safety lead | No week 3 work in the repository | none | not reported |
 
 ## 9. AI tools used
