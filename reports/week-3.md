@@ -34,7 +34,7 @@ We added 37 synthetic store documents, section chunking, hybrid search with a cr
   "week": 3,
   "test_set_size": 32,
   "e2e_accuracy":       {"value": null, "ci95": null, "n": null, "script": null},
-  "abstention_correct": {"value": 1.0, "ci95": [1.0, 1.0], "ci95_wilson": [0.757, 1.0], "n": 12, "count": 12, "script": "src/evaluate_abstention_week3.py"},
+  "abstention_correct": {"value": 1.0, "ci95": [0.757, 1.0], "n": 12, "count": 12, "script": "src/evaluate_abstention_week3.py"},
   "unsupported_claims": {"value": 0.045, "n": 44, "script": "src/evaluate_faithfulness.py"},
   "hit_at_5":           {"value": 0.938, "n": 32, "script": "src/evaluate_retrieval.py"},
   "mrr":                {"value": 0.77, "n": 32, "script": "src/evaluate_retrieval.py"},
@@ -54,7 +54,7 @@ Changes to any test set this week: a new 32-question retrieval set (W3.5), a 19-
 
 - `hit_at_5` and `mrr` are for the system as built (hybrid with reranker), main question set.
 - `unsupported_claims` is the LLM judge's rate (Wilson 95% interval 0.01–0.15). Both flagged claims were judged supported by the human check, so it is an upper bound.
-- `abstention_correct` covers the 12 questions the store documents cannot answer: all 12 got the fixed reply and no unsupported claim (judge v2). It replaces the week 2 measure, whose "unanswerable" cases the documents now partly answer (experiment 4).
+- `abstention_correct` (Wilson interval) covers the 12 questions the store documents cannot answer: all 12 got the fixed reply and no unsupported claim (judge v2). It replaces the week 2 measure, whose "unanswerable" cases the documents now partly answer (experiment 4).
 - `e2e_accuracy` is null: the week 2 cases have rubrics written for an assistant without documents and were not re-run on the RAG pipeline. `injection_success` starts in week 5.
 - Cost and latency are the answer call per question. Retrieval runs locally and costs nothing. Spend is list price of every committed call since the week 2 scoreboard, including the judge calibration runs.
 
@@ -142,8 +142,8 @@ The second conversation is still open.
 
 | Member | Role | What they did this week | Commits or files | Hours |
 |---|---|---|---|---|
-| Orhun Cerit | Data and retrieval lead | Retrieval question set (W3.5), retrieval evaluation with the three-mode ablation, price-change rule in the sale policy | 91ff132, a822654, c60d559, a0d701c |  6 |
-| Nurettin Selim Özyılmaz | Agent and tools lead | Store documents, chunking, hybrid search, reranker, cited answers, live demo, architecture page, embeddings view, faithfulness evaluation and failure labels, abstention set and re-measure, judge v2 and the calibration sample, T23 and T34 label review, 40 human labels, the product-track conversation, week 3 scoreboard, this report | PR #7 | not reported |
+| Orhun Cerit | Data and retrieval lead | Retrieval question set (W3.5), retrieval evaluation with the three-mode ablation, price-change rule in the sale policy | 91ff132, a822654, c60d559, a0d701c | 6 |
+| Nurettin Selim Özyılmaz | Agent and tools lead | Store documents, chunking, hybrid search, reranker, cited answers, live demo, architecture page, embeddings view, faithfulness evaluation and failure labels, abstention set and re-measure, judge v2 and the calibration sample, T23 and T34 label review, 40 human labels, the product-track conversation, week 3 scoreboard, this report | PRs #7, #8, #9, #10 | about 15 |
 | Yakup Berk Öngül | Evaluation and safety lead | No week 3 work in the repository | none | not reported |
 
 ## 9. AI tools used
@@ -152,7 +152,7 @@ The second conversation is still open.
 |---|---|
 | Claude Code (Selim) | Drafted the store documents, retrieval, reranker, citation, demo, embedding, faithfulness and scoreboard code with tests, the architecture page and this report. Re-checked two of Selim's labels at his request, and no label changed |
 | Groq `openai/gpt-oss-20b` | The model under test, the classifier and the faithfulness judge |
-| Claude (Orhun) | Learning the course topics, drafting the retrieval question set and src/evaluate_retrieval.py. Orhun checked every question, gold passage and result |
+| Claude (Orhun) | Learning the course topics, drafting the retrieval question set and `src/evaluate_retrieval.py`. Orhun checked every question, gold passage and result |
 | Berk | Not reported |
 
 ## 10. Next week
