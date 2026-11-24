@@ -12,7 +12,7 @@
 
 ## 1. Summary
 
-We added 37 synthetic store documents, section chunking, hybrid search with a cross-encoder reranker, and answers with numbered citations. On 32 retrieval questions a correct passage is in the top 5 for **30 (hit@5 0.94, MRR 0.77)**. BM25 alone found 20 (p = 0.001 against embeddings). **All 12 questions the documents cannot answer got an honest abstention.** 27 of 32 answers were fully supported. The judge is the weak point: on claims a person rated, it agrees only fairly (κ 0.30 to 0.37) and misses policies applied to the wrong case. Last week's feedback is answered.
+We added 37 synthetic store documents, section chunking, hybrid search with a cross-encoder reranker, and answers with numbered citations. On 32 retrieval questions a correct passage is in the top 5 for **30 (hit@5 0.94, MRR 0.77)**. BM25 alone found 20 (p = 0.001 against embeddings). **All 12 questions the documents cannot answer got an honest abstention.** 27 of 32 answers were fully supported. The judge is the weak point: two annotators agree with each other (κ 0.69), but with the judge only fairly (κ 0.30 to 0.48). Last week's feedback is answered.
 
 ## 2. Deliverables
 
@@ -23,7 +23,7 @@ We added 37 synthetic store documents, section chunking, hybrid search with a cr
 | W3.3 | done | [`src/retrieval.py`](../src/retrieval.py) | BM25 with a tokenizer that keeps codes like `TR-220` whole, `BAAI/bge-small-en-v1.5` embeddings, reciprocal rank fusion, then `Xenova/ms-marco-MiniLM-L-6-v2` re-scores the top 20. Staff-only documents are never indexed for customers |
 | W3.4 | done | [`src/rag_answer.py`](../src/rag_answer.py), [`prompts/rag_v1.txt`](../prompts/rag_v1.txt) | Every fact ends with [n]. A fixed reply when the passages do not answer. `check_citations()` flags missing or invalid citations |
 | W3.5 | done | [`tests/retrieval_questions.json`](../tests/retrieval_questions.json), [`src/evaluate_retrieval.py`](../src/evaluate_retrieval.py), `results/week3/retrieval_eval.json` | 32 questions with gold passages: 25 paraphrases, 4 exact codes, 3 traps. hit@1, 3, 5, 10 and MRR@10 |
-| W3.6 | done | [`src/evaluate_faithfulness.py`](../src/evaluate_faithfulness.py), `results/week3/faithfulness/` | 44 claims judged one by one against their cited passages. Judge checked twice against human labels: 20 system claims, and a calibration sample of 20 with real unsupported claims (`src/calibrate_judge_week3.py`, `results/week3/judge_calibration/`) |
+| W3.6 | done | [`src/evaluate_faithfulness.py`](../src/evaluate_faithfulness.py), `results/week3/faithfulness/` | 44 claims judged one by one against their cited passages. Judge checked twice against human labels: 20 system claims, and a calibration sample of 20 with real unsupported claims, labelled by two people (`src/calibrate_judge_week3.py`, `results/week3/judge_calibration/`) |
 | W3.7 | done | `results/week3/retrieval_eval.json` | Two ablations, one change each: the retrieval method (hybrid, embeddings only, BM25 only) and the reranker (on or off) |
 | W3.8 | done | `results/week3/faithfulness/raw.jsonl` (`failure`), section 5 | Each failed answer labelled retrieval or generation, then checked by hand |
 
@@ -54,7 +54,7 @@ Changes to any test set this week: a new 32-question retrieval set (W3.5), a 19-
 
 - `hit_at_5` and `mrr` are for the system as built (hybrid with reranker), main question set.
 - `unsupported_claims` is the LLM judge's rate (Wilson 95% interval 0.01–0.15). Both flagged claims were judged supported by the human check, so it is an upper bound.
-- `abstention_correct` (Wilson interval) covers the 12 questions the store documents cannot answer: all 12 got the fixed reply and no unsupported claim (judge v2). It replaces the week 2 measure, whose "unanswerable" cases the documents now partly answer (experiment 4).
+- `abstention_correct` (Wilson interval) covers the 12 questions the documents cannot answer: all 12 got the fixed reply and no unsupported claim (judge v2). It replaces the week 2 measure, whose "unanswerable" cases the documents now partly answer (experiment 4).
 - `e2e_accuracy` is null: the week 2 cases have rubrics written for an assistant without documents and were not re-run on the RAG pipeline. `injection_success` starts in week 5.
 - Cost and latency are the answer call per question. Retrieval runs locally and costs nothing. Spend is list price of every committed call since the week 2 scoreboard, including the judge calibration runs.
 
@@ -86,10 +86,10 @@ Counts out of 32. All four modes find every exact-code question (4 of 4). Paired
 
 ### Experiment 3: Does the faithfulness judge agree with a person?
 
-- **Hypothesis:** The claim judge matches a human annotator, and judge v2, which adds the store-channel rule from week 2 (`docs/label_review_week3.md`), matches better than v1.
-- **Change:** Two samples, labelled by Selim without the judge's verdicts. (a) 20 claims from the system's own answers. (b) 20 claims from answers to a deliberately loose prompt that is not part of the system, stratified to 10 judge-supported and 10 judge-unsupported, so both classes occur.
-- **Result:** (a) Agreement 18 of 20. κ = 0.00 is not informative, because the human rated every claim supported. The two disagreements were the judge's only two flags. (b) The human rated 11 of 20 unsupported. Judge v1 agrees on 13 of 19 (κ = 0.37, one verdict missing), judge v2 on 13 of 20 (κ = 0.30). The judges accepted 4 claims the human rejected, all applying a real policy to the wrong case (a competitor's price treated as our price drop, a sale-item rule applied to every hoodie). They rejected 3 the human accepted (two polite offers of help, one "no price matching").
-- **Decision:** Not reliable yet. The κ ≥ 0.6 target from week 2 is missed, and the store-channel rule did not help. Next: a judge rule for policies applied outside their condition, an explicit rule for polite offers, and a second annotator on the same sheet (`results/week3/judge_calibration/sample.csv`). Until then `unsupported_claims` is an estimate with unknown bias. Details: `results/week3/faithfulness/human_labels_notes.md`, `results/week3/judge_calibration/calibration.json`.
+- **Hypothesis:** The claim judge matches human annotators, and judge v2, with the store-channel rule from week 2 (`docs/label_review_week3.md`), matches better than v1.
+- **Change:** Two samples, labelled on sheets without the judge's verdicts. (a) 20 claims from the system's own answers (Selim). (b) 20 claims from answers to a deliberately loose prompt that is not part of the system, stratified to 10 judge-supported and 10 judge-unsupported, labelled by Selim and Berk.
+- **Result:** (a) Agreement 18 of 20. κ = 0.00 is not informative, because the human rated every claim supported. The two disagreements were the judge's only two flags. (b) Selim rated 11 of 20 unsupported, Berk 12, and they agree on 17 (κ = 0.69). Judge v1 agrees with them on 13 and 14 of 19 (κ = 0.37 and 0.48, one verdict missing), judge v2 on 13 and 14 of 20 (κ = 0.30 and 0.40). Both people rejected 3 claims the judges accepted, all applying a real policy to the wrong case (a competitor's price treated as our price drop, a sale-item rule applied to every hoodie). Both accepted 2 polite offers of help the judges rejected.
+- **Decision:** Not reliable yet. The two people reach κ ≥ 0.6, so the judge, not the task, is the problem. The store-channel rule did not help. Next: a judge rule for policies applied outside their condition, and one for polite offers. Until then `unsupported_claims` is an estimate with unknown bias. Details: `results/week3/faithfulness/human_labels_notes.md`, `results/week3/judge_calibration/calibration.json`.
 
 ### Experiment 4: Abstention on the RAG pipeline
 
@@ -144,7 +144,7 @@ The second conversation is still open.
 |---|---|---|---|---|
 | Orhun Cerit | Data and retrieval lead | Retrieval question set (W3.5), retrieval evaluation with the three-mode ablation, price-change rule in the sale policy | 91ff132, a822654, c60d559, a0d701c | 6 |
 | Nurettin Selim Özyılmaz | Agent and tools lead | Store documents, chunking, hybrid search, reranker, cited answers, live demo, architecture page, embeddings view, faithfulness evaluation and failure labels, abstention set and re-measure, judge v2 and the calibration sample, T23 and T34 label review, 40 human labels, the product-track conversation, week 3 scoreboard, this report | PRs #7, #8, #9, #10 | about 15 |
-| Yakup Berk Öngül | Evaluation and safety lead | No week 3 work in the repository | none | not reported |
+| Yakup Berk Öngül | Evaluation and safety lead | Second annotator: 20 labels on the judge calibration sample, scored against both judges and Selim (experiment 3) | 80f2570, PR #12 | not reported |
 
 ## 9. AI tools used
 
@@ -161,4 +161,4 @@ The second conversation is still open.
 |---|---|---|
 | 1. A generated product catalogue to about 10,000 chunks, with near-identical codes, then re-run the retrieval evaluation | `hit_at_5`, `mrr` | `hit_at_5` stays at or above 0.90 at 10,000 chunks |
 | 2. Three tools (document search, order data, sandbox return) and an agent loop with step, token and time limits (W4.1, W4.2) | `task_success`, cost per task | First measurement on at least 10 multi-step tasks |
-| 3. Fix the judge where people disagree with it: a rule for policies applied outside their condition and one for polite offers, then the same 20-claim sheet labelled by a second annotator, plus the fixes for R22, R29, R13 and T21 | judge κ, `unsupported_claims` | κ ≥ 0.6 against both annotators |
+| 3. Fix the judge where people disagree with it: a rule for policies applied outside their condition and one for polite offers, plus the fixes for R22, R29, R13 and T21 | judge κ, `unsupported_claims` | κ ≥ 0.6 against both annotators (they agree with each other at 0.69) |
