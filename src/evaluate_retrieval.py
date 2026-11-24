@@ -14,7 +14,7 @@ Ablations, one change each (W3.7): the same questions with
   hybrid  BM25 + embeddings fused with reciprocal rank fusion (the system as built)
   dense   embeddings only            -> what BM25 adds
   bm25    BM25 (keywords) only       -> what embeddings add
-  rerank  hybrid, then the top 20 re-scored by a cross-encoder -> what the reranker adds
+  hybrid+rerank  hybrid top 20 re-ordered by a cross-encoder (src/rerank.py) -> what the reranker adds
 
 Questions tagged "typo" are misspelled copies of main questions. They are reported
 separately so they do not change the main numbers.
@@ -31,6 +31,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from corpus import ROOT, load_chunks  # noqa: E402
 from retrieval import Index  # noqa: E402
+
+MODES = ["hybrid", "dense", "bm25", "hybrid+rerank"]
 
 QUESTIONS = ROOT / "tests" / "retrieval_questions.json"
 OUTPUT = ROOT / "results" / "week3" / "retrieval_eval.json"
@@ -67,10 +69,17 @@ def score(ranks):
     return out
 
 
-def evaluate(index, questions, mode):
+def run_search(index, reranker, query, mode):
+    if mode == "hybrid+rerank":
+        from rerank import search_reranked
+        return search_reranked(index, reranker, query, DEPTH)
+    return index.search(query, DEPTH, mode)
+
+
+def evaluate(index, questions, mode, reranker=None):
     rows = []
     for q in questions:
-        results = [h.chunk.id for h in index.search(q["question"], DEPTH, mode)]
+        results = [h.chunk.id for h in run_search(index, reranker, q["question"], mode)]
         rows.append({"id": q["id"], "type": q["type"], "question": q["question"],
                      "gold": q["gold"], "rank": first_gold_rank(results, set(q["gold"])),
                      "top3": results[:3]})
@@ -86,19 +95,24 @@ def evaluate(index, questions, mode):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--mode", choices=["hybrid", "dense", "bm25", "rerank"], action="append",
+    parser.add_argument("--mode", choices=MODES, action="append",
                         help="search mode(s) to evaluate; default: all four")
     args = parser.parse_args()
-    modes = args.mode or ["hybrid", "dense", "bm25", "rerank"]
+    modes = args.mode or MODES
 
     questions = load_questions()
     index = Index(dense=any(m != "bm25" for m in modes))
+    reranker = None
+    if "hybrid+rerank" in modes:
+        from rerank import Reranker
+        reranker = Reranker()
     report = {"questions": str(QUESTIONS.relative_to(ROOT)), "depth": DEPTH,
               "public_chunks": len(index.chunks),
               "embedding_model": index.embedder.name if index.embedder else None,
+              "reranker_model": reranker.name if reranker else None,
               "modes": {}}
     for mode in modes:
-        summary, rows = evaluate(index, questions, mode)
+        summary, rows = evaluate(index, questions, mode, reranker)
         report["modes"][mode] = {"summary": summary, "per_question": rows}
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
@@ -106,10 +120,10 @@ def main():
 
     n = report["modes"][modes[0]]["summary"]["main"]["n"]
     print(f"\nMain set: {n} questions, {report['public_chunks']} public chunks\n")
-    print(f"{'mode':<8}" + "".join(f"{'hit@' + str(k):>9}" for k in KS) + f"{'MRR':>8}")
+    print(f"{'mode':<14}" + "".join(f"{'hit@' + str(k):>9}" for k in KS) + f"{'MRR':>8}")
     for mode in modes:
         s = report["modes"][mode]["summary"]["main"]
-        print(f"{mode:<8}" + "".join(f"{s[f'hit_at_{k}']:>9.3f}" for k in KS) + f"{s['mrr']:>8.3f}")
+        print(f"{mode:<14}" + "".join(f"{s[f'hit_at_{k}']:>9.3f}" for k in KS) + f"{s['mrr']:>8.3f}")
     for mode in modes:
         s = report["modes"][mode]["summary"]
         parts = [f"{t} hit@5 {s[t]['hits_at_5']}/{s[t]['n']}" for t in s if t != "main"]
@@ -118,7 +132,7 @@ def main():
     for mode in modes:
         for r in report["modes"][mode]["per_question"]:
             if r["rank"] is None or r["rank"] > 5:
-                print(f"  {mode:<7} {r['id']:<5} rank {r['rank'] or '-':<3} {r['question'][:60]}"
+                print(f"  {mode:<13} {r['id']:<5} rank {r['rank'] or '-':<3} {r['question'][:60]}"
                       f"  -> got {r['top3'][0]}")
     print(f"\nSaved {OUTPUT.relative_to(ROOT)}")
 
