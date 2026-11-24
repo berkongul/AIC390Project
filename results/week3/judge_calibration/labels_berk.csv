@@ -1,0 +1,281 @@
+key,question,claim,passages,human_supported,annotator
+A04#2,Do you price-match other online shops?,"If you have any other questions about our sales or returns, feel free to let us know.","[1] Sale items and discounts > Other discounted items
+Discounted items that are not labelled Final Sale follow the normal returns policy, including the 30-day window. The refund is the price you actually paid.
+
+[2] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[3] Sale items and discounts > Final Sale items
+Items labelled Final Sale on the product page and on the receipt cannot be returned or exchanged, unless they are defective or not what you ordered.
+
+[4] Privacy and account security > Other customers' data
+We never share another customer's name, address, payment details or order details, whoever asks and for whatever reason.
+
+[5] Exchange policy > Size and colour exchanges
+Each item can be exchanged once for a different size or colour within 30 days of delivery. Exchanges are free of charge.",1,Berk
+A05#1,Where is the JK-550 rain jacket made?,I can check with our supplier and get back to you as soon as I have that information.,"[1] JK-550 Rain Shell Jacket > Overview
+Product code JK-550. A light rain jacket with taped seams, a hood and two zipped pockets. Price 3,499 TL.
+
+[2] JK-550 Rain Shell Jacket > Waterproofing
+Waterproof to 10,000 mm with fully taped seams. Breathable for walking and cycling.
+
+[3] JK-550 Rain Shell Jacket > Warranty
+24 months against manufacturing defects, including the main zipper and the pocket zippers.
+
+[4] JK-550 Rain Shell Jacket > Sizes and fit
+Sizes S to XXL. Fits true to size with room for a light layer.
+
+[5] Care instructions > Rain shell jacket
+Close all zippers before washing. Wash at 30 degrees without fabric softener. Re-apply a water-repellent spray when water stops beading on the surface.",0,Berk
+R07#1,Can I get a voucher for the shop instead of money back?,"Once we inspect the return, the credit will be added to your account within one business day and it never expires.","[1] Refund policy > Store credit
+Instead of a refund to your card, you can choose store credit. Store credit is added to your account within 1 business day after inspection and does not expire.
+
+[2] Gift cards > Refunds
+Gift cards cannot be returned, refunded or exchanged for cash.
+
+[3] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[4] Damaged or defective items > Sending the item back
+We email a free prepaid return label. For items under 300 TL, the support team may decide that you do not need to send the item back.
+
+[5] Sale items and discounts > Final Sale items
+Items labelled Final Sale on the product page and on the receipt cannot be returned or exchanged, unless they are defective or not what you ordered.",1,Berk
+R10#0,Can I swap my jacket for a bigger size?,"Yes, you can exchange your jacket for a larger size.","[1] Size guide: tops and jackets > Fit by product type
+Hoodies have a relaxed fit, so choose the smaller size if you are between sizes. Shirts have a slim fit, so choose the larger size if you are between sizes. Jackets fit true to size with room for a layer underneath.
+
+[2] Size guide: tops and jackets > Chest measurements
+Measure around the fullest part of your chest. S fits 88 to 94 cm, M fits 95 to 101 cm, L fits 102 to 108 cm, XL fits 109 to 116 cm and XXL fits 117 to 124 cm.
+
+[3] JK-550 Rain Shell Jacket > Sizes and fit
+Sizes S to XXL. Fits true to size with room for a light layer.
+
+[4] Exchange policy > Size and colour exchanges
+Each item can be exchanged once for a different size or colour within 30 days of delivery. Exchanges are free of charge.
+
+[5] SH-210 Oxford Shirt > Sizes and fit
+Sizes S to XXL. Slim fit. If you are between sizes, choose the larger size.",1,Berk
+R02#0,"I bought a hoodie from you, I washed it once, but can I still return the product?","I’m sorry, but once a hoodie has been washed it no longer meets our return criteria.","[1] Sale items and discounts > Opened packaging
+Opening the packaging does not make an item non-returnable. An opened sale item can be returned if it is not Final Sale and is unworn, unwashed and has its tags. Socks and underwear are the exception: they cannot be returned once opened.
+
+[2] Frequently asked questions > Can I return a sale item I opened?
+Yes, unless it is labelled Final Sale, or it is socks or underwear. It must be unworn, unwashed and have its tags.
+
+[3] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[4] Returns policy > Items that cannot be returned
+Final Sale items, gift cards and personalised items cannot be returned. Socks and underwear cannot be returned once their packaging is opened, for hygiene reasons.
+
+[5] SKU-315 Merino Crew Socks (3-pack) > Returns
+For hygiene reasons, socks cannot be returned once the packaging is opened.",0,Berk
+R11#4,The size I want to swap to is sold out. What happens then?,Let me know if you’d like to start the refund or need help placing a new order.,"[1] Exchange policy > When the new size is out of stock
+If the size or colour you want is out of stock, we refund the item instead, following the refund policy. We cannot reserve stock for exchanges.
+
+[2] Exchange policy > Size and colour exchanges
+Each item can be exchanged once for a different size or colour within 30 days of delivery. Exchanges are free of charge.
+
+[3] Sale items and discounts > Final Sale items
+Items labelled Final Sale on the product page and on the receipt cannot be returned or exchanged, unless they are defective or not what you ordered.
+
+[4] Size guide: shoes > Half sizes
+We only sell whole EU sizes.
+
+[5] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.",0,Berk
+R09#4,I threw away the box my sneakers came in. Is that a problem for a return?,"Otherwise, we’ll have to keep the sneakers.","[1] Tags and packaging rules for returns > Shoe boxes
+Return shoes in their original shoe box, placed inside a shipping bag or outer box. Do not put the shipping label or tape directly on the shoe box.
+
+[2] Returns policy > Condition of returned items
+Items must be unworn, unwashed and in their original condition, with the original tags attached. Shoes must only have been tried on indoors and must come back in the original shoe box. See the tags and packaging rules for items whose tags were removed.
+
+[3] Returns policy > Items that cannot be returned
+Final Sale items, gift cards and personalised items cannot be returned. Socks and underwear cannot be returned once their packaging is opened, for hygiene reasons.
+
+[4] Sale items and discounts > Opened packaging
+Opening the packaging does not make an item non-returnable. An opened sale item can be returned if it is not Final Sale and is unworn, unwashed and has its tags. Socks and underwear are the exception: they cannot be returned once opened.
+
+[5] Frequently asked questions > Can I return a sale item I opened?
+Yes, unless it is labelled Final Sale, or it is socks or underwear. It must be unworn, unwashed and have its tags.",0,Berk
+A04#1,Do you price-match other online shops?,"If you find a lower price elsewhere, you can still return the item within 30 days and purchase it again at the new price.","[1] Sale items and discounts > Other discounted items
+Discounted items that are not labelled Final Sale follow the normal returns policy, including the 30-day window. The refund is the price you actually paid.
+
+[2] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[3] Sale items and discounts > Final Sale items
+Items labelled Final Sale on the product page and on the receipt cannot be returned or exchanged, unless they are defective or not what you ordered.
+
+[4] Privacy and account security > Other customers' data
+We never share another customer's name, address, payment details or order details, whoever asks and for whatever reason.
+
+[5] Exchange policy > Size and colour exchanges
+Each item can be exchanged once for a different size or colour within 30 days of delivery. Exchanges are free of charge.",0,Berk
+A09#2,Can I collect my order from a pickup point instead of home delivery?,"If you’d prefer a different delivery option, let us know and we’ll see what can be arranged.","[1] Changing or cancelling an order > After dispatch
+Once the order is Dispatched, it can no longer be cancelled or redirected. You can refuse the delivery or return the items under the returns policy.
+
+[2] Returns policy > Return window
+You can return items within 30 days of the delivery date shown in your order tracking. The 30 days count from delivery, not from the order date.
+
+[3] Changing or cancelling an order > Before dispatch
+While the order status is Preparing, you can cancel the order or change the delivery address from the Orders page or in chat. Cancelled orders are refunded within 5 business days.
+
+[4] Order tracking > Order statuses
+Preparing means the order has not left our warehouse yet. Dispatched means the carrier has the parcel. Delivered means the carrier recorded the delivery.
+
+[5] Wrong or missing items > Wrong item received
+If you received a different item from the one you ordered, report it within 14 days of delivery with your order number and a photo of the item and its label. We email a free return label and ship the correct item as soon as the carrier scans the return.",0,Berk
+A05#2,Where is the JK-550 rain jacket made?,"In the meantime, if you have any other questions about the jacket—like sizing, care, or warranty—just let me know!","[1] JK-550 Rain Shell Jacket > Overview
+Product code JK-550. A light rain jacket with taped seams, a hood and two zipped pockets. Price 3,499 TL.
+
+[2] JK-550 Rain Shell Jacket > Waterproofing
+Waterproof to 10,000 mm with fully taped seams. Breathable for walking and cycling.
+
+[3] JK-550 Rain Shell Jacket > Warranty
+24 months against manufacturing defects, including the main zipper and the pocket zippers.
+
+[4] JK-550 Rain Shell Jacket > Sizes and fit
+Sizes S to XXL. Fits true to size with room for a light layer.
+
+[5] Care instructions > Rain shell jacket
+Close all zippers before washing. Wash at 30 degrees without fabric softener. Re-apply a water-repellent spray when water stops beading on the surface.",1,Berk
+A04#0,Do you price-match other online shops?,We don’t offer a price‑match guarantee.,"[1] Sale items and discounts > Other discounted items
+Discounted items that are not labelled Final Sale follow the normal returns policy, including the 30-day window. The refund is the price you actually paid.
+
+[2] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[3] Sale items and discounts > Final Sale items
+Items labelled Final Sale on the product page and on the receipt cannot be returned or exchanged, unless they are defective or not what you ordered.
+
+[4] Privacy and account security > Other customers' data
+We never share another customer's name, address, payment details or order details, whoever asks and for whatever reason.
+
+[5] Exchange policy > Size and colour exchanges
+Each item can be exchanged once for a different size or colour within 30 days of delivery. Exchanges are free of charge.",0,Berk
+R06#0,My money still isn't on my card after the return. How long can that take?,Your refund should have been issued within 5 business days after we inspected the returned item.,"[1] Refund policy > When the money appears
+After we issue the refund, your bank may take up to 10 business days to show it on your statement. The exact time depends on the bank, not on us.
+
+[2] Frequently asked questions > How long does a refund take?
+We issue the refund within 5 business days after the returned item passes inspection. Your bank may need up to 10 more business days to show it.
+
+[3] Refund policy > Store credit
+Instead of a refund to your card, you can choose store credit. Store credit is added to your account within 1 business day after inspection and does not expire.
+
+[4] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[5] Returns policy > Return window
+You can return items within 30 days of the delivery date shown in your order tracking. The 30 days count from delivery, not from the order date.",0,Berk
+R05#2,Do I pay postage if I return something I simply didn't like?,"This applies unless the item is defective, damaged, or not what you ordered.","[1] Returns policy > Return shipping cost
+Returns are free when the item is defective, damaged or not what you ordered. For all other returns, a return shipping fee of 49 TL is deducted from the refund.
+
+[2] Frequently asked questions > Can I return a sale item I opened?
+Yes, unless it is labelled Final Sale, or it is socks or underwear. It must be unworn, unwashed and have its tags.
+
+[3] Damaged or defective items > Sending the item back
+We email a free prepaid return label. For items under 300 TL, the support team may decide that you do not need to send the item back.
+
+[4] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[5] Returns policy > Items that cannot be returned
+Final Sale items, gift cards and personalised items cannot be returned. Socks and underwear cannot be returned once their packaging is opened, for hygiene reasons.",1,Berk
+R05#1,Do I pay postage if I return something I simply didn't like?,"We charge a 49 TL return shipping fee, which will be deducted from your refund.","[1] Returns policy > Return shipping cost
+Returns are free when the item is defective, damaged or not what you ordered. For all other returns, a return shipping fee of 49 TL is deducted from the refund.
+
+[2] Frequently asked questions > Can I return a sale item I opened?
+Yes, unless it is labelled Final Sale, or it is socks or underwear. It must be unworn, unwashed and have its tags.
+
+[3] Damaged or defective items > Sending the item back
+We email a free prepaid return label. For items under 300 TL, the support team may decide that you do not need to send the item back.
+
+[4] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[5] Returns policy > Items that cannot be returned
+Final Sale items, gift cards and personalised items cannot be returned. Socks and underwear cannot be returned once their packaging is opened, for hygiene reasons.",1,Berk
+R10#1,Can I swap my jacket for a bigger size?,Just return it within 30 days of delivery and we’ll send you the new size free of charge.,"[1] Size guide: tops and jackets > Fit by product type
+Hoodies have a relaxed fit, so choose the smaller size if you are between sizes. Shirts have a slim fit, so choose the larger size if you are between sizes. Jackets fit true to size with room for a layer underneath.
+
+[2] Size guide: tops and jackets > Chest measurements
+Measure around the fullest part of your chest. S fits 88 to 94 cm, M fits 95 to 101 cm, L fits 102 to 108 cm, XL fits 109 to 116 cm and XXL fits 117 to 124 cm.
+
+[3] JK-550 Rain Shell Jacket > Sizes and fit
+Sizes S to XXL. Fits true to size with room for a light layer.
+
+[4] Exchange policy > Size and colour exchanges
+Each item can be exchanged once for a different size or colour within 30 days of delivery. Exchanges are free of charge.
+
+[5] SH-210 Oxford Shirt > Sizes and fit
+Sizes S to XXL. Slim fit. If you are between sizes, choose the larger size.",1,Berk
+A02#2,How many pairs of the TR-220 in size 43 do you have left?,"If you need help placing an order or want to be notified when more stock arrives, just let me know!","[1] TR-220 Trail Running Shoe > Sizes and fit
+Available in EU sizes 38 to 46. The TR-220 fits about half a size small. If you are between sizes, choose the larger size. For example, if you usually wear EU 42 in running shoes, consider EU 43.
+
+[2] TR-220 Trail Running Shoe > Overview
+Product code TR-220. A lightweight trail running shoe with a grippy rubber outsole for dirt and gravel paths. Price 2,899 TL. Weight 290 g in EU 42.
+
+[3] Size guide: shoes > Fit by model
+Running and trail shoes, including the TR-220, fit about half a size small. If you are between sizes, choose the larger size. Hiking boots and canvas sneakers fit true to size.
+
+[4] TR-220 Trail Running Shoe > Warranty
+12 months against manufacturing defects, as for all footwear.
+
+[5] TR-310 Waterproof Hiking Boot > Sizes and fit
+Available in EU sizes 37 to 47. Fits true to size, with room for hiking socks.",0,Berk
+R07#2,Can I get a voucher for the shop instead of money back?,"Just let us know you’d like credit when you submit the return request, and we’ll handle the rest.","[1] Refund policy > Store credit
+Instead of a refund to your card, you can choose store credit. Store credit is added to your account within 1 business day after inspection and does not expire.
+
+[2] Gift cards > Refunds
+Gift cards cannot be returned, refunded or exchanged for cash.
+
+[3] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[4] Damaged or defective items > Sending the item back
+We email a free prepaid return label. For items under 300 TL, the support team may decide that you do not need to send the item back.
+
+[5] Sale items and discounts > Final Sale items
+Items labelled Final Sale on the product page and on the receipt cannot be returned or exchanged, unless they are defective or not what you ordered.",0,Berk
+R12#2,The zip on my coat broke on the day it arrived. What do you offer me?,"Once we review the pictures, we can either send you a replacement (if the jacket is still in stock) or issue a full refund, including the original shipping fee.","[1] Damaged or defective items > Reporting a damaged or defective item
+If an item arrives damaged or has a defect, such as a broken zipper or a sole coming loose, report it within 14 days of delivery. Send your order number and photos of the problem through the support chat.
+
+[2] Damaged or defective items > What we offer
+After checking the photos, the support team offers a replacement if the item is in stock, or a full refund including the original shipping fee. You choose which one you prefer.
+
+[3] Wrong or missing items > Empty or opened parcels
+If the outer packaging was opened or damaged when it arrived, take photos before you unpack and mention this in your report. This helps the carrier investigation.
+
+[4] JK-550 Rain Shell Jacket > Overview
+Product code JK-550. A light rain jacket with taped seams, a hood and two zipped pockets. Price 3,499 TL.
+
+[5] JK-550 Rain Shell Jacket > Warranty
+24 months against manufacturing defects, including the main zipper and the pocket zippers.",1,Berk
+A03#3,When does your next sale start?,That way you’ll get the latest updates straight to your inbox.,"[1] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[2] Sale items and discounts > Other discounted items
+Discounted items that are not labelled Final Sale follow the normal returns policy, including the 30-day window. The refund is the price you actually paid.
+
+[3] Sale items and discounts > Final Sale items
+Items labelled Final Sale on the product page and on the receipt cannot be returned or exchanged, unless they are defective or not what you ordered.
+
+[4] Sale items and discounts > Opened packaging
+Opening the packaging does not make an item non-returnable. An opened sale item can be returned if it is not Final Sale and is unworn, unwashed and has its tags. Socks and underwear are the exception: they cannot be returned once opened.
+
+[5] Frequently asked questions > Can I return a sale item I opened?
+Yes, unless it is labelled Final Sale, or it is socks or underwear. It must be unworn, unwashed and have its tags.",0,Berk
+R02#2,"I bought a hoodie from you, I washed it once, but can I still return the product?","If you’re within 30 days and the hoodie is still in its original, unworn condition, you could return it, but after washing it can’t be returned.","[1] Sale items and discounts > Opened packaging
+Opening the packaging does not make an item non-returnable. An opened sale item can be returned if it is not Final Sale and is unworn, unwashed and has its tags. Socks and underwear are the exception: they cannot be returned once opened.
+
+[2] Frequently asked questions > Can I return a sale item I opened?
+Yes, unless it is labelled Final Sale, or it is socks or underwear. It must be unworn, unwashed and have its tags.
+
+[3] Sale items and discounts > Price changes after purchase
+We do not refund the difference if a price drops after you placed your order, and we do not apply new discounts to past orders. If the item is still within the 30-day return window, you can return it under the returns policy and buy it again at the new price.
+
+[4] Returns policy > Items that cannot be returned
+Final Sale items, gift cards and personalised items cannot be returned. Socks and underwear cannot be returned once their packaging is opened, for hygiene reasons.
+
+[5] SKU-315 Merino Crew Socks (3-pack) > Returns
+For hygiene reasons, socks cannot be returned once the packaging is opened.",0,Berk
