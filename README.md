@@ -44,6 +44,8 @@ python src/corpus.py                                   # 37 documents, 116 chunk
 python src/retrieval.py --mode rerank "Does the TR-220 run small?"   # hybrid search + reranker
 python src/evaluate_retrieval.py                       # W3.5 hit@k and MRR, W3.7 ablations (4 modes)
 python src/evaluate_faithfulness.py                    # W3.6 claim-by-claim judge, W3.8 failure causes (Groq)
+python src/evaluate_abstention_week3.py                # abstention on questions the documents cannot answer (Groq)
+python src/calibrate_judge_week3.py --score            # judge against human labels (kappa)
 python src/scoreboard_week3.py                         # results/scoreboard_week3.json from the committed results
 python src/demo.py                                     # live demo: classify, retrieve, answer with [n] citations
 python src/demo.py --no-llm "Is the backpack waterproof?"   # retrieval only, no key needed

@@ -23,6 +23,7 @@ class Week3Scoreboard(unittest.TestCase):
     def test_every_key_present(self):
         board = json.loads(sb.OUT.read_text(encoding="utf-8"))
         self.assertEqual(len(board), 14)
+        self.assertEqual(board["abstention_correct"]["script"], "src/evaluate_abstention_week3.py")
         self.assertIsNotNone(board["hit_at_5"]["value"])
 
 

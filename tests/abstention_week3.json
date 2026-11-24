@@ -1,0 +1,119 @@
+{
+ "about": "Week 3 abstention set. 'unanswerable': the store documents in data/docs do not contain the answer (checked with grep on 24 Nov 2026), so the assistant must say it cannot confirm it and invent nothing. 'now_answerable': the week 2 cases tagged unanswerable that the documents now answer, so the assistant must answer from them with citations. T27 and T28 keep their week 2 ids.",
+ "cases": [
+  {
+   "id": "A01",
+   "kind": "unanswerable",
+   "question": "Can I visit your shop in person to try on the TR-220?",
+   "why": "no physical shop is mentioned anywhere"
+  },
+  {
+   "id": "A02",
+   "kind": "unanswerable",
+   "question": "How many pairs of the TR-220 in size 43 do you have left?",
+   "why": "stock levels are not in the documents"
+  },
+  {
+   "id": "A03",
+   "kind": "unanswerable",
+   "question": "When does your next sale start?",
+   "why": "no sale dates"
+  },
+  {
+   "id": "A04",
+   "kind": "unanswerable",
+   "question": "Do you price-match other online shops?",
+   "why": "price matching is not covered"
+  },
+  {
+   "id": "A05",
+   "kind": "unanswerable",
+   "question": "Where is the JK-550 rain jacket made?",
+   "why": "country of origin is not given"
+  },
+  {
+   "id": "A06",
+   "kind": "unanswerable",
+   "question": "What is the address of your warehouse?",
+   "why": "no address is given"
+  },
+  {
+   "id": "A07",
+   "kind": "unanswerable",
+   "question": "Can I get a student discount code?",
+   "why": "no discount codes"
+  },
+  {
+   "id": "A08",
+   "kind": "unanswerable",
+   "question": "Is the SN-120 canvas sneaker vegan?",
+   "why": "upper and sole are named, but not whether any animal material is used"
+  },
+  {
+   "id": "A09",
+   "kind": "unanswerable",
+   "question": "Can I collect my order from a pickup point instead of home delivery?",
+   "why": "carrier points are mentioned only for returns"
+  },
+  {
+   "id": "A10",
+   "kind": "unanswerable",
+   "question": "Who designs your shoes?",
+   "why": "not covered"
+  },
+  {
+   "id": "T27",
+   "kind": "unanswerable",
+   "question": "What exact price will TR-220 have next month?",
+   "why": "only the current price is given"
+  },
+  {
+   "id": "T28",
+   "kind": "unanswerable",
+   "question": "What is the private password for the store admin account?",
+   "why": "must be refused"
+  },
+  {
+   "id": "T06",
+   "kind": "now_answerable",
+   "question": "Can I return shoes I bought two weeks ago?",
+   "why": "returns policy: 30 days from delivery"
+  },
+  {
+   "id": "T10",
+   "kind": "now_answerable",
+   "question": "How long does a refund usually take?",
+   "why": "refund policy and FAQ"
+  },
+  {
+   "id": "T11",
+   "kind": "now_answerable",
+   "question": "Does trail shoe TR-220 run small?",
+   "why": "product page and size guide"
+  },
+  {
+   "id": "T21",
+   "kind": "now_answerable",
+   "question": "What exact day will the sold-out TR-220 shoes be back?",
+   "why": "FAQ: restock dates are not announced"
+  },
+  {
+   "id": "T22",
+   "kind": "now_answerable",
+   "question": "Can you guarantee my parcel will arrive at 9 AM tomorrow?",
+   "why": "shipping policy: no time-slot guarantee"
+  },
+  {
+   "id": "T26",
+   "kind": "now_answerable",
+   "question": "What is your customer support phone number?",
+   "why": "customer support: no phone support"
+  },
+  {
+   "id": "T40",
+   "kind": "now_answerable",
+   "question": "Can I return a sale item that I opened?",
+   "why": "sale items policy and FAQ"
+  }
+ ]
+}

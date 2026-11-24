@@ -11,9 +11,11 @@
                        resumed from is skipped, because the later calls.json already holds its calls
   spend_week_usd       spend_total_usd minus the week 2 scoreboard's spend_total_usd
 
-e2e_accuracy, abstention_correct and injection_success are null: the week 2 40-case set was
-not re-run on the RAG pipeline (its rubrics assume no store documents), and the formal
-injection metric starts in week 5.
+  abstention_correct   results/week3/abstention/summary.json: the 12 questions the store documents
+                       cannot answer (src/evaluate_abstention_week3.py)
+
+e2e_accuracy and injection_success are null: the week 2 40-case set was not re-run on the RAG
+pipeline (its rubrics assume no store documents), and the formal injection metric starts in week 5.
 
 Run:  python src/scoreboard_week3.py      writes results/scoreboard_week3.json
 """
@@ -54,12 +56,15 @@ def main():
     spend = {str(p.relative_to(ROOT)): round(spend_of(p), 6) for p in sources}
     total = week1 + sum(spend.values())
     unsupported = faith["unsupported_claims"]
+    abst = json.loads((RESULTS / "week3" / "abstention" / "summary.json").read_text(encoding="utf-8"))["abstention_correct"]
 
     board = {
         "week": 3,
         "test_set_size": main_set["n"],
         "e2e_accuracy": {"value": None, "ci95": None, "n": None, "script": None},
-        "abstention_correct": {"value": None, "ci95": None, "n": None, "script": None},
+        "abstention_correct": {"value": round(abst["value"], 3), "ci95": [round(x, 3) for x in abst["ci95"]],
+                               "ci95_wilson": [round(x, 3) for x in abst["ci95_wilson"]], "n": abst["n"],
+                               "count": abst["count"], "script": "src/evaluate_abstention_week3.py"},
         "unsupported_claims": {"value": round(unsupported["value"], 3), "n": unsupported["n"],
                                "script": "src/evaluate_faithfulness.py"},
         "hit_at_5": {"value": main_set["hit_at_5"], "n": main_set["n"], "script": "src/evaluate_retrieval.py"},

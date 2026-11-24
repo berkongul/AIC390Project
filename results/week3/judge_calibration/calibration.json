@@ -1,0 +1,38 @@
+{
+ "n": 20,
+ "annotators": {
+  "selim": {
+   "unsupported": 11,
+   "vs_judge_v1": {
+    "n": 19,
+    "agreement": 0.6842105263157895,
+    "cohen_kappa": 0.37362637362637363,
+    "missing_verdicts": 1
+   },
+   "disagree_v1": [
+    "A04#0",
+    "A04#1",
+    "A04#2",
+    "R02#0",
+    "R02#2",
+    "R10#1"
+   ],
+   "vs_judge_v2": {
+    "n": 20,
+    "agreement": 0.65,
+    "cohen_kappa": 0.30000000000000004,
+    "missing_verdicts": 0
+   },
+   "disagree_v2": [
+    "A04#0",
+    "A04#1",
+    "A04#2",
+    "A05#2",
+    "R02#0",
+    "R02#2",
+    "R10#1"
+   ]
+  }
+ },
+ "between_annotators": []
+}
