@@ -1,0 +1,12 @@
+{
+ "n": 20,
+ "agreement": 0.9,
+ "cohen_kappa": 0.0,
+ "annotator": [
+  "Nurettin Selim \u00d6zy\u0131lmaz"
+ ],
+ "disagree": [
+  "R13#1",
+  "R32#0"
+ ]
+}
