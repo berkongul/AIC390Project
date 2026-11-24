@@ -1,0 +1,36 @@
+{
+ "mode": "rerank",
+ "k": 5,
+ "judge": "v2",
+ "abstention_correct": {
+  "value": 1.0,
+  "n": 12,
+  "count": 12,
+  "ci95": [
+   1.0,
+   1
+  ],
+  "ci95_wilson": [
+   0.7574992425007574,
+   1
+  ]
+ },
+ "abstention_errors": [],
+ "now_answerable_correct": {
+  "value": 0.7142857142857143,
+  "n": 7,
+  "count": 5,
+  "ci95": [
+   0.3796217036720841,
+   1
+  ],
+  "ci95_wilson": [
+   0.35892909014821267,
+   0.9177828342909844
+  ]
+ },
+ "now_answerable_errors": [
+  "T06",
+  "T21"
+ ]
+}
