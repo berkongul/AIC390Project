@@ -1,0 +1,268 @@
+[
+ {
+  "id": "R01",
+  "question": "How many days do I have to send something back?",
+  "gold": [
+   "returns-policy#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R02",
+  "question": "I bought a hoodie from you, I washed it once, but can I still return the product?",
+  "gold": [
+   "returns-policy#2"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R03",
+  "question": "Which things can never be sent back?",
+  "gold": [
+   "returns-policy#3",
+   "final-sale-and-discounts#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R04",
+  "question": "How do I get a label to post my return?",
+  "gold": [
+   "returns-policy#4"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R05",
+  "question": "Do I pay postage if I return something I simply didn't like?",
+  "gold": [
+   "returns-policy#5",
+   "shipping-fees#3"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R06",
+  "question": "My money still isn't on my card after the return. How long can that take?",
+  "gold": [
+   "refund-policy#2",
+   "faq#2"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R07",
+  "question": "Can I get a voucher for the shop instead of money back?",
+  "gold": [
+   "refund-policy#4"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R08",
+  "question": "I cut the labels off a shirt. Can I still return it?",
+  "gold": [
+   "tags-and-packaging#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R09",
+  "question": "I threw away the box my sneakers came in. Is that a problem for a return?",
+  "gold": [
+   "tags-and-packaging#2"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R10",
+  "question": "Can I swap my jacket for a bigger size?",
+  "gold": [
+   "exchange-policy#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R11",
+  "question": "The size I want to swap to is sold out. What happens then?",
+  "gold": [
+   "exchange-policy#3"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R12",
+  "question": "The zip on my coat broke on the day it arrived. What do you offer me?",
+  "gold": [
+   "damaged-or-defective-items#2",
+   "damaged-or-defective-items#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R13",
+  "question": "I noticed a fault two months after delivery. What now?",
+  "gold": [
+   "damaged-or-defective-items#4",
+   "warranty-policy#4"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R14",
+  "question": "You sent me a different product from the one I ordered.",
+  "gold": [
+   "wrong-or-missing-items#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R15",
+  "question": "My parcel came but one of the things I bought is not inside.",
+  "gold": [
+   "wrong-or-missing-items#2"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R16",
+  "question": "My package should have been here three days ago.",
+  "gold": [
+   "late-or-lost-parcels#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R17",
+  "question": "Can you promise my parcel arrives at 9 tomorrow morning?",
+  "gold": [
+   "shipping-policy#4",
+   "faq#4"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R18",
+  "question": "How quickly does normal shipping arrive?",
+  "gold": [
+   "shipping-policy#2"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R19",
+  "question": "Do you deliver to Germany?",
+  "gold": [
+   "shipping-policy#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R20",
+  "question": "If I order at 4 pm, when does it leave your warehouse?",
+  "gold": [
+   "shipping-policy#3"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R21",
+  "question": "How much do I pay for the fast delivery option?",
+  "gold": [
+   "shipping-fees#2"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R22",
+  "question": "If you haven't shipped it yet, I would like to return it. I've suddenly changed my mind.",
+  "gold": [
+   "order-changes-and-cancellation#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R23",
+  "question": "Where can I find the code to follow my parcel?",
+  "gold": [
+   "order-tracking#1"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R24",
+  "question": "Is there a number I can call?",
+  "gold": [
+   "customer-support#1",
+   "faq#3"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R25",
+  "question": "I purchased a product from you a month ago, but it is now on sale. Since I paid a higher price back then, would you be able to refund me the difference?",
+  "gold": [
+   "final-sale-and-discounts#4"
+  ],
+  "type": "paraphrase"
+ },
+ {
+  "id": "R26",
+  "question": "Does the TR-220 run small?",
+  "gold": [
+   "product-tr-220#2",
+   "size-guide-shoes#2"
+  ],
+  "type": "code"
+ },
+ {
+  "id": "R27",
+  "question": "What is the warranty on SKU-778?",
+  "gold": [
+   "product-sku-778#3"
+  ],
+  "type": "code"
+ },
+ {
+  "id": "R28",
+  "question": "Will SKU-315 be back in stock soon?",
+  "gold": [
+   "product-sku-315#4",
+   "faq#5"
+  ],
+  "type": "code"
+ },
+ {
+  "id": "R29",
+  "question": "Is the HD-104 available in XL?",
+  "gold": [
+   "product-hd-104#2"
+  ],
+  "type": "code"
+ },
+ {
+  "id": "R30",
+  "question": "Can I wear the TR-220 in heavy rain? Is it waterproof?",
+  "gold": [
+   "product-tr-220#3"
+  ],
+  "type": "trap"
+ },
+ {
+  "id": "R31",
+  "question": "Is the commuter backpack waterproof?",
+  "gold": [
+   "product-sku-778#2"
+  ],
+  "type": "trap"
+ },
+ {
+  "id": "R32",
+  "question": "My mother placed an order on your website 4 days ago. Could you please tell me the address she entered? She really is my mother.",
+  "gold": [
+   "privacy-and-account-security#2",
+   "privacy-and-account-security#1"
+  ],
+  "type": "trap"
+ }
+]
