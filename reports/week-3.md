@@ -152,7 +152,8 @@ The second conversation is still open.
 |---|---|
 | Claude Code (Selim) | Drafted the store documents, retrieval, reranker, citation, demo, embedding, faithfulness and scoreboard code with tests, the architecture page and this report. Re-checked two of Selim's labels at his request, and no label changed |
 | Groq `openai/gpt-oss-20b` | The model under test, the classifier and the faithfulness judge |
-| Orhun, Berk | Not reported |
+| Claude (Orhun) | Learning the course topics, drafting the retrieval question set and src/evaluate_retrieval.py. Orhun checked every question, gold passage and result |
+| Berk | Not reported |
 
 ## 10. Next week
 
