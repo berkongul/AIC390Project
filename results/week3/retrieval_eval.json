@@ -1,8 +1,9 @@
 {
- "questions": "tests/retrieval_questions.json",
+ "questions": "tests\\retrieval_questions.json",
  "depth": 10,
  "public_chunks": 109,
  "embedding_model": "BAAI/bge-small-en-v1.5",
+ "reranker_model": "Xenova/ms-marco-MiniLM-L-6-v2",
  "modes": {
   "hybrid": {
    "summary": {
@@ -1540,7 +1541,7 @@
     }
    ]
   },
-  "rerank": {
+  "hybrid+rerank": {
    "summary": {
     "main": {
      "n": 32,
