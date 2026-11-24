@@ -142,7 +142,7 @@ The second conversation is still open.
 
 | Member | Role | What they did this week | Commits or files | Hours |
 |---|---|---|---|---|
-| Orhun Cerit | Data and retrieval lead | Retrieval question set (W3.5), retrieval evaluation with the three-mode ablation, price-change rule in the sale policy | 91ff132, a822654, c60d559, a0d701c | not reported |
+| Orhun Cerit | Data and retrieval lead | Retrieval question set (W3.5), retrieval evaluation with the three-mode ablation, price-change rule in the sale policy | 91ff132, a822654, c60d559, a0d701c |  6 |
 | Nurettin Selim Özyılmaz | Agent and tools lead | Store documents, chunking, hybrid search, reranker, cited answers, live demo, architecture page, embeddings view, faithfulness evaluation and failure labels, abstention set and re-measure, judge v2 and the calibration sample, T23 and T34 label review, 40 human labels, the product-track conversation, week 3 scoreboard, this report | PR #7 | not reported |
 | Yakup Berk Öngül | Evaluation and safety lead | No week 3 work in the repository | none | not reported |
 
