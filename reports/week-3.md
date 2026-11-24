@@ -144,7 +144,7 @@ The second conversation is still open.
 |---|---|---|---|---|
 | Orhun Cerit | Data and retrieval lead | Retrieval question set (W3.5), retrieval evaluation with the three-mode ablation, price-change rule in the sale policy | 91ff132, a822654, c60d559, a0d701c | 6 |
 | Nurettin Selim Özyılmaz | Agent and tools lead | Store documents, chunking, hybrid search, reranker, cited answers, live demo, architecture page, embeddings view, faithfulness evaluation and failure labels, abstention set and re-measure, judge v2 and the calibration sample, T23 and T34 label review, 40 human labels, the product-track conversation, week 3 scoreboard, this report | PRs #7, #8, #9, #10 | about 15 |
-| Yakup Berk Öngül | Evaluation and safety lead | Second annotator: 20 labels on the judge calibration sample, scored against both judges and Selim (experiment 3) | 80f2570, PR #12 | not reported |
+| Yakup Berk Öngül | Evaluation and safety lead | Second annotator: 20 labels on the judge calibration sample, scored against both judges and Selim (experiment 3) | 80f2570, PR #12 | 4 |
 
 ## 9. AI tools used
 
