@@ -8,10 +8,18 @@
     "script": null
   },
   "abstention_correct": {
-    "value": null,
-    "ci95": null,
-    "n": null,
-    "script": null
+    "value": 1.0,
+    "ci95": [
+      1.0,
+      1
+    ],
+    "ci95_wilson": [
+      0.757,
+      1
+    ],
+    "n": 12,
+    "count": 12,
+    "script": "src/evaluate_abstention_week3.py"
   },
   "unsupported_claims": {
     "value": 0.045,
@@ -46,6 +54,6 @@
   },
   "cost_per_task_usd": 0.00012414,
   "latency_p50_s": 0.548,
-  "spend_week_usd": 0.016147,
-  "spend_total_usd": 0.04563
+  "spend_week_usd": 0.031058,
+  "spend_total_usd": 0.060541
 }
