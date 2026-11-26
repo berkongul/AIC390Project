@@ -1,0 +1,3652 @@
+{
+ "corpus": "full",
+ "questions": {
+  "week3": "tests\\retrieval_questions.json",
+  "catalogue": "tests\\retrieval_questions_catalogue.json"
+ },
+ "depth": 10,
+ "public_chunks": 10109,
+ "embedding_model": "BAAI/bge-small-en-v1.5",
+ "modes": {
+  "hybrid": {
+   "summary": {
+    "week3": {
+     "n": 32,
+     "hit_at_1": 0.594,
+     "hits_at_1": 19,
+     "hit_at_3": 0.812,
+     "hits_at_3": 26,
+     "hit_at_5": 0.875,
+     "hits_at_5": 28,
+     "hit_at_10": 0.875,
+     "hits_at_10": 28,
+     "mrr": 0.698
+    },
+    "catalogue": {
+     "n": 22,
+     "hit_at_1": 0.682,
+     "hits_at_1": 15,
+     "hit_at_3": 0.864,
+     "hits_at_3": 19,
+     "hit_at_5": 1.0,
+     "hits_at_5": 22,
+     "hit_at_10": 1.0,
+     "hits_at_10": 22,
+     "mrr": 0.802
+    },
+    "catalogue_code": {
+     "n": 16,
+     "hit_at_1": 0.625,
+     "hits_at_1": 10,
+     "hit_at_3": 0.812,
+     "hits_at_3": 13,
+     "hit_at_5": 1.0,
+     "hits_at_5": 16,
+     "hit_at_10": 1.0,
+     "hits_at_10": 16,
+     "mrr": 0.759
+    },
+    "catalogue_name": {
+     "n": 6,
+     "hit_at_1": 0.833,
+     "hits_at_1": 5,
+     "hit_at_3": 1.0,
+     "hits_at_3": 6,
+     "hit_at_5": 1.0,
+     "hits_at_5": 6,
+     "hit_at_10": 1.0,
+     "hits_at_10": 6,
+     "mrr": 0.917
+    },
+    "code": {
+     "n": 4,
+     "hit_at_1": 0.75,
+     "hits_at_1": 3,
+     "hit_at_3": 1.0,
+     "hits_at_3": 4,
+     "hit_at_5": 1.0,
+     "hits_at_5": 4,
+     "hit_at_10": 1.0,
+     "hits_at_10": 4,
+     "mrr": 0.833
+    },
+    "paraphrase": {
+     "n": 25,
+     "hit_at_1": 0.56,
+     "hits_at_1": 14,
+     "hit_at_3": 0.76,
+     "hits_at_3": 19,
+     "hit_at_5": 0.84,
+     "hits_at_5": 21,
+     "hit_at_10": 0.84,
+     "hits_at_10": 21,
+     "mrr": 0.667
+    },
+    "trap": {
+     "n": 3,
+     "hit_at_1": 0.667,
+     "hits_at_1": 2,
+     "hit_at_3": 1.0,
+     "hits_at_3": 3,
+     "hit_at_5": 1.0,
+     "hits_at_5": 3,
+     "hit_at_10": 1.0,
+     "hits_at_10": 3,
+     "mrr": 0.778
+    }
+   },
+   "per_question": [
+    {
+     "id": "R01",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How many days do I have to send something back?",
+     "gold": [
+      "returns-policy#1"
+     ],
+     "rank": 4,
+     "top3": [
+      "faq#2",
+      "damaged-or-defective-items#3",
+      "returns-policy#4"
+     ]
+    },
+    {
+     "id": "R02",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I bought a hoodie from you, I washed it once, but can I still return the product?",
+     "gold": [
+      "returns-policy#2"
+     ],
+     "rank": null,
+     "top3": [
+      "faq#1",
+      "final-sale-and-discounts#3",
+      "returns-policy#3"
+     ]
+    },
+    {
+     "id": "R03",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Which things can never be sent back?",
+     "gold": [
+      "returns-policy#3",
+      "final-sale-and-discounts#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "final-sale-and-discounts#3",
+      "returns-policy#3",
+      "order-changes-and-cancellation#2"
+     ]
+    },
+    {
+     "id": "R04",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How do I get a label to post my return?",
+     "gold": [
+      "returns-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#4",
+      "damaged-or-defective-items#3",
+      "wrong-or-missing-items#1"
+     ]
+    },
+    {
+     "id": "R05",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do I pay postage if I return something I simply didn't like?",
+     "gold": [
+      "returns-policy#5",
+      "shipping-fees#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#5",
+      "damaged-or-defective-items#3",
+      "faq#1"
+     ]
+    },
+    {
+     "id": "R06",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My money still isn't on my card after the return. How long can that take?",
+     "gold": [
+      "refund-policy#2",
+      "faq#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "faq#2",
+      "refund-policy#2",
+      "final-sale-and-discounts#4"
+     ]
+    },
+    {
+     "id": "R07",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I get a voucher for the shop instead of money back?",
+     "gold": [
+      "refund-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "refund-policy#4",
+      "exchange-policy#3",
+      "order-changes-and-cancellation#2"
+     ]
+    },
+    {
+     "id": "R08",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I cut the labels off a shirt. Can I still return it?",
+     "gold": [
+      "tags-and-packaging#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "faq#1",
+      "tags-and-packaging#1",
+      "final-sale-and-discounts#3"
+     ]
+    },
+    {
+     "id": "R09",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I threw away the box my sneakers came in. Is that a problem for a return?",
+     "gold": [
+      "tags-and-packaging#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "tags-and-packaging#2",
+      "faq#1",
+      "returns-policy#3"
+     ]
+    },
+    {
+     "id": "R10",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I swap my jacket for a bigger size?",
+     "gold": [
+      "exchange-policy#1"
+     ],
+     "rank": 3,
+     "top3": [
+      "faq#1",
+      "product-jk-620#3",
+      "exchange-policy#1"
+     ]
+    },
+    {
+     "id": "R11",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The size I want to swap to is sold out. What happens then?",
+     "gold": [
+      "exchange-policy#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "exchange-policy#3",
+      "faq#1",
+      "damaged-or-defective-items#2"
+     ]
+    },
+    {
+     "id": "R12",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The zip on my coat broke on the day it arrived. What do you offer me?",
+     "gold": [
+      "damaged-or-defective-items#2",
+      "damaged-or-defective-items#1"
+     ],
+     "rank": 4,
+     "top3": [
+      "payment-methods#2",
+      "product-jk-330#4",
+      "faq#5"
+     ]
+    },
+    {
+     "id": "R13",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I noticed a fault two months after delivery. What now?",
+     "gold": [
+      "damaged-or-defective-items#4",
+      "warranty-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "damaged-or-defective-items#4",
+      "damaged-or-defective-items#2",
+      "returns-policy#1"
+     ]
+    },
+    {
+     "id": "R14",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "You sent me a different product from the one I ordered.",
+     "gold": [
+      "wrong-or-missing-items#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "wrong-or-missing-items#1",
+      "final-sale-and-discounts#1",
+      "refund-policy#3"
+     ]
+    },
+    {
+     "id": "R15",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My parcel came but one of the things I bought is not inside.",
+     "gold": [
+      "wrong-or-missing-items#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "wrong-or-missing-items#2",
+      "returns-policy#4",
+      "late-or-lost-parcels#1"
+     ]
+    },
+    {
+     "id": "R16",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My package should have been here three days ago.",
+     "gold": [
+      "late-or-lost-parcels#1"
+     ],
+     "rank": 3,
+     "top3": [
+      "returns-policy#1",
+      "wrong-or-missing-items#2",
+      "late-or-lost-parcels#1"
+     ]
+    },
+    {
+     "id": "R17",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can you promise my parcel arrives at 9 tomorrow morning?",
+     "gold": [
+      "shipping-policy#4",
+      "faq#4"
+     ],
+     "rank": 2,
+     "top3": [
+      "late-or-lost-parcels#3",
+      "faq#4",
+      "late-or-lost-parcels#1"
+     ]
+    },
+    {
+     "id": "R18",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How quickly does normal shipping arrive?",
+     "gold": [
+      "shipping-policy#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-policy#2",
+      "shipping-fees#1",
+      "faq#2"
+     ]
+    },
+    {
+     "id": "R19",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do you deliver to Germany?",
+     "gold": [
+      "shipping-policy#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-policy#1",
+      "payment-methods#2",
+      "exchange-policy#2"
+     ]
+    },
+    {
+     "id": "R20",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If I order at 4 pm, when does it leave your warehouse?",
+     "gold": [
+      "shipping-policy#3"
+     ],
+     "rank": null,
+     "top3": [
+      "wrong-or-missing-items#2",
+      "late-or-lost-parcels#1",
+      "order-tracking#3"
+     ]
+    },
+    {
+     "id": "R21",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How much do I pay for the fast delivery option?",
+     "gold": [
+      "shipping-fees#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-fees#2",
+      "shipping-fees#1",
+      "shipping-policy#2"
+     ]
+    },
+    {
+     "id": "R22",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If you haven't shipped it yet, I would like to return it. I've suddenly changed my mind.",
+     "gold": [
+      "order-changes-and-cancellation#1"
+     ],
+     "rank": null,
+     "top3": [
+      "wrong-or-missing-items#1",
+      "wrong-or-missing-items#2",
+      "final-sale-and-discounts#4"
+     ]
+    },
+    {
+     "id": "R23",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Where can I find the code to follow my parcel?",
+     "gold": [
+      "order-tracking#1"
+     ],
+     "rank": null,
+     "top3": [
+      "wrong-or-missing-items#2",
+      "late-or-lost-parcels#1",
+      "order-tracking#2"
+     ]
+    },
+    {
+     "id": "R24",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Is there a number I can call?",
+     "gold": [
+      "customer-support#1",
+      "faq#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "faq#3",
+      "warranty-policy#4",
+      "payment-methods#3"
+     ]
+    },
+    {
+     "id": "R25",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I purchased a product from you a month ago, but it is now on sale. Since I paid a higher price back then, would you be able to refund me the difference?",
+     "gold": [
+      "final-sale-and-discounts#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "final-sale-and-discounts#4",
+      "final-sale-and-discounts#2",
+      "final-sale-and-discounts#1"
+     ]
+    },
+    {
+     "id": "R26",
+     "set": "week3",
+     "type": "code",
+     "question": "Does the TR-220 run small?",
+     "gold": [
+      "product-tr-220#2",
+      "size-guide-shoes#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-220#2",
+      "size-guide-shoes#2",
+      "product-tr-220#3"
+     ]
+    },
+    {
+     "id": "R27",
+     "set": "week3",
+     "type": "code",
+     "question": "What is the warranty on SKU-778?",
+     "gold": [
+      "product-sku-778#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sku-778#3",
+      "product-sku-778#1",
+      "product-jk-303#4"
+     ]
+    },
+    {
+     "id": "R28",
+     "set": "week3",
+     "type": "code",
+     "question": "Will SKU-315 be back in stock soon?",
+     "gold": [
+      "product-sku-315#4",
+      "faq#5"
+     ],
+     "rank": 1,
+     "top3": [
+      "faq#5",
+      "product-sku-315#4",
+      "product-hd-104#4"
+     ]
+    },
+    {
+     "id": "R29",
+     "set": "week3",
+     "type": "code",
+     "question": "Is the HD-104 available in XL?",
+     "gold": [
+      "product-hd-104#2"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-hd-104#1",
+      "product-hd-104#4",
+      "product-hd-104#2"
+     ]
+    },
+    {
+     "id": "R30",
+     "set": "week3",
+     "type": "trap",
+     "question": "Can I wear the TR-220 in heavy rain? Is it waterproof?",
+     "gold": [
+      "product-tr-220#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-220#3",
+      "faq#1",
+      "product-tr-950#3"
+     ]
+    },
+    {
+     "id": "R31",
+     "set": "week3",
+     "type": "trap",
+     "question": "Is the commuter backpack waterproof?",
+     "gold": [
+      "product-sku-778#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sku-778#2",
+      "product-sku-778#3",
+      "product-tr-950#3"
+     ]
+    },
+    {
+     "id": "R32",
+     "set": "week3",
+     "type": "trap",
+     "question": "My mother placed an order on your website 4 days ago. Could you please tell me the address she entered? She really is my mother.",
+     "gold": [
+      "privacy-and-account-security#2",
+      "privacy-and-account-security#1"
+     ],
+     "rank": 3,
+     "top3": [
+      "order-changes-and-cancellation#1",
+      "order-changes-and-cancellation#3",
+      "privacy-and-account-security#1"
+     ]
+    },
+    {
+     "id": "C01",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much is the TR-221?",
+     "gold": [
+      "product-tr-221#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-221#1",
+      "product-tr-221#2",
+      "product-ts-221#1"
+     ]
+    },
+    {
+     "id": "C02",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the TR-219 waterproof?",
+     "gold": [
+      "product-tr-219#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-219#3",
+      "product-tr-131#3",
+      "product-tr-137#3"
+     ]
+    },
+    {
+     "id": "C03",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What sizes does the TR-202 come in?",
+     "gold": [
+      "product-tr-202#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-202#2",
+      "product-rn-202#2",
+      "product-tr-202#1"
+     ]
+    },
+    {
+     "id": "C04",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Which colours are available for the TR-230?",
+     "gold": [
+      "product-tr-230#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-tr-230#3",
+      "product-tr-230#1",
+      "product-tr-230#2"
+     ]
+    },
+    {
+     "id": "C05",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I run in wet weather with the TR-311?",
+     "gold": [
+      "product-tr-311#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-311#3",
+      "product-tr-342#3",
+      "product-tr-359#3"
+     ]
+    },
+    {
+     "id": "C06",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How heavy is the RN-188?",
+     "gold": [
+      "product-rn-188#1"
+     ],
+     "rank": 5,
+     "top3": [
+      "product-rn-188#3",
+      "product-rn-188#2",
+      "product-hk-188#1"
+     ]
+    },
+    {
+     "id": "C07",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the HK-669 good for walking through streams?",
+     "gold": [
+      "product-hk-669#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hk-669#3",
+      "product-hk-663#3",
+      "product-hk-669#4"
+     ]
+    },
+    {
+     "id": "C08",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How waterproof is the JK-551 rain shell?",
+     "gold": [
+      "product-jk-551#2"
+     ],
+     "rank": 4,
+     "top3": [
+      "product-jk-550#2",
+      "product-jk-550#1",
+      "product-jk-551#1"
+     ]
+    },
+    {
+     "id": "C09",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How long is the warranty on the JK-549?",
+     "gold": [
+      "product-jk-549#4"
+     ],
+     "rank": 5,
+     "top3": [
+      "product-jk-549#2",
+      "product-jk-729#4",
+      "product-jk-549#1"
+     ]
+    },
+    {
+     "id": "C10",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What is the HD-105 made of?",
+     "gold": [
+      "product-hd-105#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-hd-105#1",
+      "product-hd-105#3",
+      "product-ts-105#1"
+     ]
+    },
+    {
+     "id": "C11",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What waist sizes does the PN-411 have?",
+     "gold": [
+      "product-pn-411#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-pn-411#2",
+      "product-pn-630#2",
+      "product-pn-411#3"
+     ]
+    },
+    {
+     "id": "C12",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I put the SN-121 in the washing machine?",
+     "gold": [
+      "product-sn-121#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sn-121#4",
+      "product-sn-121#1",
+      "product-sn-213#4"
+     ]
+    },
+    {
+     "id": "C13",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "At what temperature should I wash the TS-102?",
+     "gold": [
+      "product-ts-102#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-ts-102#4",
+      "product-ts-102#1",
+      "product-ts-156#4"
+     ]
+    },
+    {
+     "id": "C14",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Will my things stay dry in heavy rain in the BP-310?",
+     "gold": [
+      "product-bp-310#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-bp-310#2",
+      "product-bp-495#2",
+      "product-bp-412#2"
+     ]
+    },
+    {
+     "id": "C15",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What head size does the CP-741 fit?",
+     "gold": [
+      "product-cp-741#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-cp-741#2",
+      "product-cp-538#2",
+      "product-cp-731#2"
+     ]
+    },
+    {
+     "id": "C16",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much does the BP-614 weigh when it is empty?",
+     "gold": [
+      "product-bp-614#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-bp-614#1",
+      "product-bp-614#3",
+      "product-bp-614#2"
+     ]
+    },
+    {
+     "id": "C17",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "How much does the Granite Point hiking boot cost?",
+     "gold": [
+      "product-hk-421#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hk-421#1",
+      "product-hk-421#4",
+      "product-hk-421#2"
+     ]
+    },
+    {
+     "id": "C18",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Is the Echo Bluff running shoe waterproof?",
+     "gold": [
+      "product-rn-165#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-rn-165#3",
+      "product-rn-159#3",
+      "product-rn-412#3"
+     ]
+    },
+    {
+     "id": "C19",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What is the Nimbus Summit fleece made of?",
+     "gold": [
+      "product-fl-231#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-fl-231#1",
+      "product-fl-231#3",
+      "product-fl-483#3"
+     ]
+    },
+    {
+     "id": "C20",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Does the Timber Lane sneaker fit true to size?",
+     "gold": [
+      "product-sn-435#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sn-435#2",
+      "product-sn-266#2",
+      "product-sn-204#2"
+     ]
+    },
+    {
+     "id": "C21",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What colours does the Meadow Wood jacket come in?",
+     "gold": [
+      "product-jk-151#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-jk-151#1",
+      "product-jk-151#3",
+      "product-jk-715#1"
+     ]
+    },
+    {
+     "id": "C22",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Can I machine wash the Alpine Stream hoodie?",
+     "gold": [
+      "product-hd-105#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hd-105#4",
+      "product-hd-207#4",
+      "product-hd-221#4"
+     ]
+    }
+   ]
+  },
+  "dense": {
+   "summary": {
+    "week3": {
+     "n": 32,
+     "hit_at_1": 0.625,
+     "hits_at_1": 20,
+     "hit_at_3": 0.906,
+     "hits_at_3": 29,
+     "hit_at_5": 0.906,
+     "hits_at_5": 29,
+     "hit_at_10": 0.969,
+     "hits_at_10": 31,
+     "mrr": 0.766
+    },
+    "catalogue": {
+     "n": 22,
+     "hit_at_1": 0.591,
+     "hits_at_1": 13,
+     "hit_at_3": 0.727,
+     "hits_at_3": 16,
+     "hit_at_5": 0.818,
+     "hits_at_5": 18,
+     "hit_at_10": 0.864,
+     "hits_at_10": 19,
+     "mrr": 0.685
+    },
+    "catalogue_code": {
+     "n": 16,
+     "hit_at_1": 0.438,
+     "hits_at_1": 7,
+     "hit_at_3": 0.625,
+     "hits_at_3": 10,
+     "hit_at_5": 0.75,
+     "hits_at_5": 12,
+     "hit_at_10": 0.812,
+     "hits_at_10": 13,
+     "mrr": 0.567
+    },
+    "catalogue_name": {
+     "n": 6,
+     "hit_at_1": 1.0,
+     "hits_at_1": 6,
+     "hit_at_3": 1.0,
+     "hits_at_3": 6,
+     "hit_at_5": 1.0,
+     "hits_at_5": 6,
+     "hit_at_10": 1.0,
+     "hits_at_10": 6,
+     "mrr": 1.0
+    },
+    "code": {
+     "n": 4,
+     "hit_at_1": 0.75,
+     "hits_at_1": 3,
+     "hit_at_3": 1.0,
+     "hits_at_3": 4,
+     "hit_at_5": 1.0,
+     "hits_at_5": 4,
+     "hit_at_10": 1.0,
+     "hits_at_10": 4,
+     "mrr": 0.833
+    },
+    "paraphrase": {
+     "n": 25,
+     "hit_at_1": 0.6,
+     "hits_at_1": 15,
+     "hit_at_3": 0.88,
+     "hits_at_3": 22,
+     "hit_at_5": 0.88,
+     "hits_at_5": 22,
+     "hit_at_10": 0.96,
+     "hits_at_10": 24,
+     "mrr": 0.753
+    },
+    "trap": {
+     "n": 3,
+     "hit_at_1": 0.667,
+     "hits_at_1": 2,
+     "hit_at_3": 1.0,
+     "hits_at_3": 3,
+     "hit_at_5": 1.0,
+     "hits_at_5": 3,
+     "hit_at_10": 1.0,
+     "hits_at_10": 3,
+     "mrr": 0.778
+    }
+   },
+   "per_question": [
+    {
+     "id": "R01",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How many days do I have to send something back?",
+     "gold": [
+      "returns-policy#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "wrong-or-missing-items#1",
+      "returns-policy#1",
+      "wrong-or-missing-items#2"
+     ]
+    },
+    {
+     "id": "R02",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I bought a hoodie from you, I washed it once, but can I still return the product?",
+     "gold": [
+      "returns-policy#2"
+     ],
+     "rank": 6,
+     "top3": [
+      "returns-policy#3",
+      "faq#1",
+      "product-hd-140#4"
+     ]
+    },
+    {
+     "id": "R03",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Which things can never be sent back?",
+     "gold": [
+      "returns-policy#3",
+      "final-sale-and-discounts#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#3",
+      "gift-cards#3",
+      "final-sale-and-discounts#3"
+     ]
+    },
+    {
+     "id": "R04",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How do I get a label to post my return?",
+     "gold": [
+      "returns-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#4",
+      "damaged-or-defective-items#3",
+      "wrong-or-missing-items#1"
+     ]
+    },
+    {
+     "id": "R05",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do I pay postage if I return something I simply didn't like?",
+     "gold": [
+      "returns-policy#5",
+      "shipping-fees#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "refund-policy#3",
+      "returns-policy#5",
+      "shipping-fees#3"
+     ]
+    },
+    {
+     "id": "R06",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My money still isn't on my card after the return. How long can that take?",
+     "gold": [
+      "refund-policy#2",
+      "faq#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "refund-policy#2",
+      "faq#2",
+      "refund-policy#1"
+     ]
+    },
+    {
+     "id": "R07",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I get a voucher for the shop instead of money back?",
+     "gold": [
+      "refund-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "refund-policy#4",
+      "final-sale-and-discounts#4",
+      "gift-cards#3"
+     ]
+    },
+    {
+     "id": "R08",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I cut the labels off a shirt. Can I still return it?",
+     "gold": [
+      "tags-and-packaging#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "returns-policy#2",
+      "tags-and-packaging#1",
+      "faq#1"
+     ]
+    },
+    {
+     "id": "R09",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I threw away the box my sneakers came in. Is that a problem for a return?",
+     "gold": [
+      "tags-and-packaging#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "tags-and-packaging#2",
+      "returns-policy#2",
+      "returns-policy#3"
+     ]
+    },
+    {
+     "id": "R10",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I swap my jacket for a bigger size?",
+     "gold": [
+      "exchange-policy#1"
+     ],
+     "rank": null,
+     "top3": [
+      "product-jk-620#3",
+      "product-jk-691#3",
+      "product-jk-189#3"
+     ]
+    },
+    {
+     "id": "R11",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The size I want to swap to is sold out. What happens then?",
+     "gold": [
+      "exchange-policy#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "exchange-policy#3",
+      "exchange-policy#1",
+      "product-hd-104#4"
+     ]
+    },
+    {
+     "id": "R12",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The zip on my coat broke on the day it arrived. What do you offer me?",
+     "gold": [
+      "damaged-or-defective-items#2",
+      "damaged-or-defective-items#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-jk-330#4",
+      "damaged-or-defective-items#1",
+      "product-jk-143#4"
+     ]
+    },
+    {
+     "id": "R13",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I noticed a fault two months after delivery. What now?",
+     "gold": [
+      "damaged-or-defective-items#4",
+      "warranty-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "damaged-or-defective-items#4",
+      "damaged-or-defective-items#1",
+      "wrong-or-missing-items#1"
+     ]
+    },
+    {
+     "id": "R14",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "You sent me a different product from the one I ordered.",
+     "gold": [
+      "wrong-or-missing-items#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "wrong-or-missing-items#1",
+      "damaged-or-defective-items#2",
+      "order-changes-and-cancellation#3"
+     ]
+    },
+    {
+     "id": "R15",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My parcel came but one of the things I bought is not inside.",
+     "gold": [
+      "wrong-or-missing-items#2"
+     ],
+     "rank": 2,
+     "top3": [
+      "wrong-or-missing-items#3",
+      "wrong-or-missing-items#2",
+      "late-or-lost-parcels#3"
+     ]
+    },
+    {
+     "id": "R16",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My package should have been here three days ago.",
+     "gold": [
+      "late-or-lost-parcels#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "wrong-or-missing-items#2",
+      "late-or-lost-parcels#1",
+      "wrong-or-missing-items#1"
+     ]
+    },
+    {
+     "id": "R17",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can you promise my parcel arrives at 9 tomorrow morning?",
+     "gold": [
+      "shipping-policy#4",
+      "faq#4"
+     ],
+     "rank": 2,
+     "top3": [
+      "late-or-lost-parcels#1",
+      "faq#4",
+      "shipping-policy#4"
+     ]
+    },
+    {
+     "id": "R18",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How quickly does normal shipping arrive?",
+     "gold": [
+      "shipping-policy#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-policy#2",
+      "order-tracking#2",
+      "wrong-or-missing-items#2"
+     ]
+    },
+    {
+     "id": "R19",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do you deliver to Germany?",
+     "gold": [
+      "shipping-policy#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-policy#1",
+      "shipping-policy#2",
+      "faq#4"
+     ]
+    },
+    {
+     "id": "R20",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If I order at 4 pm, when does it leave your warehouse?",
+     "gold": [
+      "shipping-policy#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-policy#3",
+      "order-changes-and-cancellation#1",
+      "wrong-or-missing-items#2"
+     ]
+    },
+    {
+     "id": "R21",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How much do I pay for the fast delivery option?",
+     "gold": [
+      "shipping-fees#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-fees#2",
+      "shipping-fees#1",
+      "payment-methods#1"
+     ]
+    },
+    {
+     "id": "R22",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If you haven't shipped it yet, I would like to return it. I've suddenly changed my mind.",
+     "gold": [
+      "order-changes-and-cancellation#1"
+     ],
+     "rank": 6,
+     "top3": [
+      "wrong-or-missing-items#1",
+      "damaged-or-defective-items#2",
+      "refund-policy#3"
+     ]
+    },
+    {
+     "id": "R23",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Where can I find the code to follow my parcel?",
+     "gold": [
+      "order-tracking#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "order-tracking#1",
+      "late-or-lost-parcels#3",
+      "wrong-or-missing-items#2"
+     ]
+    },
+    {
+     "id": "R24",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Is there a number I can call?",
+     "gold": [
+      "customer-support#1",
+      "faq#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "faq#3",
+      "customer-support#1",
+      "warranty-policy#4"
+     ]
+    },
+    {
+     "id": "R25",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I purchased a product from you a month ago, but it is now on sale. Since I paid a higher price back then, would you be able to refund me the difference?",
+     "gold": [
+      "final-sale-and-discounts#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "final-sale-and-discounts#4",
+      "final-sale-and-discounts#2",
+      "damaged-or-defective-items#2"
+     ]
+    },
+    {
+     "id": "R26",
+     "set": "week3",
+     "type": "code",
+     "question": "Does the TR-220 run small?",
+     "gold": [
+      "product-tr-220#2",
+      "size-guide-shoes#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-220#2",
+      "size-guide-shoes#2",
+      "product-tr-250#2"
+     ]
+    },
+    {
+     "id": "R27",
+     "set": "week3",
+     "type": "code",
+     "question": "What is the warranty on SKU-778?",
+     "gold": [
+      "product-sku-778#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sku-778#3",
+      "product-jk-303#4",
+      "product-jk-714#4"
+     ]
+    },
+    {
+     "id": "R28",
+     "set": "week3",
+     "type": "code",
+     "question": "Will SKU-315 be back in stock soon?",
+     "gold": [
+      "product-sku-315#4",
+      "faq#5"
+     ],
+     "rank": 1,
+     "top3": [
+      "faq#5",
+      "product-hd-104#4",
+      "product-sku-315#4"
+     ]
+    },
+    {
+     "id": "R29",
+     "set": "week3",
+     "type": "code",
+     "question": "Is the HD-104 available in XL?",
+     "gold": [
+      "product-hd-104#2"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-hd-104#1",
+      "product-hd-104#4",
+      "product-hd-104#2"
+     ]
+    },
+    {
+     "id": "R30",
+     "set": "week3",
+     "type": "trap",
+     "question": "Can I wear the TR-220 in heavy rain? Is it waterproof?",
+     "gold": [
+      "product-tr-220#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-220#3",
+      "product-tr-950#3",
+      "product-tr-250#3"
+     ]
+    },
+    {
+     "id": "R31",
+     "set": "week3",
+     "type": "trap",
+     "question": "Is the commuter backpack waterproof?",
+     "gold": [
+      "product-sku-778#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sku-778#2",
+      "product-tr-950#3",
+      "product-bp-497#2"
+     ]
+    },
+    {
+     "id": "R32",
+     "set": "week3",
+     "type": "trap",
+     "question": "My mother placed an order on your website 4 days ago. Could you please tell me the address she entered? She really is my mother.",
+     "gold": [
+      "privacy-and-account-security#2",
+      "privacy-and-account-security#1"
+     ],
+     "rank": 3,
+     "top3": [
+      "order-changes-and-cancellation#1",
+      "wrong-or-missing-items#1",
+      "privacy-and-account-security#1"
+     ]
+    },
+    {
+     "id": "C01",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much is the TR-221?",
+     "gold": [
+      "product-tr-221#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-ts-221#1",
+      "product-tr-221#1",
+      "product-tr-220#1"
+     ]
+    },
+    {
+     "id": "C02",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the TR-219 waterproof?",
+     "gold": [
+      "product-tr-219#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-219#3",
+      "product-tr-189#3",
+      "product-tr-213#3"
+     ]
+    },
+    {
+     "id": "C03",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What sizes does the TR-202 come in?",
+     "gold": [
+      "product-tr-202#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-202#2",
+      "product-rn-202#2",
+      "product-ts-202#1"
+     ]
+    },
+    {
+     "id": "C04",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Which colours are available for the TR-230?",
+     "gold": [
+      "product-tr-230#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-230#1",
+      "product-tr-230#3",
+      "product-ts-236#1"
+     ]
+    },
+    {
+     "id": "C05",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I run in wet weather with the TR-311?",
+     "gold": [
+      "product-tr-311#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-311#3",
+      "product-tr-730#3",
+      "product-tr-326#3"
+     ]
+    },
+    {
+     "id": "C06",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How heavy is the RN-188?",
+     "gold": [
+      "product-rn-188#1"
+     ],
+     "rank": null,
+     "top3": [
+      "product-hk-188#1",
+      "product-rn-188#2",
+      "product-rn-188#3"
+     ]
+    },
+    {
+     "id": "C07",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the HK-669 good for walking through streams?",
+     "gold": [
+      "product-hk-669#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-hk-663#3",
+      "product-hk-669#3",
+      "product-hk-663#1"
+     ]
+    },
+    {
+     "id": "C08",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How waterproof is the JK-551 rain shell?",
+     "gold": [
+      "product-jk-551#2"
+     ],
+     "rank": null,
+     "top3": [
+      "product-jk-550#2",
+      "product-jk-631#2",
+      "product-jk-558#2"
+     ]
+    },
+    {
+     "id": "C09",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How long is the warranty on the JK-549?",
+     "gold": [
+      "product-jk-549#4"
+     ],
+     "rank": null,
+     "top3": [
+      "product-jk-729#4",
+      "product-jk-151#4",
+      "product-jk-850#4"
+     ]
+    },
+    {
+     "id": "C10",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What is the HD-105 made of?",
+     "gold": [
+      "product-hd-105#3"
+     ],
+     "rank": 5,
+     "top3": [
+      "product-hd-105#1",
+      "product-hd-200#1",
+      "product-ts-105#3"
+     ]
+    },
+    {
+     "id": "C11",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What waist sizes does the PN-411 have?",
+     "gold": [
+      "product-pn-411#2"
+     ],
+     "rank": 6,
+     "top3": [
+      "product-pn-370#2",
+      "product-pn-630#2",
+      "product-pn-704#2"
+     ]
+    },
+    {
+     "id": "C12",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I put the SN-121 in the washing machine?",
+     "gold": [
+      "product-sn-121#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sn-121#4",
+      "product-sn-213#4",
+      "product-sn-458#4"
+     ]
+    },
+    {
+     "id": "C13",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "At what temperature should I wash the TS-102?",
+     "gold": [
+      "product-ts-102#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-ts-102#4",
+      "product-ts-156#4",
+      "product-ts-880#4"
+     ]
+    },
+    {
+     "id": "C14",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Will my things stay dry in heavy rain in the BP-310?",
+     "gold": [
+      "product-bp-310#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-bp-310#2",
+      "product-bp-318#2",
+      "product-bp-495#2"
+     ]
+    },
+    {
+     "id": "C15",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What head size does the CP-741 fit?",
+     "gold": [
+      "product-cp-741#2"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-cp-731#2",
+      "product-cp-741#2",
+      "product-cp-972#2"
+     ]
+    },
+    {
+     "id": "C16",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much does the BP-614 weigh when it is empty?",
+     "gold": [
+      "product-bp-614#3"
+     ],
+     "rank": 5,
+     "top3": [
+      "product-bp-614#1",
+      "product-bp-514#3",
+      "product-bp-686#3"
+     ]
+    },
+    {
+     "id": "C17",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "How much does the Granite Point hiking boot cost?",
+     "gold": [
+      "product-hk-421#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hk-421#1",
+      "product-hk-969#1",
+      "product-hk-575#1"
+     ]
+    },
+    {
+     "id": "C18",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Is the Echo Bluff running shoe waterproof?",
+     "gold": [
+      "product-rn-165#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-rn-165#3",
+      "product-rn-412#3",
+      "product-rn-159#3"
+     ]
+    },
+    {
+     "id": "C19",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What is the Nimbus Summit fleece made of?",
+     "gold": [
+      "product-fl-231#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-fl-231#3",
+      "product-fl-231#1",
+      "product-fl-946#3"
+     ]
+    },
+    {
+     "id": "C20",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Does the Timber Lane sneaker fit true to size?",
+     "gold": [
+      "product-sn-435#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sn-435#2",
+      "product-sn-204#2",
+      "product-sn-266#2"
+     ]
+    },
+    {
+     "id": "C21",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What colours does the Meadow Wood jacket come in?",
+     "gold": [
+      "product-jk-151#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-jk-151#1",
+      "product-jk-150#1",
+      "product-jk-715#1"
+     ]
+    },
+    {
+     "id": "C22",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Can I machine wash the Alpine Stream hoodie?",
+     "gold": [
+      "product-hd-105#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hd-105#4",
+      "product-hd-207#4",
+      "product-hd-590#4"
+     ]
+    }
+   ]
+  },
+  "bm25": {
+   "summary": {
+    "week3": {
+     "n": 32,
+     "hit_at_1": 0.281,
+     "hits_at_1": 9,
+     "hit_at_3": 0.531,
+     "hits_at_3": 17,
+     "hit_at_5": 0.688,
+     "hits_at_5": 22,
+     "hit_at_10": 0.812,
+     "hits_at_10": 26,
+     "mrr": 0.432
+    },
+    "catalogue": {
+     "n": 22,
+     "hit_at_1": 0.409,
+     "hits_at_1": 9,
+     "hit_at_3": 1.0,
+     "hits_at_3": 22,
+     "hit_at_5": 1.0,
+     "hits_at_5": 22,
+     "hit_at_10": 1.0,
+     "hits_at_10": 22,
+     "mrr": 0.667
+    },
+    "catalogue_code": {
+     "n": 16,
+     "hit_at_1": 0.375,
+     "hits_at_1": 6,
+     "hit_at_3": 1.0,
+     "hits_at_3": 16,
+     "hit_at_5": 1.0,
+     "hits_at_5": 16,
+     "hit_at_10": 1.0,
+     "hits_at_10": 16,
+     "mrr": 0.646
+    },
+    "catalogue_name": {
+     "n": 6,
+     "hit_at_1": 0.5,
+     "hits_at_1": 3,
+     "hit_at_3": 1.0,
+     "hits_at_3": 6,
+     "hit_at_5": 1.0,
+     "hits_at_5": 6,
+     "hit_at_10": 1.0,
+     "hits_at_10": 6,
+     "mrr": 0.722
+    },
+    "code": {
+     "n": 4,
+     "hit_at_1": 0.0,
+     "hits_at_1": 0,
+     "hit_at_3": 0.75,
+     "hits_at_3": 3,
+     "hit_at_5": 1.0,
+     "hits_at_5": 4,
+     "hit_at_10": 1.0,
+     "hits_at_10": 4,
+     "mrr": 0.354
+    },
+    "paraphrase": {
+     "n": 25,
+     "hit_at_1": 0.28,
+     "hits_at_1": 7,
+     "hit_at_3": 0.44,
+     "hits_at_3": 11,
+     "hit_at_5": 0.6,
+     "hits_at_5": 15,
+     "hit_at_10": 0.76,
+     "hits_at_10": 19,
+     "mrr": 0.403
+    },
+    "trap": {
+     "n": 3,
+     "hit_at_1": 0.667,
+     "hits_at_1": 2,
+     "hit_at_3": 1.0,
+     "hits_at_3": 3,
+     "hit_at_5": 1.0,
+     "hits_at_5": 3,
+     "hit_at_10": 1.0,
+     "hits_at_10": 3,
+     "mrr": 0.778
+    }
+   },
+   "per_question": [
+    {
+     "id": "R01",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How many days do I have to send something back?",
+     "gold": [
+      "returns-policy#1"
+     ],
+     "rank": null,
+     "top3": [
+      "damaged-or-defective-items#3",
+      "faq#1",
+      "faq#2"
+     ]
+    },
+    {
+     "id": "R02",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I bought a hoodie from you, I washed it once, but can I still return the product?",
+     "gold": [
+      "returns-policy#2"
+     ],
+     "rank": null,
+     "top3": [
+      "faq#1",
+      "order-changes-and-cancellation#2",
+      "returns-policy#1"
+     ]
+    },
+    {
+     "id": "R03",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Which things can never be sent back?",
+     "gold": [
+      "returns-policy#3",
+      "final-sale-and-discounts#1"
+     ],
+     "rank": 7,
+     "top3": [
+      "faq#5",
+      "order-changes-and-cancellation#2",
+      "exchange-policy#1"
+     ]
+    },
+    {
+     "id": "R04",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How do I get a label to post my return?",
+     "gold": [
+      "returns-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#4",
+      "faq#1",
+      "damaged-or-defective-items#3"
+     ]
+    },
+    {
+     "id": "R05",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do I pay postage if I return something I simply didn't like?",
+     "gold": [
+      "returns-policy#5",
+      "shipping-fees#3"
+     ],
+     "rank": 6,
+     "top3": [
+      "faq#1",
+      "final-sale-and-discounts#4",
+      "returns-policy#4"
+     ]
+    },
+    {
+     "id": "R06",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My money still isn't on my card after the return. How long can that take?",
+     "gold": [
+      "refund-policy#2",
+      "faq#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "faq#2",
+      "refund-policy#2",
+      "final-sale-and-discounts#4"
+     ]
+    },
+    {
+     "id": "R07",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I get a voucher for the shop instead of money back?",
+     "gold": [
+      "refund-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "refund-policy#4",
+      "faq#1",
+      "faq#5"
+     ]
+    },
+    {
+     "id": "R08",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I cut the labels off a shirt. Can I still return it?",
+     "gold": [
+      "tags-and-packaging#1"
+     ],
+     "rank": 4,
+     "top3": [
+      "faq#1",
+      "final-sale-and-discounts#4",
+      "order-changes-and-cancellation#2"
+     ]
+    },
+    {
+     "id": "R09",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I threw away the box my sneakers came in. Is that a problem for a return?",
+     "gold": [
+      "tags-and-packaging#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "tags-and-packaging#2",
+      "faq#1",
+      "damaged-or-defective-items#3"
+     ]
+    },
+    {
+     "id": "R10",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I swap my jacket for a bigger size?",
+     "gold": [
+      "exchange-policy#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "faq#1",
+      "exchange-policy#1",
+      "order-changes-and-cancellation#2"
+     ]
+    },
+    {
+     "id": "R11",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The size I want to swap to is sold out. What happens then?",
+     "gold": [
+      "exchange-policy#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "exchange-policy#3",
+      "faq#1",
+      "refund-policy#3"
+     ]
+    },
+    {
+     "id": "R12",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The zip on my coat broke on the day it arrived. What do you offer me?",
+     "gold": [
+      "damaged-or-defective-items#2",
+      "damaged-or-defective-items#1"
+     ],
+     "rank": 10,
+     "top3": [
+      "payment-methods#2",
+      "faq#5",
+      "shipping-policy#3"
+     ]
+    },
+    {
+     "id": "R13",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I noticed a fault two months after delivery. What now?",
+     "gold": [
+      "damaged-or-defective-items#4",
+      "warranty-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "damaged-or-defective-items#4",
+      "shipping-fees#1",
+      "damaged-or-defective-items#2"
+     ]
+    },
+    {
+     "id": "R14",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "You sent me a different product from the one I ordered.",
+     "gold": [
+      "wrong-or-missing-items#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "wrong-or-missing-items#1",
+      "returns-policy#5",
+      "faq#1"
+     ]
+    },
+    {
+     "id": "R15",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My parcel came but one of the things I bought is not inside.",
+     "gold": [
+      "wrong-or-missing-items#2"
+     ],
+     "rank": 2,
+     "top3": [
+      "returns-policy#4",
+      "wrong-or-missing-items#2",
+      "faq#1"
+     ]
+    },
+    {
+     "id": "R16",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My package should have been here three days ago.",
+     "gold": [
+      "late-or-lost-parcels#1"
+     ],
+     "rank": 9,
+     "top3": [
+      "returns-policy#2",
+      "damaged-or-defective-items#4",
+      "shipping-policy#2"
+     ]
+    },
+    {
+     "id": "R17",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can you promise my parcel arrives at 9 tomorrow morning?",
+     "gold": [
+      "shipping-policy#4",
+      "faq#4"
+     ],
+     "rank": 5,
+     "top3": [
+      "tags-and-packaging#1",
+      "late-or-lost-parcels#3",
+      "order-changes-and-cancellation#2"
+     ]
+    },
+    {
+     "id": "R18",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How quickly does normal shipping arrive?",
+     "gold": [
+      "shipping-policy#2"
+     ],
+     "rank": null,
+     "top3": [
+      "warranty-policy#3",
+      "faq#2",
+      "shipping-policy#4"
+     ]
+    },
+    {
+     "id": "R19",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do you deliver to Germany?",
+     "gold": [
+      "shipping-policy#1"
+     ],
+     "rank": 5,
+     "top3": [
+      "final-sale-and-discounts#4",
+      "faq#3",
+      "damaged-or-defective-items#3"
+     ]
+    },
+    {
+     "id": "R20",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If I order at 4 pm, when does it leave your warehouse?",
+     "gold": [
+      "shipping-policy#3"
+     ],
+     "rank": null,
+     "top3": [
+      "order-tracking#1",
+      "faq#1",
+      "wrong-or-missing-items#2"
+     ]
+    },
+    {
+     "id": "R21",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How much do I pay for the fast delivery option?",
+     "gold": [
+      "shipping-fees#2"
+     ],
+     "rank": 3,
+     "top3": [
+      "payment-methods#2",
+      "faq#1",
+      "shipping-fees#2"
+     ]
+    },
+    {
+     "id": "R22",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If you haven't shipped it yet, I would like to return it. I've suddenly changed my mind.",
+     "gold": [
+      "order-changes-and-cancellation#1"
+     ],
+     "rank": null,
+     "top3": [
+      "faq#1",
+      "final-sale-and-discounts#4",
+      "order-changes-and-cancellation#2"
+     ]
+    },
+    {
+     "id": "R23",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Where can I find the code to follow my parcel?",
+     "gold": [
+      "order-tracking#1"
+     ],
+     "rank": null,
+     "top3": [
+      "faq#1",
+      "shipping-policy#1",
+      "tags-and-packaging#1"
+     ]
+    },
+    {
+     "id": "R24",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Is there a number I can call?",
+     "gold": [
+      "customer-support#1",
+      "faq#3"
+     ],
+     "rank": 4,
+     "top3": [
+      "faq#1",
+      "order-changes-and-cancellation#2",
+      "payment-methods#3"
+     ]
+    },
+    {
+     "id": "R25",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I purchased a product from you a month ago, but it is now on sale. Since I paid a higher price back then, would you be able to refund me the difference?",
+     "gold": [
+      "final-sale-and-discounts#4"
+     ],
+     "rank": 3,
+     "top3": [
+      "faq#1",
+      "faq#5",
+      "final-sale-and-discounts#4"
+     ]
+    },
+    {
+     "id": "R26",
+     "set": "week3",
+     "type": "code",
+     "question": "Does the TR-220 run small?",
+     "gold": [
+      "product-tr-220#2",
+      "size-guide-shoes#2"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-tr-220#3",
+      "product-tr-220#1",
+      "product-tr-220#2"
+     ]
+    },
+    {
+     "id": "R27",
+     "set": "week3",
+     "type": "code",
+     "question": "What is the warranty on SKU-778?",
+     "gold": [
+      "product-sku-778#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-sku-778#1",
+      "product-sku-778#3",
+      "product-sku-778#2"
+     ]
+    },
+    {
+     "id": "R28",
+     "set": "week3",
+     "type": "code",
+     "question": "Will SKU-315 be back in stock soon?",
+     "gold": [
+      "product-sku-315#4",
+      "faq#5"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-sku-315#3",
+      "product-sku-315#1",
+      "faq#5"
+     ]
+    },
+    {
+     "id": "R29",
+     "set": "week3",
+     "type": "code",
+     "question": "Is the HD-104 available in XL?",
+     "gold": [
+      "product-hd-104#2"
+     ],
+     "rank": 4,
+     "top3": [
+      "product-hd-104#1",
+      "product-hd-104#3",
+      "product-hd-104#4"
+     ]
+    },
+    {
+     "id": "R30",
+     "set": "week3",
+     "type": "trap",
+     "question": "Can I wear the TR-220 in heavy rain? Is it waterproof?",
+     "gold": [
+      "product-tr-220#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-220#3",
+      "faq#1",
+      "product-tr-220#1"
+     ]
+    },
+    {
+     "id": "R31",
+     "set": "week3",
+     "type": "trap",
+     "question": "Is the commuter backpack waterproof?",
+     "gold": [
+      "product-sku-778#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sku-778#2",
+      "product-sku-778#3",
+      "product-sku-778#1"
+     ]
+    },
+    {
+     "id": "R32",
+     "set": "week3",
+     "type": "trap",
+     "question": "My mother placed an order on your website 4 days ago. Could you please tell me the address she entered? She really is my mother.",
+     "gold": [
+      "privacy-and-account-security#2",
+      "privacy-and-account-security#1"
+     ],
+     "rank": 3,
+     "top3": [
+      "order-changes-and-cancellation#3",
+      "order-changes-and-cancellation#1",
+      "privacy-and-account-security#1"
+     ]
+    },
+    {
+     "id": "C01",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much is the TR-221?",
+     "gold": [
+      "product-tr-221#1"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-tr-221#3",
+      "product-tr-221#2",
+      "product-tr-221#1"
+     ]
+    },
+    {
+     "id": "C02",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the TR-219 waterproof?",
+     "gold": [
+      "product-tr-219#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-219#3",
+      "product-tr-219#2",
+      "product-tr-219#1"
+     ]
+    },
+    {
+     "id": "C03",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What sizes does the TR-202 come in?",
+     "gold": [
+      "product-tr-202#2"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-tr-202#3",
+      "product-tr-202#2",
+      "product-tr-202#1"
+     ]
+    },
+    {
+     "id": "C04",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Which colours are available for the TR-230?",
+     "gold": [
+      "product-tr-230#1"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-tr-230#3",
+      "product-tr-230#2",
+      "product-tr-230#1"
+     ]
+    },
+    {
+     "id": "C05",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I run in wet weather with the TR-311?",
+     "gold": [
+      "product-tr-311#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-311#3",
+      "product-tr-311#1",
+      "product-tr-311#2"
+     ]
+    },
+    {
+     "id": "C06",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How heavy is the RN-188?",
+     "gold": [
+      "product-rn-188#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-rn-188#3",
+      "product-rn-188#1",
+      "product-rn-188#2"
+     ]
+    },
+    {
+     "id": "C07",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the HK-669 good for walking through streams?",
+     "gold": [
+      "product-hk-669#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hk-669#3",
+      "product-hk-669#4",
+      "product-hk-669#1"
+     ]
+    },
+    {
+     "id": "C08",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How waterproof is the JK-551 rain shell?",
+     "gold": [
+      "product-jk-551#2"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-jk-551#1",
+      "product-jk-551#2",
+      "product-jk-551#4"
+     ]
+    },
+    {
+     "id": "C09",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How long is the warranty on the JK-549?",
+     "gold": [
+      "product-jk-549#4"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-jk-549#2",
+      "product-jk-549#1",
+      "product-jk-549#4"
+     ]
+    },
+    {
+     "id": "C10",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What is the HD-105 made of?",
+     "gold": [
+      "product-hd-105#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-hd-105#1",
+      "product-hd-105#3",
+      "product-hd-105#4"
+     ]
+    },
+    {
+     "id": "C11",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What waist sizes does the PN-411 have?",
+     "gold": [
+      "product-pn-411#2"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-pn-411#3",
+      "product-pn-411#1",
+      "product-pn-411#2"
+     ]
+    },
+    {
+     "id": "C12",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I put the SN-121 in the washing machine?",
+     "gold": [
+      "product-sn-121#4"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-sn-121#1",
+      "product-sn-121#4",
+      "product-sn-121#2"
+     ]
+    },
+    {
+     "id": "C13",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "At what temperature should I wash the TS-102?",
+     "gold": [
+      "product-ts-102#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-ts-102#4",
+      "product-ts-102#1",
+      "product-ts-102#3"
+     ]
+    },
+    {
+     "id": "C14",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Will my things stay dry in heavy rain in the BP-310?",
+     "gold": [
+      "product-bp-310#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-bp-310#2",
+      "product-bp-310#1",
+      "product-bp-310#3"
+     ]
+    },
+    {
+     "id": "C15",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What head size does the CP-741 fit?",
+     "gold": [
+      "product-cp-741#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-cp-741#2",
+      "product-cp-741#3",
+      "product-cp-741#1"
+     ]
+    },
+    {
+     "id": "C16",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much does the BP-614 weigh when it is empty?",
+     "gold": [
+      "product-bp-614#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-bp-614#2",
+      "product-bp-614#3",
+      "product-bp-614#1"
+     ]
+    },
+    {
+     "id": "C17",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "How much does the Granite Point hiking boot cost?",
+     "gold": [
+      "product-hk-421#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hk-421#1",
+      "product-hk-421#4",
+      "faq#2"
+     ]
+    },
+    {
+     "id": "C18",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Is the Echo Bluff running shoe waterproof?",
+     "gold": [
+      "product-rn-165#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-rn-165#3",
+      "product-rn-165#1",
+      "product-rn-165#4"
+     ]
+    },
+    {
+     "id": "C19",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What is the Nimbus Summit fleece made of?",
+     "gold": [
+      "product-fl-231#3"
+     ],
+     "rank": 3,
+     "top3": [
+      "product-fl-231#1",
+      "product-cp-020#1",
+      "product-fl-231#3"
+     ]
+    },
+    {
+     "id": "C20",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Does the Timber Lane sneaker fit true to size?",
+     "gold": [
+      "product-sn-435#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sn-435#2",
+      "product-sn-959#2",
+      "product-sn-266#2"
+     ]
+    },
+    {
+     "id": "C21",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What colours does the Meadow Wood jacket come in?",
+     "gold": [
+      "product-jk-151#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "warranty-policy#3",
+      "product-jk-151#1",
+      "product-jk-151#2"
+     ]
+    },
+    {
+     "id": "C22",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Can I machine wash the Alpine Stream hoodie?",
+     "gold": [
+      "product-hd-105#4"
+     ],
+     "rank": 2,
+     "top3": [
+      "faq#1",
+      "product-hd-105#4",
+      "product-hd-105#1"
+     ]
+    }
+   ]
+  },
+  "rerank": {
+   "summary": {
+    "week3": {
+     "n": 32,
+     "hit_at_1": 0.656,
+     "hits_at_1": 21,
+     "hit_at_3": 0.812,
+     "hits_at_3": 26,
+     "hit_at_5": 0.906,
+     "hits_at_5": 29,
+     "hit_at_10": 0.906,
+     "hits_at_10": 29,
+     "mrr": 0.756
+    },
+    "catalogue": {
+     "n": 22,
+     "hit_at_1": 0.864,
+     "hits_at_1": 19,
+     "hit_at_3": 0.955,
+     "hits_at_3": 21,
+     "hit_at_5": 0.955,
+     "hits_at_5": 21,
+     "hit_at_10": 1.0,
+     "hits_at_10": 22,
+     "mrr": 0.915
+    },
+    "catalogue_code": {
+     "n": 16,
+     "hit_at_1": 0.875,
+     "hits_at_1": 14,
+     "hit_at_3": 0.938,
+     "hits_at_3": 15,
+     "hit_at_5": 0.938,
+     "hits_at_5": 15,
+     "hit_at_10": 1.0,
+     "hits_at_10": 16,
+     "mrr": 0.914
+    },
+    "catalogue_name": {
+     "n": 6,
+     "hit_at_1": 0.833,
+     "hits_at_1": 5,
+     "hit_at_3": 1.0,
+     "hits_at_3": 6,
+     "hit_at_5": 1.0,
+     "hits_at_5": 6,
+     "hit_at_10": 1.0,
+     "hits_at_10": 6,
+     "mrr": 0.917
+    },
+    "code": {
+     "n": 4,
+     "hit_at_1": 0.75,
+     "hits_at_1": 3,
+     "hit_at_3": 1.0,
+     "hits_at_3": 4,
+     "hit_at_5": 1.0,
+     "hits_at_5": 4,
+     "hit_at_10": 1.0,
+     "hits_at_10": 4,
+     "mrr": 0.875
+    },
+    "paraphrase": {
+     "n": 25,
+     "hit_at_1": 0.64,
+     "hits_at_1": 16,
+     "hit_at_3": 0.76,
+     "hits_at_3": 19,
+     "hit_at_5": 0.88,
+     "hits_at_5": 22,
+     "hit_at_10": 0.88,
+     "hits_at_10": 22,
+     "mrr": 0.728
+    },
+    "trap": {
+     "n": 3,
+     "hit_at_1": 0.667,
+     "hits_at_1": 2,
+     "hit_at_3": 1.0,
+     "hits_at_3": 3,
+     "hit_at_5": 1.0,
+     "hits_at_5": 3,
+     "hit_at_10": 1.0,
+     "hits_at_10": 3,
+     "mrr": 0.833
+    }
+   },
+   "per_question": [
+    {
+     "id": "R01",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How many days do I have to send something back?",
+     "gold": [
+      "returns-policy#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#1",
+      "wrong-or-missing-items#1",
+      "faq#2"
+     ]
+    },
+    {
+     "id": "R02",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I bought a hoodie from you, I washed it once, but can I still return the product?",
+     "gold": [
+      "returns-policy#2"
+     ],
+     "rank": null,
+     "top3": [
+      "final-sale-and-discounts#3",
+      "faq#1",
+      "final-sale-and-discounts#4"
+     ]
+    },
+    {
+     "id": "R03",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Which things can never be sent back?",
+     "gold": [
+      "returns-policy#3",
+      "final-sale-and-discounts#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#3",
+      "final-sale-and-discounts#3",
+      "damaged-or-defective-items#3"
+     ]
+    },
+    {
+     "id": "R04",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How do I get a label to post my return?",
+     "gold": [
+      "returns-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#4",
+      "wrong-or-missing-items#1",
+      "damaged-or-defective-items#3"
+     ]
+    },
+    {
+     "id": "R05",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do I pay postage if I return something I simply didn't like?",
+     "gold": [
+      "returns-policy#5",
+      "shipping-fees#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "returns-policy#5",
+      "faq#1",
+      "damaged-or-defective-items#3"
+     ]
+    },
+    {
+     "id": "R06",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My money still isn't on my card after the return. How long can that take?",
+     "gold": [
+      "refund-policy#2",
+      "faq#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "refund-policy#2",
+      "faq#2",
+      "refund-policy#4"
+     ]
+    },
+    {
+     "id": "R07",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I get a voucher for the shop instead of money back?",
+     "gold": [
+      "refund-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "refund-policy#4",
+      "gift-cards#3",
+      "final-sale-and-discounts#4"
+     ]
+    },
+    {
+     "id": "R08",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I cut the labels off a shirt. Can I still return it?",
+     "gold": [
+      "tags-and-packaging#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "faq#1",
+      "tags-and-packaging#1",
+      "final-sale-and-discounts#3"
+     ]
+    },
+    {
+     "id": "R09",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I threw away the box my sneakers came in. Is that a problem for a return?",
+     "gold": [
+      "tags-and-packaging#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "tags-and-packaging#2",
+      "returns-policy#2",
+      "returns-policy#3"
+     ]
+    },
+    {
+     "id": "R10",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can I swap my jacket for a bigger size?",
+     "gold": [
+      "exchange-policy#1"
+     ],
+     "rank": null,
+     "top3": [
+      "product-jk-189#3",
+      "product-jk-253#3",
+      "product-jk-929#3"
+     ]
+    },
+    {
+     "id": "R11",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The size I want to swap to is sold out. What happens then?",
+     "gold": [
+      "exchange-policy#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "exchange-policy#3",
+      "exchange-policy#1",
+      "final-sale-and-discounts#1"
+     ]
+    },
+    {
+     "id": "R12",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "The zip on my coat broke on the day it arrived. What do you offer me?",
+     "gold": [
+      "damaged-or-defective-items#2",
+      "damaged-or-defective-items#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "damaged-or-defective-items#1",
+      "damaged-or-defective-items#2",
+      "product-jk-143#4"
+     ]
+    },
+    {
+     "id": "R13",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I noticed a fault two months after delivery. What now?",
+     "gold": [
+      "damaged-or-defective-items#4",
+      "warranty-policy#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "damaged-or-defective-items#4",
+      "damaged-or-defective-items#1",
+      "late-or-lost-parcels#1"
+     ]
+    },
+    {
+     "id": "R14",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "You sent me a different product from the one I ordered.",
+     "gold": [
+      "wrong-or-missing-items#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "wrong-or-missing-items#1",
+      "final-sale-and-discounts#1",
+      "order-changes-and-cancellation#3"
+     ]
+    },
+    {
+     "id": "R15",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My parcel came but one of the things I bought is not inside.",
+     "gold": [
+      "wrong-or-missing-items#2"
+     ],
+     "rank": 2,
+     "top3": [
+      "wrong-or-missing-items#3",
+      "wrong-or-missing-items#2",
+      "final-sale-and-discounts#3"
+     ]
+    },
+    {
+     "id": "R16",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "My package should have been here three days ago.",
+     "gold": [
+      "late-or-lost-parcels#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "late-or-lost-parcels#1",
+      "wrong-or-missing-items#2",
+      "wrong-or-missing-items#3"
+     ]
+    },
+    {
+     "id": "R17",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Can you promise my parcel arrives at 9 tomorrow morning?",
+     "gold": [
+      "shipping-policy#4",
+      "faq#4"
+     ],
+     "rank": 2,
+     "top3": [
+      "late-or-lost-parcels#1",
+      "faq#4",
+      "late-or-lost-parcels#3"
+     ]
+    },
+    {
+     "id": "R18",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How quickly does normal shipping arrive?",
+     "gold": [
+      "shipping-policy#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-policy#2",
+      "wrong-or-missing-items#2",
+      "wrong-or-missing-items#1"
+     ]
+    },
+    {
+     "id": "R19",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Do you deliver to Germany?",
+     "gold": [
+      "shipping-policy#1"
+     ],
+     "rank": 5,
+     "top3": [
+      "payment-methods#2",
+      "shipping-policy#2",
+      "faq#4"
+     ]
+    },
+    {
+     "id": "R20",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If I order at 4 pm, when does it leave your warehouse?",
+     "gold": [
+      "shipping-policy#3"
+     ],
+     "rank": 4,
+     "top3": [
+      "order-tracking#3",
+      "exchange-policy#2",
+      "wrong-or-missing-items#2"
+     ]
+    },
+    {
+     "id": "R21",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "How much do I pay for the fast delivery option?",
+     "gold": [
+      "shipping-fees#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "shipping-fees#2",
+      "shipping-fees#1",
+      "returns-policy#5"
+     ]
+    },
+    {
+     "id": "R22",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "If you haven't shipped it yet, I would like to return it. I've suddenly changed my mind.",
+     "gold": [
+      "order-changes-and-cancellation#1"
+     ],
+     "rank": null,
+     "top3": [
+      "order-changes-and-cancellation#2",
+      "final-sale-and-discounts#4",
+      "wrong-or-missing-items#1"
+     ]
+    },
+    {
+     "id": "R23",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Where can I find the code to follow my parcel?",
+     "gold": [
+      "order-tracking#1"
+     ],
+     "rank": 4,
+     "top3": [
+      "late-or-lost-parcels#1",
+      "wrong-or-missing-items#2",
+      "returns-policy#4"
+     ]
+    },
+    {
+     "id": "R24",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "Is there a number I can call?",
+     "gold": [
+      "customer-support#1",
+      "faq#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "faq#3",
+      "customer-support#1",
+      "privacy-and-account-security#3"
+     ]
+    },
+    {
+     "id": "R25",
+     "set": "week3",
+     "type": "paraphrase",
+     "question": "I purchased a product from you a month ago, but it is now on sale. Since I paid a higher price back then, would you be able to refund me the difference?",
+     "gold": [
+      "final-sale-and-discounts#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "final-sale-and-discounts#4",
+      "final-sale-and-discounts#2",
+      "final-sale-and-discounts#1"
+     ]
+    },
+    {
+     "id": "R26",
+     "set": "week3",
+     "type": "code",
+     "question": "Does the TR-220 run small?",
+     "gold": [
+      "product-tr-220#2",
+      "size-guide-shoes#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-220#2",
+      "size-guide-shoes#2",
+      "product-rn-220#2"
+     ]
+    },
+    {
+     "id": "R27",
+     "set": "week3",
+     "type": "code",
+     "question": "What is the warranty on SKU-778?",
+     "gold": [
+      "product-sku-778#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sku-778#3",
+      "product-sku-778#2",
+      "product-sku-778#1"
+     ]
+    },
+    {
+     "id": "R28",
+     "set": "week3",
+     "type": "code",
+     "question": "Will SKU-315 be back in stock soon?",
+     "gold": [
+      "product-sku-315#4",
+      "faq#5"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-sku-315#3",
+      "product-sku-315#4",
+      "product-sku-315#1"
+     ]
+    },
+    {
+     "id": "R29",
+     "set": "week3",
+     "type": "code",
+     "question": "Is the HD-104 available in XL?",
+     "gold": [
+      "product-hd-104#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hd-104#2",
+      "product-hd-104#1",
+      "product-hd-104#4"
+     ]
+    },
+    {
+     "id": "R30",
+     "set": "week3",
+     "type": "trap",
+     "question": "Can I wear the TR-220 in heavy rain? Is it waterproof?",
+     "gold": [
+      "product-tr-220#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-220#3",
+      "product-rn-220#3",
+      "product-tr-250#3"
+     ]
+    },
+    {
+     "id": "R31",
+     "set": "week3",
+     "type": "trap",
+     "question": "Is the commuter backpack waterproof?",
+     "gold": [
+      "product-sku-778#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sku-778#2",
+      "product-sku-778#3",
+      "product-sku-778#1"
+     ]
+    },
+    {
+     "id": "R32",
+     "set": "week3",
+     "type": "trap",
+     "question": "My mother placed an order on your website 4 days ago. Could you please tell me the address she entered? She really is my mother.",
+     "gold": [
+      "privacy-and-account-security#2",
+      "privacy-and-account-security#1"
+     ],
+     "rank": 2,
+     "top3": [
+      "order-changes-and-cancellation#3",
+      "privacy-and-account-security#1",
+      "order-changes-and-cancellation#1"
+     ]
+    },
+    {
+     "id": "C01",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much is the TR-221?",
+     "gold": [
+      "product-tr-221#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-221#1",
+      "product-tr-221#2",
+      "product-tr-220#1"
+     ]
+    },
+    {
+     "id": "C02",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the TR-219 waterproof?",
+     "gold": [
+      "product-tr-219#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-219#3",
+      "product-tr-220#3",
+      "product-tr-213#3"
+     ]
+    },
+    {
+     "id": "C03",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What sizes does the TR-202 come in?",
+     "gold": [
+      "product-tr-202#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-202#2",
+      "product-tr-210#2",
+      "product-rn-202#2"
+     ]
+    },
+    {
+     "id": "C04",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Which colours are available for the TR-230?",
+     "gold": [
+      "product-tr-230#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-230#1",
+      "product-tr-416#1",
+      "product-tr-560#1"
+     ]
+    },
+    {
+     "id": "C05",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I run in wet weather with the TR-311?",
+     "gold": [
+      "product-tr-311#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-tr-311#3",
+      "product-tr-311#1",
+      "product-tr-311#2"
+     ]
+    },
+    {
+     "id": "C06",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How heavy is the RN-188?",
+     "gold": [
+      "product-rn-188#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-rn-188#1",
+      "product-rn-186#1",
+      "product-rn-188#2"
+     ]
+    },
+    {
+     "id": "C07",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Is the HK-669 good for walking through streams?",
+     "gold": [
+      "product-hk-669#3"
+     ],
+     "rank": 8,
+     "top3": [
+      "product-hk-663#3",
+      "product-hk-666#3",
+      "product-hk-663#1"
+     ]
+    },
+    {
+     "id": "C08",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How waterproof is the JK-551 rain shell?",
+     "gold": [
+      "product-jk-551#2"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-jk-550#2",
+      "product-jk-551#2",
+      "product-jk-551#1"
+     ]
+    },
+    {
+     "id": "C09",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How long is the warranty on the JK-549?",
+     "gold": [
+      "product-jk-549#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-jk-549#4",
+      "product-jk-729#4",
+      "product-jk-398#4"
+     ]
+    },
+    {
+     "id": "C10",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What is the HD-105 made of?",
+     "gold": [
+      "product-hd-105#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hd-105#3",
+      "product-hd-105#1",
+      "product-hd-105#4"
+     ]
+    },
+    {
+     "id": "C11",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What waist sizes does the PN-411 have?",
+     "gold": [
+      "product-pn-411#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-pn-411#2",
+      "product-pn-370#2",
+      "product-pn-848#2"
+     ]
+    },
+    {
+     "id": "C12",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Can I put the SN-121 in the washing machine?",
+     "gold": [
+      "product-sn-121#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sn-121#4",
+      "product-sn-212#4",
+      "product-sn-490#4"
+     ]
+    },
+    {
+     "id": "C13",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "At what temperature should I wash the TS-102?",
+     "gold": [
+      "product-ts-102#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-ts-102#4",
+      "product-ts-100#4",
+      "product-ts-210#4"
+     ]
+    },
+    {
+     "id": "C14",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "Will my things stay dry in heavy rain in the BP-310?",
+     "gold": [
+      "product-bp-310#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-bp-310#2",
+      "product-bp-318#2",
+      "product-bp-297#2"
+     ]
+    },
+    {
+     "id": "C15",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "What head size does the CP-741 fit?",
+     "gold": [
+      "product-cp-741#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-cp-741#2",
+      "product-cp-721#2",
+      "product-cp-731#2"
+     ]
+    },
+    {
+     "id": "C16",
+     "set": "catalogue",
+     "type": "catalogue_code",
+     "question": "How much does the BP-614 weigh when it is empty?",
+     "gold": [
+      "product-bp-614#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-bp-614#3",
+      "product-bp-514#3",
+      "product-bp-454#3"
+     ]
+    },
+    {
+     "id": "C17",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "How much does the Granite Point hiking boot cost?",
+     "gold": [
+      "product-hk-421#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hk-421#1",
+      "product-hk-575#1",
+      "product-hk-969#1"
+     ]
+    },
+    {
+     "id": "C18",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Is the Echo Bluff running shoe waterproof?",
+     "gold": [
+      "product-rn-165#3"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-rn-165#3",
+      "product-tr-907#3",
+      "product-rn-170#3"
+     ]
+    },
+    {
+     "id": "C19",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What is the Nimbus Summit fleece made of?",
+     "gold": [
+      "product-fl-231#3"
+     ],
+     "rank": 2,
+     "top3": [
+      "product-fl-231#1",
+      "product-fl-231#3",
+      "product-fl-483#3"
+     ]
+    },
+    {
+     "id": "C20",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Does the Timber Lane sneaker fit true to size?",
+     "gold": [
+      "product-sn-435#2"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-sn-435#2",
+      "product-sn-204#2",
+      "product-sn-266#2"
+     ]
+    },
+    {
+     "id": "C21",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "What colours does the Meadow Wood jacket come in?",
+     "gold": [
+      "product-jk-151#1"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-jk-151#1",
+      "product-jk-150#1",
+      "product-jk-597#1"
+     ]
+    },
+    {
+     "id": "C22",
+     "set": "catalogue",
+     "type": "catalogue_name",
+     "question": "Can I machine wash the Alpine Stream hoodie?",
+     "gold": [
+      "product-hd-105#4"
+     ],
+     "rank": 1,
+     "top3": [
+      "product-hd-105#4",
+      "product-hd-207#4",
+      "product-hd-590#4"
+     ]
+    }
+   ]
+  }
+ }
+}
