@@ -1,4 +1,4 @@
-"""Week 3 retrieval evaluation (W3.5) and the search ablations (W3.7).
+"""Retrieval evaluation: week 3 (W3.5, W3.7) and the week 4 scale test at about 10,000 chunks.
 
 Owner: Orhun Cerit (data and retrieval lead).
 
@@ -19,9 +19,17 @@ Ablations, one change each (W3.7): the same questions with
 Questions tagged "typo" are misspelled copies of main questions. They are reported
 separately so they do not change the main numbers.
 
-Run:  python src/evaluate_retrieval.py              all four modes
-      python src/evaluate_retrieval.py --mode bm25  one mode (bm25 needs no model download)
-Writes results/week3/retrieval_eval.json
+Week 4: the corpus grows to about 10,000 chunks with the generated product catalogue
+(src/catalogue.py). Two question sets are scored separately:
+  week3      the 32 week 3 questions, unchanged (tests/retrieval_questions.json)
+  catalogue  22 questions about generated products whose codes differ by one digit from
+             other products, asked by code or by product name
+             (tests/retrieval_questions_catalogue.json)
+
+Run:  python src/evaluate_retrieval.py                  full corpus (~10,000 chunks), all four modes
+      python src/evaluate_retrieval.py --corpus small   week 3 corpus (109 chunks), week 3 questions
+      python src/evaluate_retrieval.py --mode bm25      one mode (bm25 needs no model download)
+Writes results/week4/retrieval_eval_<corpus>.json (week 3 results in results/week3/ stay as they are).
 """
 import argparse
 import json
@@ -33,15 +41,16 @@ from corpus import ROOT, load_chunks  # noqa: E402
 from retrieval import Index  # noqa: E402
 
 QUESTIONS = ROOT / "tests" / "retrieval_questions.json"
-OUTPUT = ROOT / "results" / "week3" / "retrieval_eval.json"
+CATALOGUE_QUESTIONS = ROOT / "tests" / "retrieval_questions_catalogue.json"
+OUTPUT_DIR = ROOT / "results" / "week4"
 KS = (1, 3, 5, 10)
 DEPTH = 10
 
 
-def load_questions(path=QUESTIONS):
+def load_questions(path, chunk_ids, set_name):
     questions = json.loads(Path(path).read_text(encoding="utf-8"))
-    chunk_ids = {c.id for c in load_chunks()}
     for q in questions:
+        q["set"] = set_name
         missing = [g for g in q["gold"] if g not in chunk_ids]
         if missing:
             raise SystemExit(f"{q['id']}: gold chunk(s) not in the public corpus: {missing}")
@@ -71,16 +80,15 @@ def evaluate(index, questions, mode):
     rows = []
     for q in questions:
         results = [h.chunk.id for h in index.search(q["question"], DEPTH, mode)]
-        rows.append({"id": q["id"], "type": q["type"], "question": q["question"],
+        rows.append({"id": q["id"], "set": q["set"], "type": q["type"], "question": q["question"],
                      "gold": q["gold"], "rank": first_gold_rank(results, set(q["gold"])),
                      "top3": results[:3]})
-    main = [r for r in rows if r["type"] != "typo"]
-    typo = [r for r in rows if r["type"] == "typo"]
-    summary = {"main": score([r["rank"] for r in main])}
-    for t in sorted({r["type"] for r in main}):
-        summary[t] = score([r["rank"] for r in main if r["type"] == t])
-    if typo:
-        summary["typo"] = score([r["rank"] for r in typo])
+    summary = {}
+    for set_name in dict.fromkeys(r["set"] for r in rows):
+        in_set = [r for r in rows if r["set"] == set_name and r["type"] != "typo"]
+        summary[set_name] = score([r["rank"] for r in in_set])
+    for t in sorted({r["type"] for r in rows}):
+        summary[t] = score([r["rank"] for r in rows if r["type"] == t])
     return summary, rows
 
 
@@ -88,12 +96,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--mode", choices=["hybrid", "dense", "bm25", "rerank"], action="append",
                         help="search mode(s) to evaluate; default: all four")
+    parser.add_argument("--corpus", choices=["full", "small"], default="full",
+                        help="full: with the generated catalogue (~10,000 chunks); small: week 3 corpus")
     args = parser.parse_args()
     modes = args.mode or ["hybrid", "dense", "bm25", "rerank"]
 
-    questions = load_questions()
-    index = Index(dense=any(m != "bm25" for m in modes))
-    report = {"questions": str(QUESTIONS.relative_to(ROOT)), "depth": DEPTH,
+    chunks = load_chunks(catalogue=args.corpus == "full")
+    chunk_ids = {c.id for c in chunks}
+    sets = [("week3", QUESTIONS)] + ([("catalogue", CATALOGUE_QUESTIONS)] if args.corpus == "full" else [])
+    questions = [q for name, path in sets for q in load_questions(path, chunk_ids, name)]
+    print(f"Indexing {len(chunks)} public chunks (the first full run embeds them all, a few minutes)...")
+    index = Index(chunks=chunks, dense=any(m != "bm25" for m in modes))
+    report = {"corpus": args.corpus,
+              "questions": {name: str(path.relative_to(ROOT)) for name, path in sets}, "depth": DEPTH,
               "public_chunks": len(index.chunks),
               "embedding_model": index.embedder.name if index.embedder else None,
               "modes": {}}
@@ -101,26 +116,29 @@ def main():
         summary, rows = evaluate(index, questions, mode)
         report["modes"][mode] = {"summary": summary, "per_question": rows}
 
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    output = OUTPUT_DIR / f"retrieval_eval_{args.corpus}.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    n = report["modes"][modes[0]]["summary"]["main"]["n"]
-    print(f"\nMain set: {n} questions, {report['public_chunks']} public chunks\n")
-    print(f"{'mode':<8}" + "".join(f"{'hit@' + str(k):>9}" for k in KS) + f"{'MRR':>8}")
-    for mode in modes:
-        s = report["modes"][mode]["summary"]["main"]
-        print(f"{mode:<8}" + "".join(f"{s[f'hit_at_{k}']:>9.3f}" for k in KS) + f"{s['mrr']:>8.3f}")
+    for set_name, _ in sets:
+        n = report["modes"][modes[0]]["summary"][set_name]["n"]
+        print(f"\n{set_name} questions: {n}, corpus: {report['public_chunks']} public chunks\n")
+        print(f"{'mode':<8}" + "".join(f"{'hit@' + str(k):>9}" for k in KS) + f"{'MRR':>8}")
+        for mode in modes:
+            s = report["modes"][mode]["summary"][set_name]
+            print(f"{mode:<8}" + "".join(f"{s[f'hit_at_{k}']:>9.3f}" for k in KS) + f"{s['mrr']:>8.3f}")
+    print("\nhit@5 by question type:")
     for mode in modes:
         s = report["modes"][mode]["summary"]
-        parts = [f"{t} hit@5 {s[t]['hits_at_5']}/{s[t]['n']}" for t in s if t != "main"]
-        print(f"  {mode}: " + ", ".join(parts))
+        types = sorted({r["type"] for r in report["modes"][mode]["per_question"]})
+        print(f"  {mode:<7} " + ", ".join(f"{t} {s[t]['hits_at_5']}/{s[t]['n']}" for t in types))
     print("\nMissed at hit@5 (rank of first gold chunk, '-' = not in top 10):")
     for mode in modes:
         for r in report["modes"][mode]["per_question"]:
             if r["rank"] is None or r["rank"] > 5:
-                print(f"  {mode:<7} {r['id']:<5} rank {r['rank'] or '-':<3} {r['question'][:60]}"
+                print(f"  {mode:<7} {r['id']:<5} rank {r['rank'] or '-':<3} {r['question'][:55]}"
                       f"  -> got {r['top3'][0]}")
-    print(f"\nSaved {OUTPUT.relative_to(ROOT)}")
+    print(f"\nSaved {output.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

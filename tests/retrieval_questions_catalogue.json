@@ -1,0 +1,178 @@
+[
+ {
+  "id": "C01",
+  "question": "How much is the TR-221?",
+  "gold": [
+   "product-tr-221#1"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C02",
+  "question": "Is the TR-219 waterproof?",
+  "gold": [
+   "product-tr-219#3"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C03",
+  "question": "What sizes does the TR-202 come in?",
+  "gold": [
+   "product-tr-202#2"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C04",
+  "question": "Which colours are available for the TR-230?",
+  "gold": [
+   "product-tr-230#1"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C05",
+  "question": "Can I run in wet weather with the TR-311?",
+  "gold": [
+   "product-tr-311#3"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C06",
+  "question": "How heavy is the RN-188?",
+  "gold": [
+   "product-rn-188#1"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C07",
+  "question": "Is the HK-669 good for walking through streams?",
+  "gold": [
+   "product-hk-669#3"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C08",
+  "question": "How waterproof is the JK-551 rain shell?",
+  "gold": [
+   "product-jk-551#2"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C09",
+  "question": "How long is the warranty on the JK-549?",
+  "gold": [
+   "product-jk-549#4"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C10",
+  "question": "What is the HD-105 made of?",
+  "gold": [
+   "product-hd-105#3"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C11",
+  "question": "What waist sizes does the PN-411 have?",
+  "gold": [
+   "product-pn-411#2"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C12",
+  "question": "Can I put the SN-121 in the washing machine?",
+  "gold": [
+   "product-sn-121#4"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C13",
+  "question": "At what temperature should I wash the TS-102?",
+  "gold": [
+   "product-ts-102#4"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C14",
+  "question": "Will my things stay dry in heavy rain in the BP-310?",
+  "gold": [
+   "product-bp-310#2"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C15",
+  "question": "What head size does the CP-741 fit?",
+  "gold": [
+   "product-cp-741#2"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C16",
+  "question": "How much does the BP-614 weigh when it is empty?",
+  "gold": [
+   "product-bp-614#3"
+  ],
+  "type": "catalogue_code"
+ },
+ {
+  "id": "C17",
+  "question": "How much does the Granite Point hiking boot cost?",
+  "gold": [
+   "product-hk-421#1"
+  ],
+  "type": "catalogue_name"
+ },
+ {
+  "id": "C18",
+  "question": "Is the Echo Bluff running shoe waterproof?",
+  "gold": [
+   "product-rn-165#3"
+  ],
+  "type": "catalogue_name"
+ },
+ {
+  "id": "C19",
+  "question": "What is the Nimbus Summit fleece made of?",
+  "gold": [
+   "product-fl-231#3"
+  ],
+  "type": "catalogue_name"
+ },
+ {
+  "id": "C20",
+  "question": "Does the Timber Lane sneaker fit true to size?",
+  "gold": [
+   "product-sn-435#2"
+  ],
+  "type": "catalogue_name"
+ },
+ {
+  "id": "C21",
+  "question": "What colours does the Meadow Wood jacket come in?",
+  "gold": [
+   "product-jk-151#1"
+  ],
+  "type": "catalogue_name"
+ },
+ {
+  "id": "C22",
+  "question": "Can I machine wash the Alpine Stream hoodie?",
+  "gold": [
+   "product-hd-105#4"
+  ],
+  "type": "catalogue_name"
+ }
+]

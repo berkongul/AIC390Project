@@ -71,8 +71,16 @@ def parse(path):
     return Document(meta["id"], meta, text[end + 5:])
 
 
-def load_documents():
-    return [parse(p) for p in sorted(DOCS.glob("*.md"))]
+def load_documents(catalogue=True):
+    """The hand-written documents in data/docs, plus the generated product catalogue
+    (src/catalogue.py, about 2,500 product pages) unless catalogue=False."""
+    docs = [parse(p) for p in sorted(DOCS.glob("*.md"))]
+    if catalogue:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from catalogue import generate
+        taken = {d.id for d in docs}
+        docs += [Document(doc_id, meta, body) for doc_id, meta, body in generate() if doc_id not in taken]
+    return docs
 
 
 def chunk(doc):
@@ -99,8 +107,8 @@ def chunk(doc):
     return chunks
 
 
-def load_chunks(access=("public",)):
-    return [c for d in load_documents() for c in chunk(d) if c.access in access]
+def load_chunks(access=("public",), catalogue=True):
+    return [c for d in load_documents(catalogue) for c in chunk(d) if c.access in access]
 
 
 def main():
